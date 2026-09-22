@@ -1,8 +1,12 @@
+# Make a strafe mode where you area always in upwards, and pointing towards the enemy
+# Make the movement mode feel better
+# Position smoothing for camera makes the camera jittery
+
 extends CharacterBody2D
 
 @export_group("Movement Properties")
 @export var base_speed: float = 300.0
-@export var rush_speed_modifier = 100.0
+@export var rush_speed_modifier: float = 100.0
 @export var turn_speed: float = 12.0
 @export var base_acceleration: float = 300.0
 @export var base_friction: float = 1200.0
