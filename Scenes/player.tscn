@@ -251,7 +251,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=1258302323]
 script = ExtResource("1_cvnsp")
-rush_speed_modifier = 150.0
 dash_velocity = 500.0
 dash_duration = 0.5
 dash_cooldown = 0.2
