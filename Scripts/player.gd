@@ -20,9 +20,9 @@ func _ready() -> void:
 
 # for real strafe code, loop through nodes in Strafe group, and find nearest
 func test_strafe() -> void:
-	print(get_tree().get_first_node_in_group("Strafe"))
-	if get_tree().get_first_node_in_group("Strafe"):
-		set_strafe_target(get_tree().get_first_node_in_group("Strafe"))
+	print(get_tree().get_first_node_in_group("StrafeTarget"))
+	if get_tree().get_first_node_in_group("StrafeTarget"):
+		set_strafe_target(get_tree().get_first_node_in_group("StrafeTarget"))
 
 
 func _physics_process(delta: float) -> void:
@@ -38,18 +38,20 @@ func _physics_process(delta: float) -> void:
 	velocity = dash.resolve_velocity(movement, input_direction, velocity, delta)
 	move_and_slide()
 	
-	var is_strafing : bool = strafe.has_target() and not dash.is_active()
+	var is_strafing : bool = strafe.has_target()
+	var dash_facing = dash.get_facing_dir_override()
+	var is_dash_facing = (dash_facing != Vector2.ZERO)
 	
 	# get dashing direction override if dashing or about to, otherwise it stays as Vector2.ZERO
-	var facing : Vector2 = dash.get_facing_dir_override()
-	if facing == Vector2.ZERO:
-		if is_strafing:
-			facing = strafe.get_facing_dir(global_position)
-		else:
-			if input_direction != Vector2.ZERO: facing = input_direction
-			else: facing = last_move_direction
-
-	direction.update(facing, is_strafing)
+	var facing : Vector2
+	if is_dash_facing:
+		facing = dash_facing
+	elif is_strafing:
+		facing = strafe.get_facing_dir(global_position)
+	else:
+		facing = input_direction if input_direction != Vector2.ZERO else last_move_direction
+	
+	direction.update(facing, is_strafing and not is_dash_facing, animation)
 	animation.update_state(velocity.length(), is_strafing)
 
 

@@ -18,6 +18,6 @@ position = Vector2(-101, -8)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
-[node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["Strafe"]]
+[node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["StrafeTarget"]]
 position = Vector2(200, 200)
 texture = ExtResource("4_jjvhh")

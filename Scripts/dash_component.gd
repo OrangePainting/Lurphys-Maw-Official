@@ -58,7 +58,8 @@ func physics_process(delta: float) -> void:
 func get_velocity() -> Vector2: return direction * (distance / duration)
 
 func get_facing_dir_override() -> Vector2:
-	if is_dashing or is_queued: return direction
+	if is_dashing: return direction
+	elif is_queued: return dash_direction
 	else: return Vector2.ZERO
 
 func get_charge_progress() -> float:
