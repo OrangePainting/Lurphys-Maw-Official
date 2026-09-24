@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bqhe5wfw1e32c" path="res://Assets/art/player/player-hurt.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://ckrdom0eu77gj" path="res://Assets/art/player/player-swiming.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://cf2sd1cxa5xha" path="res://Assets/art/player/player-rush.png" id="5_x3wgy"]
+[ext_resource type="Script" uid="uid://671fmny7oqjm" path="res://Scripts/move_component.gd" id="7_tx1dd"]
+[ext_resource type="Script" uid="uid://b1r5glq4jm8a0" path="res://Scripts/dash_component.gd" id="8_gymyn"]
+[ext_resource type="Script" uid="uid://cmq0fmtxhwqh1" path="res://Scripts/direction_component.gd" id="9_pu2lt"]
+[ext_resource type="Script" uid="uid://c8ex675vplwbw" path="res://Scripts/animation_component.gd" id="10_ukyrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li6ia"]
 radius = 13.0
@@ -271,11 +275,15 @@ visible = false
 [node name="Components" type="Node" parent="." unique_id=1216039329]
 
 [node name="MoveComponent" type="Node" parent="Components" unique_id=221707488]
+script = ExtResource("7_tx1dd")
 
 [node name="DashComponent" type="Node" parent="Components" unique_id=855497149]
+script = ExtResource("8_gymyn")
 
 [node name="DirectionComponent" type="Node" parent="Components" unique_id=1328554085]
+script = ExtResource("9_pu2lt")
 
 [node name="AnimationComponent" type="Node" parent="Components" unique_id=49459687]
+script = ExtResource("10_ukyrk")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
