@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b1r5glq4jm8a0" path="res://Scripts/dash_component.gd" id="8_gymyn"]
 [ext_resource type="Script" uid="uid://cmq0fmtxhwqh1" path="res://Scripts/direction_component.gd" id="9_pu2lt"]
 [ext_resource type="Script" uid="uid://c8ex675vplwbw" path="res://Scripts/animation_component.gd" id="10_ukyrk"]
+[ext_resource type="Script" uid="uid://bppapg8gr6qpb" path="res://Scripts/strafe_component.gd" id="11_gymyn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li6ia"]
 radius = 13.0
@@ -289,5 +290,9 @@ script = ExtResource("9_pu2lt")
 [node name="AnimationComponent" type="Node" parent="Components" unique_id=49459687]
 unique_name_in_owner = true
 script = ExtResource("10_ukyrk")
+
+[node name="StrafeComponent" type="Node" parent="Components" unique_id=501090193]
+unique_name_in_owner = true
+script = ExtResource("11_gymyn")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

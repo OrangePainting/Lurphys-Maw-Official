@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/main.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="4_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=1755036456]
 script = ExtResource("1_jjgbg")
@@ -16,3 +17,7 @@ position = Vector2(-101, -8)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1207779249]
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="Target" type="Sprite2D" parent="." unique_id=2068717330 groups=["Target"]]
+texture = ExtResource("4_jjvhh")
+offset = Vector2(200, 200)

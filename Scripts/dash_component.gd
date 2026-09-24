@@ -15,24 +15,14 @@ var is_dashing := false
 var is_queued := false
 var direction := Vector2.RIGHT
 var dash_direction := Vector2.RIGHT
-var charges := 1
+var charges : int
 
 var dash_timer := 0.0
 var delay_timer := 0.0
 var recharge_timer := 0.0
 
-#d_value = dash value
-func setup(d_distance: float, d_duration: float, d_delay: float,
-	d_cooldown: float, d_max_charges: int) -> void:
-		distance = d_distance
-		duration = d_duration
-		delay = d_delay
-		cooldown = d_cooldown
-		max_charges = d_max_charges
-		charges = d_max_charges
-
-
 func is_active() -> bool: return is_dashing or is_queued
+func _ready() -> void: charges = max_charges
 
 
 func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool:
@@ -67,6 +57,9 @@ func physics_process(delta: float) -> void:
 # distance / time = speed, speed * direction = velocity
 func get_velocity() -> Vector2: return direction * (distance / duration)
 
+func get_facing_dir_override() -> Vector2:
+	if is_dashing or is_queued: return direction
+	else: return Vector2.ZERO
 
 func get_charge_progress() -> float:
 	if charges >= max_charges: return 1.0

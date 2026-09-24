@@ -6,18 +6,16 @@ class_name AnimationComponent extends Node
 var current_state := &"idle"
 var must_finish_state = false
 
-func setup(player_sprite: AnimatedSprite2D) -> void:
-	sprite = player_sprite
+func _ready() -> void:
 	sprite.animation_finished.connect(on_sprite_animation_finished)
 
 
-func update_state(speed: float) -> void:
+func update_state(speed: float, force_idle: bool = false) -> void:
 	if must_finish_state: return
 	
-	var next_state = &"idle"
-	if speed > 5.0:
-		next_state = &"rush"
-	current_state = next_state
+	if force_idle or speed < 5.0: current_state = &"idle"
+	else: current_state = &"rush"
+	
 	sprite.play(current_state)
 
 

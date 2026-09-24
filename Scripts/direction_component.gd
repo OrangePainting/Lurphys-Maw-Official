@@ -6,13 +6,10 @@ class_name DirectionComponent extends Node
 
 var facing_angle := 0.0
 
+func _ready() -> void: facing_angle = sprite.rotation
 
-func setup(player_sprite: Node2D, player_collision_shape: CollisionShape2D,
-	player_facing_angle: float) -> void:
-	
-	sprite = player_sprite
-	collision_shape = player_collision_shape
-	facing_angle = player_facing_angle
+func get_facing_dir() -> Vector2:
+	return Vector2(sin(facing_angle), cos(facing_angle)).normalized()
 
 
 func update(direction: Vector2) -> void:
