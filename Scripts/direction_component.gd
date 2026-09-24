@@ -1,8 +1,9 @@
 # DirectionComponent designed for player, so it may not work as well for other entities
 class_name DirectionComponent extends Node
 
-var sprite: Node2D
-var collision_shape: CollisionShape2D
+@onready var sprite: Node2D = %Sprite
+@onready var collision_shape := %CollisionShape2D
+
 var facing_angle := 0.0
 
 

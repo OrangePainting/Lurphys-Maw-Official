@@ -1,8 +1,8 @@
 # animation component for player, so it may not work well for other entities
 class_name AnimationComponent extends Node
 
-var sprite: AnimatedSprite2D
-var is_rushing := false
+@onready var sprite := %Sprite
+
 var current_state := &"idle"
 var must_finish_state = false
 

@@ -1,8 +1,9 @@
 class_name MovementComponent extends Node
 
-var speed: float = 300.0
-var acceleration: float = 300.0
-var friction: float = 1200.0
+@export_group("Properties")
+@export var speed := 300.0
+@export var acceleration := 300.0
+@export var friction := 1200.0
 
 func setup(player_speed: float, player_acceleration: float,
 	 player_friction: float) -> void:
@@ -12,7 +13,6 @@ func setup(player_speed: float, player_acceleration: float,
 	friction = player_friction
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func process(input_direction: Vector2, 
 	current_velocity: Vector2, delta: float) -> Vector2:
 	

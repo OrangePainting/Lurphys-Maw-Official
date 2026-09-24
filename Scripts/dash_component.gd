@@ -4,12 +4,12 @@ signal dash_queued(direction: Vector2)
 signal dash_started(direction: Vector2)
 signal dash_ended()
 
-# all related to dash
-var distance := 75.0
-var duration := 0.15
-var delay := 0.25
-var cooldown := 1.0
-var max_charges := 1
+@export_group("Properties")
+@export var distance := 75.0
+@export var duration := 0.15 # sec
+@export var delay := 0.25 # sec
+@export var cooldown := 2.5 # sec
+@export var max_charges := 1 # later don't make this an export variable, as this could be an upgrade
 
 var is_dashing := false
 var is_queued := false
@@ -88,3 +88,21 @@ func update_recharge(delta: float) -> void:
 		charges += 1
 		if charges < max_charges: recharge_timer = cooldown
 		else: recharge_timer = 0
+
+
+func resolve_velocity(movement: MovementComponent, input_direction: Vector2,
+	current_velocity: Vector2, delta: float) -> Vector2:
+	
+	if is_dashing: return get_velocity()
+	elif is_queued: return movement.decelerate(current_velocity, delta)
+	else: return movement.process(input_direction, current_velocity, delta)
+
+func resolve_facing_direction(input_direction: Vector2,
+	prev_direction: Vector2) -> Vector2:
+	
+	var facing_direction := input_direction
+	if is_dashing: facing_direction = direction
+	elif is_queued: facing_direction = dash_direction
+	
+	if facing_direction == Vector2.ZERO: return prev_direction
+	else: return facing_direction
