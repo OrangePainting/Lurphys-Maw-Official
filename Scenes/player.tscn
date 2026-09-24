@@ -249,11 +249,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1258302323]
+[node name="Player" type="CharacterBody2D" unique_id=784674488]
 script = ExtResource("1_cvnsp")
-dash_velocity = 500.0
-dash_duration = 0.5
-dash_cooldown = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=992792402]
 unique_name_in_owner = true
