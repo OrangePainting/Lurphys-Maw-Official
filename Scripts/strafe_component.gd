@@ -10,5 +10,4 @@ func remove_target() -> void: target = null
 
 func get_facing_dir(from_pos: Vector2) -> Vector2:
 	if not has_target(): return Vector2.ZERO
-	print(target)
 	return Vector2.LEFT if sign(target.global_position.x - from_pos.x) == -1 else Vector2.RIGHT

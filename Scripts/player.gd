@@ -16,7 +16,7 @@ func _ready() -> void:
 	dash.dash_started.connect(on_dash_started)
 	
 	# testing strafing
-	call_deferred("test_strafe")
+	#call_deferred("test_strafe")
 
 # for real strafe code, loop through nodes in Strafe group, and find nearest
 func test_strafe() -> void:
