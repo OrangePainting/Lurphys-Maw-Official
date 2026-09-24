@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://hqwq4v5l21u0"]
+
+[ext_resource type="Script" uid="uid://bvmi1rgwv6oh5" path="res://examples/hex_kingdom/hex_kingdom.gd" id="1_hex"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="3_ui"]
+
+[sub_resource type="Environment" id="Environment_realm"]
+background_mode = 1
+background_color = Color(0.42, 0.24, 0.25, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.72, 0.54, 1)
+ambient_light_energy = 0.78
+reflected_light_source = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.62
+glow_strength = 0.78
+glow_bloom = 0.1
+fog_enabled = true
+fog_light_color = Color(0.68, 0.43, 0.39, 1)
+fog_light_energy = 0.35
+fog_density = 0.008
+fog_height = -2.0
+fog_height_density = 0.12
+
+[node name="HexKingdom" type="Node3D" unique_id=1686600796]
+script = ExtResource("1_hex")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=572807512]
+environment = SubResource("Environment_realm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1957342615]
+projection = 1
+current = true
+size = 29.5
+
+[node name="ShowcaseUI" parent="." unique_id=1206271961 instance=ExtResource("3_ui")]
+title_text = "HEX KINGDOM"
+controls_text = "DRAG  ORBIT     ·     RIGHT DRAG  REFRAME     ·     SCROLL  ZOOM     ·     R  RESET"
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=177999812]

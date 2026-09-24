@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://coltfspsotrma"]
+
+[ext_resource type="Script" uid="uid://dvb4h1dwgmvj" path="res://examples/mold_logo/mold_logo.gd" id="1_logo"]
+
+[sub_resource type="Environment" id="Environment_logo"]
+background_mode = 1
+background_color = Color(0.008, 0.008, 0.025, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.54, 0.57, 0.92, 1)
+ambient_light_energy = 0.72
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.82
+glow_strength = 1.05
+glow_bloom = 0.12
+
+[node name="MoldLogo" type="Node3D" unique_id=1635116042]
+script = ExtResource("1_logo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2111577038]
+environment = SubResource("Environment_logo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=974287921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 16)
+projection = 1
+current = true
+size = 12.5
+far = 100.0
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=447844355]

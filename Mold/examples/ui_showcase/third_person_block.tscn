@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bbhb5skiqd6um"]
+
+[ext_resource type="Script" uid="uid://cn6wdr7ntgi5v" path="res://examples/ui_showcase/third_person_block.gd" id="1_controller"]
+
+[sub_resource type="BoxShape3D" id="Shape_block"]
+size = Vector3(1.15, 1.15, 1.15)
+
+[sub_resource type="StandardMaterial3D" id="Material_block"]
+albedo_color = Color(0.11, 0.38, 0.46, 1)
+metallic = 0.45
+roughness = 0.24
+emission_enabled = true
+emission = Color(0.025, 0.12, 0.16, 1)
+emission_energy_multiplier = 0.7
+
+[sub_resource type="BoxMesh" id="Mesh_block"]
+material = SubResource("Material_block")
+size = Vector3(1.15, 1.15, 1.15)
+
+[sub_resource type="StandardMaterial3D" id="Material_nose"]
+albedo_color = Color(0.18, 0.82, 1, 1)
+emission_enabled = true
+emission = Color(0.08, 0.56, 0.85, 1)
+emission_energy_multiplier = 2.4
+
+[sub_resource type="BoxMesh" id="Mesh_nose"]
+material = SubResource("Material_nose")
+size = Vector3(0.54, 0.16, 0.12)
+
+[node name="ThirdPersonBlock" type="CharacterBody3D" unique_id=1292067357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 4)
+script = ExtResource("1_controller")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1279128909]
+shape = SubResource("Shape_block")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1942014298]
+
+[node name="Body" type="MeshInstance3D" parent="Visual" unique_id=1891860046]
+mesh = SubResource("Mesh_block")
+
+[node name="ForwardLight" type="MeshInstance3D" parent="Visual" unique_id=1069567384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.615)
+mesh = SubResource("Mesh_nose")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1033846832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=401671553]
+transform = Transform3D(1, 0, 0, 0, 0.96639, 0.257081, 0, -0.257081, 0.96639, 0, 1.45, 6.2)
+current = true
+fov = 64.0
+near = 0.08
+far = 180.0

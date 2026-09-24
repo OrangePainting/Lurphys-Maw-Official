@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ckjy7kdjwrgoy"]
+
+[ext_resource type="Script" uid="uid://by1tmtlfg2sgi" path="res://examples/performance/performance.gd" id="1_demo"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="3_ui"]
+
+[sub_resource type="Environment" id="Environment_performance"]
+background_mode = 1
+background_color = Color(0.008, 0.004, 0.035, 1)
+
+[node name="PerformanceTest" type="Node3D" unique_id=1987179457]
+script = ExtResource("1_demo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=28644678]
+environment = SubResource("Environment_performance")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1428731816]
+transform = Transform3D(0.707107, -0.408248, 0.57735, 0, 0.816497, 0.57735, -0.707107, -0.408248, 0.57735, 22, 24, 22)
+projection = 1
+current = true
+size = 38.0
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1757074918]
+layer = 10
+
+[node name="Metrics" type="Label" parent="Interface" unique_id=2137894844]
+offset_left = 32.0
+offset_top = 178.0
+offset_right = 720.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0.72, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+
+[node name="CountTitle" type="Label" parent="Interface" unique_id=55661469]
+offset_left = 32.0
+offset_top = 366.0
+offset_right = 720.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(1, 0.96, 0.42, 1)
+theme_override_font_sizes/font_size = 14
+text = "MOLD COUNT"
+
+[node name="CountSelector" type="HBoxContainer" parent="Interface" unique_id=423816922]
+offset_left = 32.0
+offset_top = 390.0
+offset_right = 720.0
+offset_bottom = 418.0
+theme_override_constants/separation = 4
+
+[node name="Count100" type="Button" parent="Interface/CountSelector" unique_id=1402669262]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "100"
+flat = true
+
+[node name="Count1000" type="Button" parent="Interface/CountSelector" unique_id=1098373585]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "1K"
+flat = true
+
+[node name="Count10000" type="Button" parent="Interface/CountSelector" unique_id=760381263]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "10K"
+flat = true
+
+[node name="Count20000" type="Button" parent="Interface/CountSelector" unique_id=860457829]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+button_pressed = true
+text = "20K"
+flat = true
+
+[node name="Count40000" type="Button" parent="Interface/CountSelector" unique_id=1295142563]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "40K"
+flat = true
+
+[node name="Count80000" type="Button" parent="Interface/CountSelector" unique_id=1029726294]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "80K"
+flat = true
+
+[node name="Count160000" type="Button" parent="Interface/CountSelector" unique_id=215610892]
+custom_minimum_size = Vector2(68, 28)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.42, 1)
+toggle_mode = true
+text = "160K"
+flat = true
+
+[node name="AnimateButton" type="Button" parent="Interface" unique_id=510863438]
+offset_left = 32.0
+offset_top = 428.0
+offset_right = 172.0
+offset_bottom = 456.0
+text = "Pause animation"
+flat = true
+
+[node name="OrderingLabel" type="Label" parent="Interface" unique_id=1715820221]
+offset_left = 32.0
+offset_top = 466.0
+offset_right = 232.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 14
+text = "Transparency ordering"
+
+[node name="OrderingSelector" type="OptionButton" parent="Interface" unique_id=1099855543]
+offset_left = 240.0
+offset_top = 466.0
+offset_right = 480.0
+offset_bottom = 494.0
+tooltip_text = "Choose Native Compatible or Batched. Switching preserves handles."
+
+[node name="OrderingNote" type="Label" parent="Interface" unique_id=40034718]
+offset_left = 32.0
+offset_top = 506.0
+offset_right = 720.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 14
+text = "Transparent workload | Native pool creation occurs on first use."
+
+[node name="ShowcaseUI" parent="." unique_id=751928209 instance=ExtResource("3_ui")]
+title_text = "PERFORMANCE TEST"
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=1369689713]

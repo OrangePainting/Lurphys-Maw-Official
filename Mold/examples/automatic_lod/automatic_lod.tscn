@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://dtgag8hcehgvu"]
+
+[ext_resource type="Script" uid="uid://bo4ol0exxw7ao" path="res://examples/automatic_lod/automatic_lod.gd" id="1_script"]
+
+[sub_resource type="Environment" id="Environment_lod"]
+background_mode = 1
+background_color = Color(0.008, 0.004, 0.035, 1)
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.65
+glow_strength = 0.8
+
+[sub_resource type="StyleBoxFlat" id="Panel_style"]
+bg_color = Color(0.025, 0.018, 0.075, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24, 0.8, 0.9, 0.45)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="AutomaticLod" type="Node3D" unique_id=100781793]
+script = ExtResource("1_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=979645503]
+environment = SubResource("Environment_lod")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1386418684]
+current = true
+fov = 58.0
+near = 0.1
+far = 200.0
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1554284320]
+layer = 20
+
+[node name="Title" type="Label" parent="Interface" unique_id=1953100523]
+offset_left = 32.0
+offset_top = 26.0
+offset_right = 620.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 0.91, 0.63, 1)
+theme_override_font_sizes/font_size = 28
+text = "MOLD // AUTOMATIC LOD LAB"
+
+[node name="Subtitle" type="Label" parent="Interface" unique_id=285953787]
+offset_left = 34.0
+offset_top = 66.0
+offset_right = 720.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.72, 1, 1, 0.9)
+theme_override_font_sizes/font_size = 14
+text = "Move the camera through five mesh-detail tiers · authored maximum: EXTREME"
+
+[node name="ControlPanel" type="PanelContainer" parent="Interface" unique_id=832375093]
+offset_left = 32.0
+offset_top = 116.0
+offset_right = 460.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("Panel_style")
+
+[node name="Content" type="VBoxContainer" parent="Interface/ControlPanel" unique_id=816805231]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SpacerTop" type="Control" parent="Interface/ControlPanel/Content" unique_id=691755469]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="ShapeLabel" type="Label" parent="Interface/ControlPanel/Content" unique_id=1631767198]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 13
+text = "  SHAPE"
+
+[node name="ShapeSelector" type="OptionButton" parent="Interface/ControlPanel/Content" unique_id=101427776]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="BlendLabel" type="Label" parent="Interface/ControlPanel/Content" unique_id=1709890014]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 13
+text = "  BLEND MODE"
+
+[node name="BlendSelector" type="OptionButton" parent="Interface/ControlPanel/Content" unique_id=713011058]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="ModeLabel" type="Label" parent="Interface/ControlPanel/Content" unique_id=1896422010]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 13
+text = "  QUALITY MODE"
+
+[node name="ModeRow" type="HBoxContainer" parent="Interface/ControlPanel/Content" unique_id=244514380]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ModeSelector" type="OptionButton" parent="Interface/ControlPanel/Content/ModeRow" unique_id=2086176540]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QualitySelector" type="OptionButton" parent="Interface/ControlPanel/Content/ModeRow" unique_id=480518147]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AmountLabel" type="Label" parent="Interface/ControlPanel/Content" unique_id=1866015852]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 13
+text = "  AMOUNT"
+
+[node name="AmountRow" type="HBoxContainer" parent="Interface/ControlPanel/Content" unique_id=1223466810]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AmountSlider" type="HSlider" parent="Interface/ControlPanel/Content/AmountRow" unique_id=1822406841]
+custom_minimum_size = Vector2(330, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 16.0
+max_value = 4096.0
+step = 16.0
+value = 256.0
+
+[node name="AmountValue" type="Label" parent="Interface/ControlPanel/Content/AmountRow" unique_id=1788055770]
+custom_minimum_size = Vector2(66, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 1, 1, 1)
+text = "256"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PresetRow" type="HBoxContainer" parent="Interface/ControlPanel/Content" unique_id=89544377]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Preset64" type="Button" parent="Interface/ControlPanel/Content/PresetRow" unique_id=215605975]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+toggle_mode = true
+text = "64"
+
+[node name="Preset256" type="Button" parent="Interface/ControlPanel/Content/PresetRow" unique_id=255267085]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "256"
+
+[node name="Preset1024" type="Button" parent="Interface/ControlPanel/Content/PresetRow" unique_id=1761844621]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+toggle_mode = true
+text = "1K"
+
+[node name="Preset4096" type="Button" parent="Interface/ControlPanel/Content/PresetRow" unique_id=548393458]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+toggle_mode = true
+text = "4K"
+
+[node name="DistanceLabel" type="Label" parent="Interface/ControlPanel/Content" unique_id=1835396986]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 13
+text = "  CAMERA DISTANCE"
+
+[node name="DistanceRow" type="HBoxContainer" parent="Interface/ControlPanel/Content" unique_id=719968504]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DistanceSlider" type="HSlider" parent="Interface/ControlPanel/Content/DistanceRow" unique_id=871683963]
+custom_minimum_size = Vector2(330, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 10.0
+max_value = 80.0
+step = 0.25
+value = 34.0
+
+[node name="DistanceValue" type="Label" parent="Interface/ControlPanel/Content/DistanceRow" unique_id=1700616774]
+custom_minimum_size = Vector2(66, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 1, 1, 1)
+text = "34.0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Interface/ControlPanel/Content" unique_id=1661262537]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.75, 0.86, 0.9)
+theme_override_font_sizes/font_size = 12
+text = "  Drag distance slowly to see complementary dithered transitions."
+
+[node name="Statistics" type="Label" parent="Interface" unique_id=1130764514]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -720.0
+offset_top = -86.0
+offset_right = -30.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.72, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "DETAIL DISTRIBUTION"
+horizontal_alignment = 2
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=1078227199]

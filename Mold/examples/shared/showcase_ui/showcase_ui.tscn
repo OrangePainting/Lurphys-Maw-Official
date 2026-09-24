@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://examples/shared/showcase_ui/showcase_ui.gd" id="1_ui"]
+
+[node name="ShowcaseUI" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_ui")
+
+[node name="TitleMargin" type="MarginContainer" parent="."]
+offset_top = 42.0
+offset_right = 390.0
+offset_bottom = 150.0
+mouse_filter = 2
+
+[node name="TitlePanel" type="MarginContainer" parent="TitleMargin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitlePadding" type="MarginContainer" parent="TitleMargin/TitlePanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 18
+
+[node name="TitleStack" type="VBoxContainer" parent="TitleMargin/TitlePanel/TitlePadding"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="TitleMargin/TitlePanel/TitlePadding/TitleStack"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.63, 1)
+theme_override_colors/font_shadow_color = Color(0.07, 0.03, 0.08, 0.75)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 28
+text = "MOLD SAMPLE"
+
+[node name="Subtitle" type="Label" parent="TitleMargin/TitlePanel/TitlePadding/TitleStack"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.82, 0.78, 0.75, 0.86)
+theme_override_font_sizes/font_size = 13
+text = ""
+
+[node name="ControlsMargin" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -74.0
+offset_right = 480.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="ControlsPanel" type="MarginContainer" parent="ControlsMargin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Controls" type="Label" parent="ControlsMargin/ControlsPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.95, 0.88, 0.78, 0.9)
+theme_override_font_sizes/font_size = 13
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1

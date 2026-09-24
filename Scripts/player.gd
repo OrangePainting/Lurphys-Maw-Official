@@ -84,10 +84,6 @@ func _physics_process(delta: float) -> void:
 	facing_angle = fposmod(facing_angle, TAU)
 	
 	
-	
-
-	print(facing_angle)
-	
 	sprite.rotation = facing_angle
 	if is_rushing:
 		move_speed = base_speed + rush_speed_modifier
