@@ -18,10 +18,11 @@ func _ready() -> void:
 	# testing strafing
 	call_deferred("test_strafe")
 
+# for real strafe code, loop through nodes in Strafe group, and find nearest
 func test_strafe() -> void:
-	print(get_tree().get_first_node_in_group("Target"))
-	if get_tree().get_first_node_in_group("Target"):
-		set_strafe_target(get_tree().get_first_node_in_group("Target"))
+	print(get_tree().get_first_node_in_group("Strafe"))
+	if get_tree().get_first_node_in_group("Strafe"):
+		set_strafe_target(get_tree().get_first_node_in_group("Strafe"))
 
 
 func _physics_process(delta: float) -> void:
@@ -43,11 +44,12 @@ func _physics_process(delta: float) -> void:
 	var facing : Vector2 = dash.get_facing_dir_override()
 	if facing == Vector2.ZERO:
 		if is_strafing:
-			facing = strafe.get_facing_dir(global_position, direction.get_facing_dir(), delta)
-		if input_direction != Vector2.ZERO: facing = input_direction
-		else: facing = last_move_direction
+			facing = strafe.get_facing_dir(global_position)
+		else:
+			if input_direction != Vector2.ZERO: facing = input_direction
+			else: facing = last_move_direction
 
-	direction.update(facing)
+	direction.update(facing, is_strafing)
 	animation.update_state(velocity.length(), is_strafing)
 
 

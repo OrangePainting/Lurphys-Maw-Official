@@ -9,14 +9,19 @@ var facing_angle := 0.0
 func _ready() -> void: facing_angle = sprite.rotation
 
 func get_facing_dir() -> Vector2:
-	return Vector2(sin(facing_angle), cos(facing_angle)).normalized()
+	return Vector2(cos(facing_angle), sin(facing_angle)).normalized()
 
 
-func update(direction: Vector2) -> void:
+func update(direction: Vector2, is_strafing: bool) -> void:
 	if direction == Vector2.ZERO: return
+
+	if is_strafing:
+		facing_angle = 3 * PI / 2
+		sprite.flip_h = direction.x < 0.0
+	else:
+		facing_angle = direction.angle()
+		sprite.flip_h = cos(facing_angle) < 0.0
 	
-	facing_angle = direction.angle()
-	sprite.flip_h = cos(facing_angle) < 0.0
 	if sprite.flip_h:
 		sprite.rotation = atan2(-sin(facing_angle), abs(cos(facing_angle)))
 	else:
