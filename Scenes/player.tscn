@@ -275,15 +275,19 @@ visible = false
 [node name="Components" type="Node" parent="." unique_id=1216039329]
 
 [node name="MoveComponent" type="Node" parent="Components" unique_id=221707488]
+unique_name_in_owner = true
 script = ExtResource("7_tx1dd")
 
 [node name="DashComponent" type="Node" parent="Components" unique_id=855497149]
+unique_name_in_owner = true
 script = ExtResource("8_gymyn")
 
 [node name="DirectionComponent" type="Node" parent="Components" unique_id=1328554085]
+unique_name_in_owner = true
 script = ExtResource("9_pu2lt")
 
 [node name="AnimationComponent" type="Node" parent="Components" unique_id=49459687]
+unique_name_in_owner = true
 script = ExtResource("10_ukyrk")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

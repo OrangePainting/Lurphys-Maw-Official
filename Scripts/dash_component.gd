@@ -1,11 +1,90 @@
-extends Node
+class_name DashComponent extends Node
+
+signal dash_queued(direction: Vector2)
+signal dash_started(direction: Vector2)
+signal dash_ended()
+
+# all related to dash
+var distance := 75.0
+var duration := 0.15
+var delay := 0.25
+var cooldown := 1.0
+var max_charges := 1
+
+var is_dashing := false
+var is_queued := false
+var direction := Vector2.RIGHT
+var dash_direction := Vector2.RIGHT
+var charges := 1
+
+var dash_timer := 0.0
+var delay_timer := 0.0
+var recharge_timer := 0.0
+
+#d_value = dash value
+func setup(d_distance: float, d_duration: float, d_delay: float,
+	d_cooldown: float, d_max_charges: int) -> void:
+		distance = d_distance
+		duration = d_duration
+		delay = d_delay
+		cooldown = d_cooldown
+		max_charges = d_max_charges
+		charges = d_max_charges
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func is_active() -> bool: return is_dashing or is_queued
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool:
+	if charges <= 0 or is_active(): return false
+	if charges >= max_charges: recharge_timer = cooldown
+	
+	charges -= 1
+	
+	if input_direction != Vector2.ZERO:
+		dash_direction = input_direction.normalized()
+	else:
+		dash_direction = previous_direction.normalized()
+	
+	is_queued = true
+	delay_timer = delay
+	dash_queued.emit(dash_direction)
+	return true
+
+
+func physics_process(delta: float) -> void:
+	update_recharge(delta)
+	
+	if is_dashing:
+		dash_timer -= delta
+		if dash_timer <= 0.0:
+			is_dashing = false
+			dash_ended.emit()
+	elif is_queued:
+		delay_timer -= delta
+		if delay_timer <= 0.0: start_dash()
+
+# distance / time = speed, speed * direction = velocity
+func get_velocity() -> Vector2: return direction * (distance / duration)
+
+
+func get_charge_progress() -> float:
+	if charges >= max_charges: return 1.0
+	else: return clamp(1.0 - (recharge_timer / cooldown), 0.0, 1.0)
+
+
+func start_dash() -> void:
+	is_queued = false
+	is_dashing = true
+	direction = dash_direction
+	dash_timer = duration
+	dash_started.emit(direction)
+
+
+func update_recharge(delta: float) -> void:
+	if charges >= max_charges: return
+	recharge_timer -= delta
+	if recharge_timer <= 0.0:
+		charges += 1
+		if charges < max_charges: recharge_timer = cooldown
+		else: recharge_timer = 0
