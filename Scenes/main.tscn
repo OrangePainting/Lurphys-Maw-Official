@@ -101,8 +101,6 @@ script = ExtResource("4_jjvhh")
 texture_filter = 1
 tile_set = SubResource("TileSet_0jy1n")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1129187349]
-
 [node name="Player" parent="." unique_id=1996954412 instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(-106, 13)
