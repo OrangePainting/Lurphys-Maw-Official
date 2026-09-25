@@ -1,0 +1,349 @@
+[gd_scene format=3 uid="uid://bv5bbqrrb6kt3"]
+
+[ext_resource type="Script" uid="uid://3ckjtkqvqorp" path="res://addons/mold/authoring/mold_node_3d.gd" id="2_node"]
+[ext_resource type="Script" uid="uid://b3o4l0ini6dpr" path="res://addons/mold/authoring/mold_shape_resource.gd" id="3_shape"]
+[ext_resource type="Script" uid="uid://d3yrllyfp33sr" path="res://addons/mold/authoring/mold_style_resource.gd" id="4_style"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="5_ui"]
+
+[sub_resource type="Environment" id="Environment_demo"]
+background_mode = 1
+background_color = Color(0.004, 0.018, 0.035, 1)
+
+[sub_resource type="Resource" id="Shape_backdrop"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(13.5, 8.5)
+roundness = 0.0
+
+[sub_resource type="Resource" id="Style_backdrop"]
+script = ExtResource("4_style")
+color = Color(0.025, 0.09, 0.14, 1)
+secondary_color = Color(0.035, 0.18, 0.2, 1)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.15
+
+[sub_resource type="Resource" id="Shape_divider"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(0.055, 7.25)
+roundness = 1.0
+
+[sub_resource type="Resource" id="Style_divider"]
+script = ExtResource("4_style")
+color = Color(0.1764706, 0.8313726, 0.7490196, 1)
+emission_strength = 1.1
+
+[sub_resource type="Resource" id="Shape_rounded_cuboid"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1.35, 1.35, 1.35)
+roundness = 0.66
+
+[sub_resource type="Resource" id="Style_rounded_cuboid"]
+script = ExtResource("4_style")
+color = Color(0.1333333, 0.827451, 0.9333333, 1)
+secondary_color = Color(0.0784314, 0.7215686, 0.6509804, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_torus"]
+script = ExtResource("3_shape")
+kind = 13
+size_2d = Vector2(1.96, 1)
+radius = 0.62
+height = 1.24
+thickness = 0.32
+roundness = 0.0
+start_degrees = 25.0
+span_degrees = 300.0
+detail = 4
+
+[sub_resource type="Resource" id="Style_torus"]
+script = ExtResource("4_style")
+color = Color(0.145098, 0.3882353, 0.9215686, 1)
+secondary_color = Color(0.1333333, 0.827451, 0.9333333, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.7
+
+[sub_resource type="Resource" id="Shape_regular_prism"]
+script = ExtResource("3_shape")
+kind = 8
+radius = 0.72
+height = 1.4
+roundness = 0.0
+
+[sub_resource type="Resource" id="Style_regular_prism"]
+script = ExtResource("4_style")
+color = Color(0.9607843, 0.9058824, 0.7764706, 1)
+secondary_color = Color(0.9843137, 0.4431373, 0.5215686, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.55
+
+[sub_resource type="Resource" id="Shape_cone"]
+script = ExtResource("3_shape")
+kind = 9
+radius = 0.75
+height = 1.5
+
+[sub_resource type="Resource" id="Style_cone"]
+script = ExtResource("4_style")
+color = Color(0.3882353, 0.4, 0.945098, 1)
+secondary_color = Color(0.1333333, 0.827451, 0.9333333, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_sphere"]
+script = ExtResource("3_shape")
+kind = 10
+radius = 0.72
+
+[sub_resource type="Resource" id="Style_sphere"]
+script = ExtResource("4_style")
+color = Color(0.0784314, 0.7215686, 0.6509804, 1)
+secondary_color = Color(0.145098, 0.3882353, 0.9215686, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_capsule"]
+script = ExtResource("3_shape")
+kind = 12
+height = 1.65
+
+[sub_resource type="Resource" id="Style_capsule"]
+script = ExtResource("4_style")
+color = Color(0.9843137, 0.4431373, 0.5215686, 1)
+secondary_color = Color(0.9607843, 0.9058824, 0.7764706, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(0.6, 1, 0.35)
+emission_strength = 0.55
+
+[sub_resource type="Resource" id="Shape_rounded_rectangle"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(1.55, 1.25)
+roundness = 0.35
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_rounded_rectangle"]
+script = ExtResource("4_style")
+color = Color(0.1333333, 0.827451, 0.9333333, 1)
+secondary_color = Color(0.145098, 0.3882353, 0.9215686, 1)
+color_mode = 2
+color_interpolation = 1
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_disc"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 0.75
+start_degrees = 25.0
+span_degrees = 305.0
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_disc"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.9843137, 0.4431373, 0.5215686, 0.72)
+secondary_color = Color(0.9607843, 0.9058824, 0.7764706, 0.72)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_ring"]
+script = ExtResource("3_shape")
+kind = 3
+radius = 0.78
+thickness = 0.18
+start_degrees = 20.0
+span_degrees = 320.0
+billboard_mode = 1
+dashed = true
+dash_type = 1
+dash_modifier = -0.79
+
+[sub_resource type="Resource" id="Style_ring"]
+script = ExtResource("4_style")
+mode = 2
+color = Color(0.9607843, 0.9058824, 0.7764706, 0.88)
+secondary_color = Color(0.1333333, 0.827451, 0.9333333, 0.88)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.8
+
+[sub_resource type="Resource" id="Shape_rounded_polygon"]
+script = ExtResource("3_shape")
+kind = 4
+radius = 0.78
+roundness = 0.3
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_rounded_polygon"]
+script = ExtResource("4_style")
+mode = 9
+color = Color(0.3882353, 0.4, 0.945098, 0.82)
+secondary_color = Color(0.9843137, 0.4431373, 0.5215686, 0.82)
+color_mode = 2
+color_interpolation = 1
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_rounded_rectangle_rim"]
+script = ExtResource("3_shape")
+kind = 1
+size_2d = Vector2(1.6, 1.25)
+thickness = 0.16
+roundness = 0.32
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_rounded_rectangle_rim"]
+script = ExtResource("4_style")
+mode = 4
+color = Color(0.0784314, 0.7215686, 0.6509804, 0.76)
+secondary_color = Color(0.1333333, 0.827451, 0.9333333, 0.76)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.65
+
+[sub_resource type="Resource" id="Shape_polygon_rim"]
+script = ExtResource("3_shape")
+kind = 5
+radius = 0.8
+thickness = 0.18
+roundness = 0.0
+sides = 5
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_polygon_rim"]
+script = ExtResource("4_style")
+mode = 3
+color = Color(0.9607843, 0.9058824, 0.7764706, 0.82)
+secondary_color = Color(0.9843137, 0.4431373, 0.5215686, 0.82)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.5
+
+[node name="NodeAuthoring" type="Node3D" unique_id=1557682288]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2003609799]
+environment = SubResource("Environment_demo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=436093817]
+transform = Transform3D(0.836461, -0.302957, 0.456673, 0, 0.833304, 0.552814, -0.548026, -0.462408, 0.697027, 9.5, 11.5, 14.5)
+projection = 1
+current = true
+size = 12.4
+near = 0.1
+far = 100.0
+
+[node name="Backdrop — Opaque Rounded Rectangle" type="Node3D" parent="." unique_id=1100308359]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, -0.16, 0)
+script = ExtResource("2_node")
+shape = SubResource("Shape_backdrop")
+style = SubResource("Style_backdrop")
+sorting_order = -100
+
+[node name="Center Divider" type="Node3D" parent="." unique_id=652013676]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, -0.09, 0)
+script = ExtResource("2_node")
+shape = SubResource("Shape_divider")
+style = SubResource("Style_divider")
+sorting_order = -50
+
+[node name="3D Dual Color Nodes" type="Node3D" parent="." unique_id=449632641]
+
+[node name="Rounded Cuboid — Object-Space Dual Color" type="Node3D" parent="3D Dual Color Nodes" unique_id=165386684]
+transform = Transform3D(0.91354495, 0, -0.40673694, 0, 1, 0, 0.40673694, 0, 0.91354495, -4.55, 0.7, -1.65)
+script = ExtResource("2_node")
+shape = SubResource("Shape_rounded_cuboid")
+style = SubResource("Style_rounded_cuboid")
+
+[node name="Torus — Partial Arc + Back Face Cull" type="Node3D" parent="3D Dual Color Nodes" unique_id=443999467]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, -2.15, 0.72, -1.65)
+script = ExtResource("2_node")
+shape = SubResource("Shape_torus")
+style = SubResource("Style_torus")
+
+[node name="Nested Transform Group — Rotate or Scale Me" type="Node3D" parent="3D Dual Color Nodes" unique_id=781293844]
+transform = Transform3D(1.02714, 0, 0.333738, 0, 1.08, 0, -0.333738, 0, 1.02714, -4.55, 0.72, 1.15)
+
+[node name="Regular Prism — Nested Object-Space Dual Color" type="Node3D" parent="3D Dual Color Nodes/Nested Transform Group — Rotate or Scale Me" unique_id=85976037]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0.0017948151, 0, -0.022716582)
+script = ExtResource("2_node")
+shape = SubResource("Shape_regular_prism")
+style = SubResource("Style_regular_prism")
+
+[node name="Cone — Object-Space Dual Color" type="Node3D" parent="3D Dual Color Nodes" unique_id=197857120]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, -2.15, 0.74, 1.15)
+script = ExtResource("2_node")
+shape = SubResource("Shape_cone")
+style = SubResource("Style_cone")
+
+[node name="Sphere — Front Face Cull" type="Node3D" parent="3D Dual Color Nodes" unique_id=899795640]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, -4.55, 0.7, 3.2)
+script = ExtResource("2_node")
+shape = SubResource("Shape_sphere")
+style = SubResource("Style_sphere")
+face_cull = 2
+
+[node name="Capsule — Object-Space Dual Color" type="Node3D" parent="3D Dual Color Nodes" unique_id=196308455]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, -2.15, 0.82, 3.2)
+script = ExtResource("2_node")
+shape = SubResource("Shape_capsule")
+style = SubResource("Style_capsule")
+
+[node name="2D Billboard + Blend Nodes" type="Node3D" parent="." unique_id=1114622451]
+
+[node name="Rounded Rectangle — Radial Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=23307717]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.15, 0.02, -1.65)
+script = ExtResource("2_node")
+shape = SubResource("Shape_rounded_rectangle")
+style = SubResource("Style_rounded_rectangle")
+
+[node name="Disc — Angular Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=798872549]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.55, 0.02, -1.65)
+script = ExtResource("2_node")
+shape = SubResource("Shape_disc")
+style = SubResource("Style_disc")
+
+[node name="Ring — Additive Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=768954338]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.15, 0.025, 0.75)
+script = ExtResource("2_node")
+shape = SubResource("Shape_ring")
+style = SubResource("Style_ring")
+
+[node name="Rounded Polygon — Screen Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=1524956727]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.55, 0.025, 0.75)
+script = ExtResource("2_node")
+shape = SubResource("Shape_rounded_polygon")
+style = SubResource("Style_rounded_polygon")
+
+[node name="Rounded Rectangle Rim — Dither Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=1539771257]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.15, 0.03, 3.15)
+script = ExtResource("2_node")
+shape = SubResource("Shape_rounded_rectangle_rim")
+style = SubResource("Style_rounded_rectangle_rim")
+
+[node name="Polygon Rim — Multiplicative Billboard" type="Node3D" parent="2D Billboard + Blend Nodes" unique_id=1609642254]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.55, 0.03, 3.15)
+script = ExtResource("2_node")
+shape = SubResource("Shape_polygon_rim")
+style = SubResource("Style_polygon_rim")
+
+[node name="ShowcaseUI" parent="." unique_id=1815416310 instance=ExtResource("5_ui")]
+title_text = "NODE AUTHORING"

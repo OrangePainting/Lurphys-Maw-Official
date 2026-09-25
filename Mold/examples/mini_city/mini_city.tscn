@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dya0f6dvtxv62"]
+
+[ext_resource type="Script" uid="uid://xqeqcdbni71w" path="res://examples/mini_city/mini_city.gd" id="1_city"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="3_ui"]
+
+[sub_resource type="Environment" id="Environment_city"]
+background_mode = 1
+background_color = Color(0.988235, 0.968627, 0.921569, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.92
+reflected_light_source = 2
+
+[node name="MiniCity" type="Node3D" unique_id=554083377]
+script = ExtResource("1_city")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=498496746]
+environment = SubResource("Environment_city")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1371801015]
+projection = 1
+current = true
+size = 25.5
+
+[node name="ShowcaseUI" parent="." unique_id=436353940 instance=ExtResource("3_ui")]
+title_text = "MINI CITY"
+controls_text = "DRAG  ORBIT     ·     SHIFT / RIGHT DRAG  PAN     ·     SCROLL  ZOOM     ·     R  RESET"
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=617324333]

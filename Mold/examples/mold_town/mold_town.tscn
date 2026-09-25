@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://j7qfh2vhb5kf"]
+
+[ext_resource type="Script" uid="uid://cgcd0bmq1ym3n" path="res://examples/mold_town/mold_town.gd" id="1_town"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="3_ui"]
+
+[sub_resource type="Environment" id="Environment_town"]
+background_mode = 1
+background_color = Color(0.94902, 0.823529, 0.709804, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.898039, 0.780392, 1)
+ambient_light_energy = 0.86
+reflected_light_source = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.42
+glow_strength = 0.62
+glow_bloom = 0.08
+fog_enabled = true
+fog_light_color = Color(0.94902, 0.823529, 0.709804, 1)
+fog_light_energy = 0.22
+fog_density = 0.006
+fog_height = -2.0
+fog_height_density = 0.08
+
+[node name="MoldTown" type="Node3D" unique_id=2069019310]
+script = ExtResource("1_town")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=581861385]
+environment = SubResource("Environment_town")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1453020301]
+projection = 1
+current = true
+size = 22.5
+
+[node name="ShowcaseUI" parent="." unique_id=1514580186 instance=ExtResource("3_ui")]
+title_text = "MOLD TOWN"
+controls_text = "CLICK  BUILD     ·     RIGHT CLICK  REMOVE     ·     DRAG  ORBIT     ·     SHIFT / MIDDLE DRAG  PAN     ·     SCROLL  ZOOM     ·     R  RESET"
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=568156083]

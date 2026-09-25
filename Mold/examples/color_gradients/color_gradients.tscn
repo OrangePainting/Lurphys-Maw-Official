@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://c8kbmxg07hjib"]
+
+[ext_resource type="Script" uid="uid://dxasxt5q77ikw" path="res://examples/color_gradients/color_gradients.gd" id="1_demo"]
+[ext_resource type="Script" uid="uid://3ckjtkqvqorp" path="res://addons/mold/authoring/mold_node_3d.gd" id="2_mold_node"]
+[ext_resource type="Script" uid="uid://b3o4l0ini6dpr" path="res://addons/mold/authoring/mold_shape_resource.gd" id="3_shape"]
+[ext_resource type="Script" uid="uid://d3yrllyfp33sr" path="res://addons/mold/authoring/mold_style_resource.gd" id="4_style"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="5_ui"]
+
+[sub_resource type="Environment" id="Environment_color_gradients"]
+background_mode = 1
+background_color = Color(0.004, 0.018, 0.035, 1)
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.45
+glow_strength = 0.55
+glow_bloom = 0.06
+
+[sub_resource type="Resource" id="Shape_radial"]
+script = ExtResource("3_shape")
+kind = 5
+radius = 0.88
+thickness = 0.34
+roundness = 0.16
+
+[sub_resource type="Resource" id="Style_radial_center"]
+script = ExtResource("4_style")
+color = Color(0.96, 0.91, 0.78, 1)
+secondary_color = Color(0.15, 0.39, 0.92, 1)
+color_mode = 2
+color_interpolation = 1
+emission_strength = 0.38
+
+[sub_resource type="Resource" id="Style_radial_bounds"]
+script = ExtResource("4_style")
+color = Color(0.96, 0.91, 0.78, 1)
+secondary_color = Color(0.15, 0.39, 0.92, 1)
+color_mode = 3
+color_interpolation = 1
+emission_strength = 0.38
+
+[sub_resource type="Resource" id="Shape_angular"]
+script = ExtResource("3_shape")
+kind = 3
+radius = 0.9
+thickness = 0.28
+
+[sub_resource type="Resource" id="Style_angular"]
+script = ExtResource("4_style")
+color = Color(0.13, 0.83, 0.93, 1)
+secondary_color = Color(0.98, 0.44, 0.52, 1)
+color_mode = 4
+color_interpolation = 1
+emission_strength = 0.42
+
+[sub_resource type="Resource" id="Shape_directional"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1.45, 1.45, 1.05)
+roundness = 0.24
+
+[sub_resource type="Resource" id="Style_directional"]
+script = ExtResource("4_style")
+color = Color(0.08, 0.72, 0.65, 1)
+secondary_color = Color(0.96, 0.91, 0.78, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+emission_strength = 0.28
+
+[sub_resource type="Resource" id="Shape_interpolation"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(3.35, 0.95)
+roundness = 0.42
+
+[sub_resource type="Resource" id="Style_linear_rgb"]
+script = ExtResource("4_style")
+color = Color(0.15, 0.39, 0.92, 1)
+secondary_color = Color(1, 0.72, 0.08, 1)
+color_mode = 1
+gradient_space = 1
+gradient_direction = Vector3(1, 0, 0)
+emission_strength = 0.22
+
+[sub_resource type="Resource" id="Style_oklab"]
+script = ExtResource("4_style")
+color = Color(0.15, 0.39, 0.92, 1)
+secondary_color = Color(1, 0.72, 0.08, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+gradient_direction = Vector3(1, 0, 0)
+emission_strength = 0.22
+
+[sub_resource type="Resource" id="Shape_gradient"]
+script = ExtResource("3_shape")
+size_3d = Vector3(2.05, 1.08, 0.82)
+roundness = 0.28
+
+[sub_resource type="Resource" id="Style_world"]
+script = ExtResource("4_style")
+color = Color(0.13, 0.83, 0.93, 1)
+secondary_color = Color(0.98, 0.44, 0.52, 1)
+color_mode = 1
+color_interpolation = 1
+emission_strength = 0.3
+
+[sub_resource type="Resource" id="Style_object"]
+script = ExtResource("4_style")
+color = Color(0.13, 0.83, 0.93, 1)
+secondary_color = Color(0.98, 0.44, 0.52, 1)
+color_mode = 1
+color_interpolation = 1
+gradient_space = 1
+emission_strength = 0.3
+
+[node name="ColorGradients" type="Node3D" unique_id=980450325]
+script = ExtResource("1_demo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=681211784]
+environment = SubResource("Environment_color_gradients")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=311847939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+projection = 1
+current = true
+size = 10.4
+
+[node name="ModeExamples" type="Node3D" parent="." unique_id=1174576760]
+
+[node name="RadialCenter" type="Node3D" parent="ModeExamples" unique_id=487434760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.85, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_radial")
+style = SubResource("Style_radial_center")
+
+[node name="RadialBounds" type="Node3D" parent="ModeExamples" unique_id=461495798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.85, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_radial")
+style = SubResource("Style_radial_bounds")
+
+[node name="DualAngular" type="Node3D" parent="ModeExamples" unique_id=1582052931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.85, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_angular")
+style = SubResource("Style_angular")
+
+[node name="Directional3D" type="Node3D" parent="ModeExamples" unique_id=911764767]
+transform = Transform3D(0.8869949, -0.14526029, 0.43833715, 0, 0.94923544, 0.31456655, -0.46177918, -0.27901894, 0.841967, 4.5, 1.85, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_directional")
+style = SubResource("Style_directional")
+
+[node name="InterpolationExamples" type="Node3D" parent="." unique_id=1076331682]
+
+[node name="LinearRgb" type="Node3D" parent="InterpolationExamples" unique_id=1898731505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.22, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_interpolation")
+style = SubResource("Style_linear_rgb")
+
+[node name="Oklab" type="Node3D" parent="InterpolationExamples" unique_id=1676209978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -0.22, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_interpolation")
+style = SubResource("Style_oklab")
+
+[node name="GradientExamples" type="Node3D" parent="." unique_id=167347941]
+
+[node name="World" type="Node3D" parent="GradientExamples" unique_id=675984372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.65, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_gradient")
+style = SubResource("Style_world")
+
+[node name="Object" type="Node3D" parent="GradientExamples" unique_id=2126788236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -2.65, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_gradient")
+style = SubResource("Style_object")
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1548501503]
+layer = 10
+
+[node name="ShowcaseUI" parent="." unique_id=1749749084 instance=ExtResource("5_ui")]
+title_text = "COLOR GRADIENTS"

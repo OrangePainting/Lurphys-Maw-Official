@@ -1,0 +1,803 @@
+[gd_scene format=3 uid="uid://dmobsnecimcox"]
+
+[ext_resource type="Script" uid="uid://dm5k3jtncu3dx" path="res://examples/basic/basic.gd" id="1_demo"]
+[ext_resource type="Script" uid="uid://3ckjtkqvqorp" path="res://addons/mold/authoring/mold_node_3d.gd" id="2_mold_node"]
+[ext_resource type="Script" uid="uid://b3o4l0ini6dpr" path="res://addons/mold/authoring/mold_shape_resource.gd" id="3_shape"]
+[ext_resource type="Script" uid="uid://d3yrllyfp33sr" path="res://addons/mold/authoring/mold_style_resource.gd" id="4_style"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="5_ui"]
+
+[sub_resource type="Environment" id="Environment_showcase"]
+background_mode = 1
+background_color = Color(0.008, 0.004, 0.035, 1)
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.7
+glow_strength = 0.85
+glow_bloom = 0.12
+
+[sub_resource type="Resource" id="Shape_floor"]
+script = ExtResource("3_shape")
+size_3d = Vector3(34, 0.28, 30)
+roundness = 0.08
+
+[sub_resource type="Resource" id="Style_floor"]
+script = ExtResource("4_style")
+color = Color(0.018, 0.012, 0.075, 1)
+secondary_color = Color(0.035, 0.035, 0.16, 1)
+color_mode = 1
+emission_strength = 0.18
+
+[sub_resource type="Resource" id="Shape_billboard_rect"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(1.25, 0.8)
+billboard_mode = 1
+
+[sub_resource type="Resource" id="Style_shape_lemon_2d"]
+script = ExtResource("4_style")
+color = Color(0.96, 0.88, 0.06, 1)
+secondary_color = Color(1, 1, 0.45, 1)
+color_mode = 2
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_rounded_rect"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(1.25, 0.8)
+roundness = 0.38
+
+[sub_resource type="Resource" id="Style_shape_pink_2d"]
+script = ExtResource("4_style")
+color = Color(0.82, 0.25, 0.72, 1)
+secondary_color = Color(1, 0.68, 0.94, 1)
+color_mode = 2
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_dash_normal"]
+script = ExtResource("3_shape")
+kind = 1
+size_2d = Vector2(1.25, 0.8)
+thickness = 0.12
+dashed = true
+dash_total_count = 10
+dash_spacing = 0.42
+dash_offset = 0.1
+dash_modifier = 0.7
+
+[sub_resource type="Resource" id="Style_shape_violet_2d"]
+script = ExtResource("4_style")
+color = Color(0.36, 0.16, 0.68, 1)
+secondary_color = Color(0.76, 0.48, 1, 1)
+color_mode = 2
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_dash_rounded"]
+script = ExtResource("3_shape")
+kind = 1
+size_2d = Vector2(1.25, 0.8)
+thickness = 0.12
+roundness = 0.38
+dashed = true
+dash_total_count = 10
+dash_spacing = 0.42
+dash_offset = 0.1
+dash_type = 2
+
+[sub_resource type="Resource" id="Style_shape_cyan_2d"]
+script = ExtResource("4_style")
+color = Color(0.23, 0.78, 0.88, 1)
+secondary_color = Color(0.78, 1, 1, 1)
+color_mode = 2
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_disc"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 0.58
+start_degrees = 11.459156
+span_degrees = 309.6
+
+[sub_resource type="Resource" id="Shape_dash_chevron"]
+script = ExtResource("3_shape")
+kind = 3
+radius = 0.62
+thickness = 0.13
+start_degrees = 20.053522
+span_degrees = 280.8
+dashed = true
+dash_total_count = 12
+dash_spacing = 0.45
+dash_offset = 0.15
+dash_type = 1
+dash_modifier = 0.8
+
+[sub_resource type="Resource" id="Shape_polygon"]
+script = ExtResource("3_shape")
+kind = 4
+radius = 0.6
+sides = 5
+
+[sub_resource type="Resource" id="Shape_rounded_polygon"]
+script = ExtResource("3_shape")
+kind = 4
+radius = 0.6
+roundness = 0.3
+
+[sub_resource type="Resource" id="Shape_dash_poly"]
+script = ExtResource("3_shape")
+kind = 5
+radius = 0.62
+thickness = 0.13
+sides = 7
+dashed = true
+dash_fill_count = 7
+dash_total_count = 7
+dash_offset = 0.25
+
+[sub_resource type="Resource" id="Shape_dash_round_poly"]
+script = ExtResource("3_shape")
+kind = 5
+radius = 0.62
+thickness = 0.13
+roundness = 0.28
+sides = 5
+dashed = true
+dash_fill_count = 5
+dash_total_count = 5
+dash_offset = -0.25
+
+[sub_resource type="Resource" id="Shape_cuboid"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1, 0.95, 1)
+
+[sub_resource type="Resource" id="Style_shape_violet_3d"]
+script = ExtResource("4_style")
+color = Color(0.36, 0.16, 0.68, 1)
+secondary_color = Color(0.76, 0.48, 1, 1)
+color_mode = 1
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_rounded_box"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1, 0.95, 1)
+roundness = 0.32
+detail = 1
+
+[sub_resource type="Resource" id="Style_shape_cyan_3d"]
+script = ExtResource("4_style")
+color = Color(0.23, 0.78, 0.88, 1)
+secondary_color = Color(0.78, 1, 1, 1)
+color_mode = 1
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_cylinder"]
+script = ExtResource("3_shape")
+kind = 7
+detail = 1
+
+[sub_resource type="Resource" id="Style_shape_lemon_3d"]
+script = ExtResource("4_style")
+color = Color(0.96, 0.88, 0.06, 1)
+secondary_color = Color(1, 1, 0.45, 1)
+color_mode = 1
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_rounded_cylinder"]
+script = ExtResource("3_shape")
+kind = 7
+roundness = 0.32
+detail = 1
+
+[sub_resource type="Resource" id="Style_shape_pink_3d"]
+script = ExtResource("4_style")
+color = Color(0.82, 0.25, 0.72, 1)
+secondary_color = Color(1, 0.68, 0.94, 1)
+color_mode = 1
+emission_strength = 1.15
+
+[sub_resource type="Resource" id="Shape_regular_prism"]
+script = ExtResource("3_shape")
+kind = 8
+radius = 0.56
+sides = 5
+detail = 1
+
+[sub_resource type="Resource" id="Shape_rounded_prism"]
+script = ExtResource("3_shape")
+kind = 8
+radius = 0.56
+roundness = 0.3
+detail = 1
+
+[sub_resource type="Resource" id="Shape_cone"]
+script = ExtResource("3_shape")
+kind = 9
+radius = 0.56
+height = 1.15
+detail = 1
+
+[sub_resource type="Resource" id="Shape_sphere"]
+script = ExtResource("3_shape")
+kind = 10
+radius = 0.56
+detail = 1
+
+[sub_resource type="Resource" id="Shape_hemisphere"]
+script = ExtResource("3_shape")
+kind = 11
+radius = 0.58
+detail = 1
+
+[sub_resource type="Resource" id="Shape_capsule"]
+script = ExtResource("3_shape")
+kind = 12
+radius = 0.38
+height = 1.45
+detail = 1
+
+[sub_resource type="Resource" id="Shape_torus"]
+script = ExtResource("3_shape")
+kind = 13
+radius = 0.42
+thickness = 0.24
+start_degrees = 14.323945
+span_degrees = 297.0
+detail = 1
+
+[sub_resource type="Resource" id="Shape_blend_backing"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1.5, 0.12, 1.5)
+roundness = 0.2
+detail = 0
+
+[sub_resource type="Resource" id="Style_blend_backing"]
+script = ExtResource("4_style")
+color = Color(0.42, 0.5, 0.68, 1)
+secondary_color = Color(0.78, 0.84, 0.94, 1)
+color_mode = 1
+emission_strength = 0.08
+
+[sub_resource type="Resource" id="Shape_blend_sample"]
+script = ExtResource("3_shape")
+kind = 8
+radius = 0.57
+height = 0.95
+roundness = 0.3
+detail = 1
+
+[sub_resource type="Resource" id="Style_blend_opaque"]
+script = ExtResource("4_style")
+color = Color(0.96, 0.88, 0.06, 1)
+
+[sub_resource type="Resource" id="Style_blend_transparent"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.82, 0.25, 0.72, 0.58)
+
+[sub_resource type="Resource" id="Style_blend_additive"]
+script = ExtResource("4_style")
+mode = 2
+color = Color(0.23, 0.78, 0.88, 0.62)
+
+[sub_resource type="Resource" id="Style_blend_color_dodge"]
+script = ExtResource("4_style")
+mode = 12
+color = Color(0.34, 0.48, 1, 0.48)
+
+[sub_resource type="Resource" id="Style_blend_screen"]
+script = ExtResource("4_style")
+mode = 9
+color = Color(1, 0.38, 0.78, 0.62)
+
+[sub_resource type="Resource" id="Style_blend_lighten"]
+script = ExtResource("4_style")
+mode = 10
+color = Color(1, 0.82, 0.2, 0.72)
+
+[sub_resource type="Resource" id="Style_blend_linear_burn"]
+script = ExtResource("4_style")
+mode = 8
+color = Color(0.18, 0.08, 0.5, 0.82)
+
+[sub_resource type="Resource" id="Style_blend_color_burn"]
+script = ExtResource("4_style")
+mode = 13
+color = Color(0.82, 0.32, 0.58, 0.58)
+
+[sub_resource type="Resource" id="Style_blend_multiplicative"]
+script = ExtResource("4_style")
+mode = 3
+color = Color(0.25, 0.72, 0.92, 0.68)
+
+[sub_resource type="Resource" id="Style_blend_darken"]
+script = ExtResource("4_style")
+mode = 11
+color = Color(0.04, 0.025, 0.12, 0.95)
+
+[sub_resource type="Resource" id="Style_blend_subtractive"]
+script = ExtResource("4_style")
+mode = 7
+color = Color(0.72, 0.28, 0.18, 0.78)
+
+[sub_resource type="Resource" id="Style_blend_dither"]
+script = ExtResource("4_style")
+mode = 4
+color = Color(0.95, 0.88, 0.08, 0.52)
+
+[sub_resource type="Resource" id="Style_blend_gradient"]
+script = ExtResource("4_style")
+color = Color(0.36, 0.16, 0.68, 1)
+secondary_color = Color(0.76, 0.48, 1, 1)
+color_mode = 1
+emission_strength = 1.35
+
+[sub_resource type="Resource" id="Shape_depth_backing"]
+script = ExtResource("3_shape")
+size_3d = Vector3(2.5, 0.14, 2.5)
+roundness = 0.18
+
+[sub_resource type="Resource" id="Style_depth_backing"]
+script = ExtResource("4_style")
+color = Color(0.18, 0.22, 0.38, 1)
+secondary_color = Color(0.42, 0.5, 0.68, 1)
+color_mode = 1
+emission_strength = 0.06
+
+[sub_resource type="Resource" id="Shape_depth_occluder"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1.25, 1.25, 1.25)
+roundness = 0.2
+
+[sub_resource type="Resource" id="Style_depth_occluder"]
+script = ExtResource("4_style")
+color = Color(0.018, 0.012, 0.075, 1)
+secondary_color = Color(0.36, 0.16, 0.68, 1)
+color_mode = 1
+emission_strength = 0.25
+
+[sub_resource type="Resource" id="Shape_depth_sphere"]
+script = ExtResource("3_shape")
+kind = 10
+radius = 0.72
+detail = 1
+
+[sub_resource type="Resource" id="Style_depth_reveal_pink"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.82, 0.25, 0.72, 0.82)
+
+[sub_resource type="Resource" id="Style_depth_reveal_cyan"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.23, 0.78, 0.88, 0.82)
+
+[sub_resource type="Resource" id="Style_depth_writer"]
+script = ExtResource("4_style")
+color = Color(0.36, 0.16, 0.68, 1)
+
+[sub_resource type="Resource" id="Shape_depth_masked"]
+script = ExtResource("3_shape")
+size_3d = Vector3(1.8, 1.8, 1.8)
+
+[sub_resource type="Resource" id="Style_depth_masked"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.23, 0.78, 0.88, 0.78)
+
+[node name="BasicMoldShowcase" type="Node3D" unique_id=453408774]
+script = ExtResource("1_demo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=768576310]
+environment = SubResource("Environment_showcase")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1311322538]
+transform = Transform3D(0.707107, -0.447214, 0.547723, 0, 0.774597, 0.632456, -0.707107, -0.447214, 0.547723, 18, 21, 18)
+projection = 1
+current = true
+size = 27.0
+
+[node name="Floor" type="Node3D" parent="." unique_id=650097715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.18, -0.5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_floor")
+style = SubResource("Style_floor")
+
+[node name="ShapeCatalog" type="Node3D" parent="." unique_id=404114657]
+
+[node name="Shape00" type="Node3D" parent="ShapeCatalog" unique_id=1392132042]
+transform = Transform3D(0.99280864, 0.119712204, 0, -9.03802e-09, 7.495497e-08, 1, 0.119712204, -0.99280864, 7.54979e-08, -9, 0.035, 3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_billboard_rect")
+style = SubResource("Style_shape_lemon_2d")
+
+[node name="Shape01" type="Node3D" parent="ShapeCatalog" unique_id=1726826254]
+transform = Transform3D(1, 0, 0, 0, 7.54979e-08, 1, 0, -1, 7.54979e-08, -7, 0.035, 1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_rounded_rect")
+style = SubResource("Style_shape_pink_2d")
+
+[node name="Shape02" type="Node3D" parent="ShapeCatalog" unique_id=1940336760]
+transform = Transform3D(0.99280864, -0.119712204, 0, 9.03802e-09, 7.495497e-08, 1, -0.119712204, -0.99280864, 7.54979e-08, -5, 0.035, -1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_dash_normal")
+style = SubResource("Style_shape_violet_2d")
+
+[node name="Shape03" type="Node3D" parent="ShapeCatalog" unique_id=2144576642]
+transform = Transform3D(0.99280864, 0.119712204, 0, -9.03802e-09, 7.495497e-08, 1, 0.119712204, -0.99280864, 7.54979e-08, -3, 0.035, -3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_dash_rounded")
+style = SubResource("Style_shape_cyan_2d")
+
+[node name="Shape04" type="Node3D" parent="ShapeCatalog" unique_id=481159486]
+transform = Transform3D(1, 0, 0, 0, 7.54979e-08, 1, 0, -1, 7.54979e-08, -1, 0.035, -5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_disc")
+style = SubResource("Style_shape_lemon_2d")
+
+[node name="Shape05" type="Node3D" parent="ShapeCatalog" unique_id=1092939370]
+transform = Transform3D(0.99280864, -0.119712204, 0, 9.03802e-09, 7.495497e-08, 1, -0.119712204, -0.99280864, 7.54979e-08, -7, 0.035, 5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_dash_chevron")
+style = SubResource("Style_shape_pink_2d")
+
+[node name="Shape06" type="Node3D" parent="ShapeCatalog" unique_id=1159444644]
+transform = Transform3D(0.99280864, 0.119712204, 0, -9.03802e-09, 7.495497e-08, 1, 0.119712204, -0.99280864, 7.54979e-08, -5, 0.035, 3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_polygon")
+style = SubResource("Style_shape_violet_2d")
+
+[node name="Shape07" type="Node3D" parent="ShapeCatalog" unique_id=591250221]
+transform = Transform3D(1, 0, 0, 0, 7.54979e-08, 1, 0, -1, 7.54979e-08, -3, 0.035, 1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_rounded_polygon")
+style = SubResource("Style_shape_cyan_2d")
+
+[node name="Shape08" type="Node3D" parent="ShapeCatalog" unique_id=425852317]
+transform = Transform3D(0.99280864, -0.119712204, 0, 9.03802e-09, 7.495497e-08, 1, -0.119712204, -0.99280864, 7.54979e-08, -1, 0.035, -1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_dash_poly")
+style = SubResource("Style_shape_lemon_2d")
+
+[node name="Shape09" type="Node3D" parent="ShapeCatalog" unique_id=1221079504]
+transform = Transform3D(0.99280864, 0.119712204, 0, -9.03802e-09, 7.495497e-08, 1, 0.119712204, -0.99280864, 7.54979e-08, 1, 0.035, -3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_dash_round_poly")
+style = SubResource("Style_shape_pink_2d")
+
+[node name="Shape10" type="Node3D" parent="ShapeCatalog" unique_id=1219390968]
+transform = Transform3D(-0.34289777, 0, 0.9393727, 0, 1, 0, -0.9393727, 0, -0.34289777, -5, 0.475, 7)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_cuboid")
+style = SubResource("Style_shape_violet_3d")
+
+[node name="Shape11" type="Node3D" parent="ShapeCatalog" unique_id=856164268]
+transform = Transform3D(-0.49688005, 0, 0.86781925, 0, 1, 0, -0.86781925, 0, -0.49688005, -3, 0.475, 5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_rounded_box")
+style = SubResource("Style_shape_cyan_3d")
+
+[node name="Shape12" type="Node3D" parent="ShapeCatalog" unique_id=1438791185]
+transform = Transform3D(-0.6365372, 0, 0.771246, 0, 1, 0, -0.771246, 0, -0.6365372, -1, 0.5, 3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_cylinder")
+style = SubResource("Style_shape_lemon_3d")
+
+[node name="Shape13" type="Node3D" parent="ShapeCatalog" unique_id=417819115]
+transform = Transform3D(-0.7578426, 0, 0.65243745, 0, 1, 0, -0.65243745, 0, -0.7578426, 1, 0.5, 1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_rounded_cylinder")
+style = SubResource("Style_shape_pink_3d")
+
+[node name="Shape14" type="Node3D" parent="ShapeCatalog" unique_id=786191260]
+transform = Transform3D(-0.8572989, 0, 0.5148189, 0, 1, 0, -0.5148189, 0, -0.8572989, 3, 0.5, -1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_regular_prism")
+style = SubResource("Style_shape_violet_3d")
+
+[node name="Shape15" type="Node3D" parent="ShapeCatalog" unique_id=35201924]
+transform = Transform3D(-0.9320391, 0, 0.3623578, 0, 1, 0, -0.3623578, 0, -0.9320391, 5, 0.5, 1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_rounded_prism")
+style = SubResource("Style_shape_cyan_3d")
+
+[node name="Shape16" type="Node3D" parent="ShapeCatalog" unique_id=604873910]
+transform = Transform3D(-0.97990805, 0, 0.19944967, 0, 1, 0, -0.19944967, 0, -0.97990805, 7, 0.575, -1)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_cone")
+style = SubResource("Style_shape_lemon_3d")
+
+[node name="Shape17" type="Node3D" parent="ShapeCatalog" unique_id=773541272]
+transform = Transform3D(-0.99952585, 0, 0.030791573, 0, 1, 0, -0.030791573, 0, -0.99952585, 9, 0.56, -3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_sphere")
+style = SubResource("Style_shape_pink_3d")
+
+[node name="Shape18" type="Node3D" parent="ShapeCatalog" unique_id=987192508]
+transform = Transform3D(-0.9903268, 0, -0.1387545, 0, 1, 0, 0.1387545, 0, -0.9903268, 11, 0.04, -5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_hemisphere")
+style = SubResource("Style_shape_violet_3d")
+
+[node name="Shape19" type="Node3D" parent="ShapeCatalog" unique_id=718094107]
+transform = Transform3D(-0.95257616, 0, -0.30430022, 0, 1, 0, 0.30430022, 0, -0.95257616, 13, 0.725, -7)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_capsule")
+style = SubResource("Style_shape_cyan_3d")
+
+[node name="Shape20" type="Node3D" parent="ShapeCatalog" unique_id=919485911]
+transform = Transform3D(-0.8873624, 0, -0.4610726, 0, 1, 0, 0.4610726, 0, -0.8873624, 15, 0.12, -9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_torus")
+style = SubResource("Style_shape_lemon_3d")
+
+[node name="BlendCatalog" type="Node3D" parent="." unique_id=236369884]
+
+[node name="Backing00" type="Node3D" parent="BlendCatalog" unique_id=1108028641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.06, -7)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample00" type="Node3D" parent="BlendCatalog" unique_id=1091640952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.55, -7)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_opaque")
+
+[node name="Backing01" type="Node3D" parent="BlendCatalog" unique_id=572960222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.06, -9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample01" type="Node3D" parent="BlendCatalog" unique_id=1844972534]
+transform = Transform3D(0.95233357, 0, 0.30505863, 0, 1, 0, -0.30505863, 0, 0.95233357, 3, 0.55, -9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_transparent")
+
+[node name="Backing02" type="Node3D" parent="BlendCatalog" unique_id=150055612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.06, -11)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample02" type="Node3D" parent="BlendCatalog" unique_id=726723135]
+transform = Transform3D(0.8138785, 0, 0.58103514, 0, 1, 0, -0.58103514, 0, 0.8138785, 5, 0.55, -11)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_additive")
+
+[node name="Backing03" type="Node3D" parent="BlendCatalog" unique_id=283498366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0.06, -5.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample03" type="Node3D" parent="BlendCatalog" unique_id=1166105825]
+transform = Transform3D(0.597834, 0, 0.80161995, 0, 1, 0, -0.80161995, 0, 0.597834, 2.7, 0.55, -5.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_color_dodge")
+
+[node name="Backing04" type="Node3D" parent="BlendCatalog" unique_id=1050758548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7, 0.06, -7.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample04" type="Node3D" parent="BlendCatalog" unique_id=1770149205]
+transform = Transform3D(0.3247963, 0, 0.94578403, 0, 1, 0, -0.94578403, 0, 0.3247963, 4.7, 0.55, -7.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_screen")
+
+[node name="Backing05" type="Node3D" parent="BlendCatalog" unique_id=1588696538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0.06, -9.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample05" type="Node3D" parent="BlendCatalog" unique_id=2001777921]
+transform = Transform3D(0.020794876, 0, 0.99978375, 0, 1, 0, -0.99978375, 0, 0.020794876, 6.7, 0.55, -9.3)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_lighten")
+
+[node name="Backing06" type="Node3D" parent="BlendCatalog" unique_id=988081379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0.06, -2.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample06" type="Node3D" parent="BlendCatalog" unique_id=484008761]
+transform = Transform3D(-0.28518906, 0, 0.9584713, 0, 1, 0, -0.9584713, 0, -0.28518906, 4.4, 0.55, -2.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_linear_burn")
+
+[node name="Backing07" type="Node3D" parent="BlendCatalog" unique_id=1539576191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0.06, -4.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample07" type="Node3D" parent="BlendCatalog" unique_id=253976008]
+transform = Transform3D(-0.5639851, 0, 0.8257849, 0, 1, 0, -0.8257849, 0, -0.5639851, 6.4, 0.55, -4.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_color_burn")
+
+[node name="Backing08" type="Node3D" parent="BlendCatalog" unique_id=454817295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4, 0.06, -6.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample08" type="Node3D" parent="BlendCatalog" unique_id=210454986]
+transform = Transform3D(-0.78901476, 0, 0.6143742, 0, 1, 0, -0.6143742, 0, -0.78901476, 8.4, 0.55, -6.6)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_multiplicative")
+
+[node name="Backing09" type="Node3D" parent="BlendCatalog" unique_id=1493621156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0.06, -1.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample09" type="Node3D" parent="BlendCatalog" unique_id=470341000]
+transform = Transform3D(-0.93882537, 0, 0.3443935, 0, 1, 0, -0.3443935, 0, -0.93882537, 6.1, 0.55, -1.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_darken")
+
+[node name="Backing10" type="Node3D" parent="BlendCatalog" unique_id=1000107587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, 0.06, -3.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample10" type="Node3D" parent="BlendCatalog" unique_id=1776379968]
+transform = Transform3D(-0.99913514, 0, 0.04158076, 0, 1, 0, -0.04158076, 0, -0.99913514, 8.1, 0.55, -3.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_subtractive")
+
+[node name="Backing11" type="Node3D" parent="BlendCatalog" unique_id=613182446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 0.06, -5.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample11" type="Node3D" parent="BlendCatalog" unique_id=1203185484]
+transform = Transform3D(-0.9641945, 0, -0.26519623, 0, 1, 0, 0.26519623, 0, -0.9641945, 10.1, 0.55, -5.9)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_dither")
+
+[node name="Backing12" type="Node3D" parent="BlendCatalog" unique_id=439770131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0.06, -0.2)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_backing")
+style = SubResource("Style_blend_backing")
+sorting_order = -1
+
+[node name="Sample12" type="Node3D" parent="BlendCatalog" unique_id=549275322]
+transform = Transform3D(-0.8373344, 0, -0.54669106, 0, 1, 0, 0.54669106, 0, -0.8373344, 7.8, 0.55, -0.2)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_blend_sample")
+style = SubResource("Style_blend_gradient")
+
+[node name="DepthStencilGallery" type="Node3D" parent="." unique_id=705792133]
+
+[node name="Backing00" type="Node3D" parent="DepthStencilGallery" unique_id=1276450228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.15, 9.5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_backing")
+style = SubResource("Style_depth_backing")
+sorting_order = -40
+
+[node name="Occluder00" type="Node3D" parent="DepthStencilGallery" unique_id=217791616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.724396, 1.314146, 9.737219)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_occluder")
+style = SubResource("Style_depth_occluder")
+sorting_order = -10
+
+[node name="Reveal00" type="Node3D" parent="DepthStencilGallery" unique_id=1728955120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.275604, 0.785854, 9.262781)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_sphere")
+style = SubResource("Style_depth_reveal_pink")
+sorting_order = 20
+depth_test = 8
+depth_write = 2
+
+[node name="Backing01" type="Node3D" parent="DepthStencilGallery" unique_id=462303088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.15, 5.5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_backing")
+style = SubResource("Style_depth_backing")
+sorting_order = -40
+
+[node name="Occluder01" type="Node3D" parent="DepthStencilGallery" unique_id=1607747754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.724396, 1.314146, 5.737219)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_occluder")
+style = SubResource("Style_depth_occluder")
+sorting_order = -10
+
+[node name="Reveal01" type="Node3D" parent="DepthStencilGallery" unique_id=177402272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.275604, 0.785854, 5.262781)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_sphere")
+style = SubResource("Style_depth_reveal_cyan")
+sorting_order = 20
+depth_test = 5
+depth_write = 2
+
+[node name="Backing02" type="Node3D" parent="DepthStencilGallery" unique_id=1089256965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.15, 1.5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_backing")
+style = SubResource("Style_depth_backing")
+sorting_order = -40
+
+[node name="Writer02" type="Node3D" parent="DepthStencilGallery" unique_id=1038192811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1.05, 1.5)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_sphere")
+style = SubResource("Style_depth_writer")
+sorting_order = -10
+depth_write = 1
+stencil_flags = 2
+stencil_reference = 7
+
+[node name="Masked02" type="Node3D" parent="DepthStencilGallery" unique_id=222530736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.40383, 0.9368, 1.39833)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_masked")
+style = SubResource("Style_depth_masked")
+sorting_order = 20
+depth_test = 8
+depth_write = 2
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 7
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1196501387]
+layer = 10
+
+[node name="ShapeSection" type="Label" parent="Interface" unique_id=273070384]
+offset_left = 278.0
+offset_top = 168.0
+offset_right = 520.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(0.72, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "ALL MOLD SHAPES"
+
+[node name="BlendSection" type="Label" parent="Interface" unique_id=19178192]
+offset_left = 858.0
+offset_top = 168.0
+offset_right = 1110.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(1, 0.94, 0.34, 1)
+theme_override_font_sizes/font_size = 14
+text = "BLEND / STYLE MODES"
+
+[node name="ShowcaseUI" parent="." unique_id=1633216843 instance=ExtResource("5_ui")]
+title_text = "MOLD CATALOG"

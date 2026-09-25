@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://ie6jf8wb0i4q"]
+
+[ext_resource type="Script" uid="uid://dwr3r1qnj4xk4" path="res://examples/render_state/render_state.gd" id="1_demo"]
+[ext_resource type="Script" uid="uid://3ckjtkqvqorp" path="res://addons/mold/authoring/mold_node_3d.gd" id="2_mold_node"]
+[ext_resource type="Script" uid="uid://b3o4l0ini6dpr" path="res://addons/mold/authoring/mold_shape_resource.gd" id="3_shape"]
+[ext_resource type="Script" uid="uid://d3yrllyfp33sr" path="res://addons/mold/authoring/mold_style_resource.gd" id="4_style"]
+[ext_resource type="PackedScene" path="res://examples/shared/showcase_ui/showcase_ui.tscn" id="5_ui"]
+
+[sub_resource type="Environment" id="Environment_render_state"]
+background_mode = 1
+background_color = Color(0, 0.018, 0.017, 1)
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.55
+glow_strength = 0.65
+glow_bloom = 0.08
+
+[sub_resource type="Resource" id="Shape_backing"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(3.15, 2.05)
+roundness = 0.08
+
+[sub_resource type="Resource" id="Style_backing"]
+script = ExtResource("4_style")
+color = Color(0.33, 0.4, 0.55, 1)
+
+[sub_resource type="Resource" id="Shape_default"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(1.75, 1.62)
+roundness = 0.34
+
+[sub_resource type="Resource" id="Style_cyan_radial"]
+script = ExtResource("4_style")
+color = Color(0.35, 0.91, 0.96, 1)
+secondary_color = Color(0.68, 1, 1, 1)
+color_mode = 2
+emission_strength = 1.1
+
+[sub_resource type="Resource" id="Shape_inverted"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(1.72, 1.62)
+roundness = 0.34
+
+[sub_resource type="Resource" id="Shape_depth_write_pink"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 1.08
+
+[sub_resource type="Resource" id="Style_pink"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.94, 0.34, 0.7, 0.82)
+
+[sub_resource type="Resource" id="Shape_depth_write_cyan"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 1.04
+
+[sub_resource type="Resource" id="Style_cyan"]
+script = ExtResource("4_style")
+mode = 1
+color = Color(0.35, 0.91, 0.96, 0.78)
+
+[sub_resource type="Resource" id="Shape_stencil_writer"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 1.18
+
+[sub_resource type="Resource" id="Style_cyan_opaque"]
+script = ExtResource("4_style")
+color = Color(0.35, 0.91, 0.96, 1)
+
+[sub_resource type="Resource" id="Shape_stencil_mask"]
+script = ExtResource("3_shape")
+kind = 0
+size_2d = Vector2(2.8, 1.95)
+roundness = 0.36
+
+[sub_resource type="Resource" id="Style_yellow"]
+script = ExtResource("4_style")
+color = Color(1, 0.84, 0.28, 1)
+
+[sub_resource type="Resource" id="Shape_depth_fail"]
+script = ExtResource("3_shape")
+kind = 2
+radius = 1.22
+
+[sub_resource type="Resource" id="Style_depth_fail_pink"]
+script = ExtResource("4_style")
+color = Color(0.94, 0.34, 0.7, 1)
+
+[node name="RenderStateSample" type="Node3D" unique_id=179766703]
+script = ExtResource("1_demo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=717088603]
+environment = SubResource("Environment_render_state")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1502537313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+projection = 1
+current = true
+size = 11.5
+
+[node name="DefaultDepth" type="Node3D" parent="." unique_id=1556630313]
+
+[node name="Backing" type="Node3D" parent="DefaultDepth" unique_id=43330383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.75, 0.24)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_backing")
+style = SubResource("Style_backing")
+sorting_order = -10
+
+[node name="Mold" type="Node3D" parent="DefaultDepth" unique_id=2035373156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.75, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_default")
+style = SubResource("Style_cyan_radial")
+
+[node name="InvertedDepth" type="Node3D" parent="." unique_id=2022832344]
+
+[node name="Backing" type="Node3D" parent="InvertedDepth" unique_id=329051218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99, 0.24)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_backing")
+style = SubResource("Style_backing")
+sorting_order = -10
+
+[node name="Mold" type="Node3D" parent="InvertedDepth" unique_id=1095577659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_inverted")
+style = SubResource("Style_cyan_radial")
+sorting_order = 20
+depth_test = 5
+depth_write = 2
+
+[node name="AlwaysDepth" type="Node3D" parent="." unique_id=98264063]
+
+[node name="Backing" type="Node3D" parent="AlwaysDepth" unique_id=1682269922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.99, 0.24)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_backing")
+style = SubResource("Style_backing")
+sorting_order = -10
+
+[node name="Mold" type="Node3D" parent="AlwaysDepth" unique_id=1639486212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.75, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_inverted")
+style = SubResource("Style_cyan_radial")
+sorting_order = 20
+depth_test = 8
+depth_write = 2
+
+[node name="DepthWrite" type="Node3D" parent="." unique_id=2116180039]
+
+[node name="Off" type="Node3D" parent="DepthWrite" unique_id=2069667330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02, -2.7, 0.16)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_write_pink")
+style = SubResource("Style_pink")
+sorting_order = -2
+depth_write = 2
+
+[node name="On" type="Node3D" parent="DepthWrite" unique_id=383893333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12, -2.64, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_write_cyan")
+style = SubResource("Style_cyan")
+sorting_order = 2
+depth_write = 1
+
+[node name="StencilWriteRead" type="Node3D" parent="." unique_id=117719608]
+
+[node name="Writer" type="Node3D" parent="StencilWriteRead" unique_id=1610048721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_stencil_writer")
+style = SubResource("Style_cyan_opaque")
+sorting_order = -10
+depth_write = 1
+stencil_flags = 2
+stencil_reference = 7
+
+[node name="Reader" type="Node3D" parent="StencilWriteRead" unique_id=174992703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7, 0.08)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_stencil_mask")
+style = SubResource("Style_yellow")
+sorting_order = 20
+depth_test = 8
+depth_write = 2
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 7
+
+[node name="DepthFailWrite" type="Node3D" parent="." unique_id=1648718626]
+
+[node name="Backing" type="Node3D" parent="DepthFailWrite" unique_id=1333082194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -2.46, 0.24)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_backing")
+style = SubResource("Style_backing")
+sorting_order = -10
+
+[node name="Mold" type="Node3D" parent="DepthFailWrite" unique_id=1147279534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -2.7, 0)
+script = ExtResource("2_mold_node")
+shape = SubResource("Shape_depth_fail")
+style = SubResource("Style_depth_fail_pink")
+sorting_order = 10
+depth_write = 2
+stencil_flags = 4
+stencil_reference = 11
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=543935744]
+layer = 10
+
+[node name="ShowcaseUI" parent="." unique_id=1940472900 instance=ExtResource("5_ui")]
+title_text = "RENDER STATE"

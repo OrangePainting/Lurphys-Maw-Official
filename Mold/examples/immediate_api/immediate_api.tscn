@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dr56trbt8h6ha"]
+
+[ext_resource type="Script" uid="uid://1cj1vn6e3fo1" path="res://examples/immediate_api/immediate_api.gd" id="1_demo"]
+
+[sub_resource type="Environment" id="Environment_immediate"]
+background_mode = 1
+background_color = Color(0.002, 0.018, 0.025, 1)
+
+[node name="ImmediateApi" type="Node3D" unique_id=77005048]
+script = ExtResource("1_demo")
+drawer_preview_time = 43.0
+continuously_redraw = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=226679037]
+environment = SubResource("Environment_immediate")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1589940647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2, 8.5, 10.7)
+current = true
+fov = 44.0
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1165690076]
+
+[node name="Title" type="Label" parent="Interface" unique_id=1527568817]
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 640.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 0.83, 0.36, 1)
+theme_override_font_sizes/font_size = 22
+text = "MOLD // IMMEDIATE SOLAR SYSTEM"
+
+[node name="SubmissionLabel" type="Label" parent="Interface" unique_id=1247945579]
+offset_left = 30.0
+offset_top = 66.0
+offset_right = 210.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.75, 0.84, 0.98, 1)
+text = "SUBMISSION PATH"
+
+[node name="SubmissionSelector" type="OptionButton" parent="Interface" unique_id=1151140575]
+offset_left = 30.0
+offset_top = 92.0
+offset_right = 404.0
+offset_bottom = 124.0
+selected = 0
+item_count = 2
+popup/item_0/text = "DRAWER COMPONENT"
+popup/item_0/id = 0
+popup/item_1/text = "PURE IMMEDIATE"
+popup/item_1/id = 1
+
+[node name="SpeedLabel" type="Label" parent="Interface" unique_id=963319666]
+offset_left = 30.0
+offset_top = 132.0
+offset_right = 190.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.75, 0.84, 0.98, 1)
+text = "SIMULATION SPEED"
+
+[node name="SpeedSlider" type="HSlider" parent="Interface" unique_id=1746375057]
+offset_left = 30.0
+offset_top = 160.0
+offset_right = 310.0
+offset_bottom = 180.0
+max_value = 4.0
+step = 0.05
+value = 1.0
+
+[node name="SpeedValue" type="Label" parent="Interface" unique_id=1841345012]
+offset_left = 326.0
+offset_top = 154.0
+offset_right = 404.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(1, 0.83, 0.36, 1)
+text = "0× — 4×"
+
+[node name="Controls" type="Label" parent="Interface" unique_id=1036222378]
+offset_left = 30.0
+offset_top = 190.0
+offset_right = 550.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.75, 0.84, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+text = "DRAG ORBIT  •  SHIFT/RIGHT PAN  •  WHEEL ZOOM  •  R RESET"
+
+[node name="!Scrub Drawer Preview Time or Enter Play Mode!" type="Node" parent="." unique_id=33286661]

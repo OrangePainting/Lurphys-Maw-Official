@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dh5n7idontcyu"]
+
+[ext_resource type="Script" uid="uid://c5s6nijkghdcd" path="res://examples/normal_visualization/normal_visualization.gd" id="1_script"]
+
+[sub_resource type="Environment" id="Environment_normals"]
+background_mode = 1
+background_color = Color(0.012, 0.016, 0.035, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.35, 0.4, 0.55, 1)
+ambient_light_energy = 0.45
+
+[node name="NormalVisualization" type="Node3D" unique_id=1939812783]
+script = ExtResource("1_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1923210394]
+environment = SubResource("Environment_normals")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=309326463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.5)
+projection = 1
+current = true
+size = 10.5
+
+[node name="Title" type="Label" parent="." unique_id=646993533]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 760.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.86, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "MOLD NORMAL VISUALIZATION — GDSCRIPT"
+
+[node name="Legend" type="Label" parent="." unique_id=623632258]
+offset_left = 27.0
+offset_top = 62.0
+offset_right = 820.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.64, 0.72, 0.84, 1)
+theme_override_font_sizes/font_size = 16
+text = "RGB = object-space XYZ normal  •  lines point along sampled vertex normals"
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=1384218039]

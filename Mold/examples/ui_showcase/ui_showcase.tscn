@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://5rr78t4utok5"]
+
+[ext_resource type="Script" uid="uid://cf15224m8t5lc" path="res://examples/ui_showcase/ui_showcase.gd" id="1_speedometer"]
+[ext_resource type="Script" uid="uid://5a672qi8qdx7" path="res://examples/ui_showcase/motion_tracker.gd" id="2_radar"]
+[ext_resource type="Script" uid="uid://kdbc47njav8f" path="res://examples/ui_showcase/navigation_compass.gd" id="3_compass"]
+[ext_resource type="Script" uid="uid://cu0gbejoq7ujo" path="res://examples/ui_showcase/weapon_wheel.gd" id="4_wheel"]
+[ext_resource type="PackedScene" path="res://examples/ui_showcase/third_person_showcase_world.tscn" id="5_world"]
+
+[sub_resource type="Environment" id="Environment_ui_showcase"]
+background_mode = 1
+background_color = Color(0.007, 0.012, 0.022, 1)
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.42
+glow_strength = 0.58
+glow_bloom = 0.04
+
+[node name="UiShowcase" type="Node3D" unique_id=11780483]
+script = ExtResource("1_speedometer")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2011217958]
+environment = SubResource("Environment_ui_showcase")
+
+[node name="SceneViewport" type="SubViewport" parent="." unique_id=240830334]
+own_world_3d = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="ThirdPersonShowcaseWorld" parent="SceneViewport" unique_id=316466079 instance=ExtResource("5_world")]
+
+[node name="BackgroundPlane" type="MeshInstance3D" parent="." unique_id=871218012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=976516652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+current = true
+size = 9.0
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=12873554]
+layer = 10
+
+[node name="MotionTracker" type="Node3D" parent="." unique_id=1391072673]
+script = ExtResource("2_radar")
+
+[node name="NavigationCompass" type="Node3D" parent="." unique_id=2080649353]
+script = ExtResource("3_compass")
+
+[node name="WeaponWheel" type="Node3D" parent="." unique_id=1148415919]
+script = ExtResource("4_wheel")
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=560857471]

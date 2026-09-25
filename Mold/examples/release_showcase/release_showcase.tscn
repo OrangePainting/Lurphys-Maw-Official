@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bb1l1nf8kldtj"]
+
+[ext_resource type="Script" uid="uid://cukmouneggjvc" path="res://examples/release_showcase/release_showcase.gd" id="1_showcase"]
+
+[sub_resource type="Environment" id="Environment_showcase"]
+background_mode = 1
+background_color = Color(0.008, 0.008, 0.025, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.54, 0.57, 0.92, 1)
+ambient_light_energy = 0.72
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.82
+glow_strength = 1.05
+glow_bloom = 0.12
+fog_enabled = true
+fog_light_color = Color(0.08, 0.075, 0.18, 1)
+fog_light_energy = 0.42
+fog_density = 0.0025
+fog_height = -2.0
+fog_height_density = 0.08
+
+[node name="ReleaseShowcase" type="Node3D" unique_id=899645320]
+script = ExtResource("1_showcase")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=751977245]
+environment = SubResource("Environment_showcase")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1963913964]
+projection = 1
+current = true
+size = 8.2
+
+[node name="!Enter Play Mode To See It!" type="Node" parent="." unique_id=1881882456]
