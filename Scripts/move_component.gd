@@ -18,6 +18,8 @@ func process(input_direction: Vector2,
 	
 	if input_direction != Vector2.ZERO:
 		current_velocity = current_velocity.move_toward(input_direction * speed, acceleration * delta)
+		if current_velocity.dot(input_direction) < 0:
+			current_velocity = input_direction * speed / 2.0
 		return current_velocity
 	return decelerate(current_velocity, delta)
 

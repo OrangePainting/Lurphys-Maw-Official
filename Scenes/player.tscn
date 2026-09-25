@@ -278,12 +278,14 @@ visible = false
 [node name="MoveComponent" type="Node" parent="Components" unique_id=221707488]
 unique_name_in_owner = true
 script = ExtResource("7_tx1dd")
+friction = 1500.0
 
 [node name="DashComponent" type="Node" parent="Components" unique_id=855497149]
 unique_name_in_owner = true
 script = ExtResource("8_gymyn")
 distance = 150.0
 duration = 0.25
+max_charges = 3
 
 [node name="DirectionComponent" type="Node" parent="Components" unique_id=1328554085]
 unique_name_in_owner = true
