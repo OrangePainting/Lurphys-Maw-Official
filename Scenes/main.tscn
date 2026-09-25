@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c482h17qwnv50"]
+
+[ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://ca76ox2cwfon8" path="res://Scenes/generic_enemy.tscn" id="5_kry3j"]
+
+[node name="Main" type="Node2D" unique_id=1755036456]
+script = ExtResource("1_jjgbg")
+
+[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
+position = Vector2(-100, -16)
+
+[node name="Player" parent="." unique_id=1996954412 groups=["Player"] instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
+position = Vector2(-84, -12)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1207779249]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["Strafe"]]
+position = Vector2(200, 200)
+texture = ExtResource("4_jjvhh")
+
+[node name="Generic Enemy" parent="." unique_id=1260140833 instance=ExtResource("5_kry3j")]
+position = Vector2(413, -55)
+scale = Vector2(2, 2)
