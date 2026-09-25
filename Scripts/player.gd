@@ -9,8 +9,9 @@ class_name Player extends CharacterBody2D
 
 var last_move_direction := Vector2.RIGHT
 
-
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("hi")
 	dash.dash_queued.connect(on_dash_queued)
 	dash.dash_started.connect(on_dash_started)
 	
@@ -25,6 +26,7 @@ func test_strafe() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	print("hi")
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
 	
 	if input_direction != Vector2.ZERO:
@@ -48,20 +50,6 @@ func _physics_process(delta: float) -> void:
 	elif is_strafing:
 		facing = strafe.get_facing_dir(global_position)
 	else:
-		if mousePosRelToDiver < 0:
-			sprite.scale = Vector2(2,-2)
-		else:
-			sprite.scale = Vector2(2,2)
-		facing_angle = lerp_angle(facing_angle, target_angle, turn_speed * delta)
-	facing_angle = fposmod(facing_angle, TAU)
-	
-	
-	sprite.rotation = facing_angle
-	if is_rushing:
-		move_speed = base_speed + rush_speed_modifier
-	else:
-		move_speed = base_speed
-	rotate_collision_shape()
 		facing = input_direction if input_direction != Vector2.ZERO else last_move_direction
 	
 	direction.update(facing, is_strafing and not is_dash_facing, animation)

@@ -88,7 +88,6 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_0jy1n"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_21xkr")
-[ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="4_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=1755036456]
 script = ExtResource("1_jjgbg")
