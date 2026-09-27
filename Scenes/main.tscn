@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c482h17qwnv50"]
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/main.gd" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://beoy4daurlhrt" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://ddmwg0f6kmhbc" path="res://Scenes/background.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
 
@@ -92,11 +92,11 @@ sources/1 = SubResource("TileSetAtlasSource_21xkr")
 [node name="Main" type="Node2D" unique_id=1755036456]
 script = ExtResource("1_jjgbg")
 
-[node name="LevelManager" type="Node" parent="." unique_id=492081533]
-script = ExtResource("4_jjvhh")
-
 [node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
 position = Vector2(130, 44)
+
+[node name="LevelManager" type="Node" parent="." unique_id=492081533]
+script = ExtResource("4_jjvhh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1079247556]
 texture_filter = 1

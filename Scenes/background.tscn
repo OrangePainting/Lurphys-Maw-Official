@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://ddmwg0f6kmhbc"]
+[gd_scene format=3 uid="uid://bqfvfbu7f2feg"]
 
 [ext_resource type="Texture2D" uid="uid://coun010e7k3vc" path="res://Assets/art/environment/background.png" id="1_pojwb"]
 [ext_resource type="Texture2D" uid="uid://c5hwqkeqh36yo" path="res://Assets/art/environment/midground.png" id="2_4aqey"]
-[ext_resource type="PackedScene" uid="uid://dw2disphs2eot" path="res://Scenes/generic_melee_enemy.tscn" id="4_ltlj5"]
 
 [node name="Background" type="Node2D" unique_id=1103033396]
 
@@ -23,6 +22,3 @@ repeat_times = 4
 [node name="Sprite2D" type="Sprite2D" parent="MidLayer" unique_id=1372889919]
 texture = ExtResource("2_4aqey")
 centered = false
-
-[node name="GenericMeleeEnemy" parent="." unique_id=397981035 instance=ExtResource("4_ltlj5")]
-position = Vector2(202, -9)
