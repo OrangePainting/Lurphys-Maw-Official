@@ -32,6 +32,7 @@ enabled=PackedStringArray("res://addons/limbo_console/plugin.cfg", "res://addons
 [global_group]
 
 StrafeTarget=""
+Player=""
 
 [input]
 

@@ -92,16 +92,17 @@ sources/1 = SubResource("TileSetAtlasSource_21xkr")
 [node name="Main" type="Node2D" unique_id=1755036456]
 script = ExtResource("1_jjgbg")
 
+[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
+position = Vector2(130, 44)
+
 [node name="LevelManager" type="Node" parent="." unique_id=492081533]
 script = ExtResource("4_jjvhh")
-
-[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1079247556]
 texture_filter = 1
 tile_set = SubResource("TileSet_0jy1n")
 
-[node name="Player" parent="." unique_id=1996954412 instance=ExtResource("2_bo1nx")]
+[node name="Player" parent="." unique_id=1996954412 groups=["Player"] instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(-106, 13)
 
@@ -112,4 +113,3 @@ position_smoothing_speed = 2.0
 
 [node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["StrafeTarget"]]
 position = Vector2(200, 200)
-texture = ExtResource("4_jjvhh")
