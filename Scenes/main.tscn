@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c482h17qwnv50"]
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/main.gd" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://beoy4daurlhrt" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ddmwg0f6kmhbc" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
 
@@ -96,12 +96,13 @@ script = ExtResource("1_jjgbg")
 script = ExtResource("4_jjvhh")
 
 [node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
+position = Vector2(130, 44)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1079247556]
 texture_filter = 1
 tile_set = SubResource("TileSet_0jy1n")
 
-[node name="Player" parent="." unique_id=1996954412 instance=ExtResource("2_bo1nx")]
+[node name="Player" parent="." unique_id=1996954412 groups=["Player"] instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(-106, 13)
 
@@ -112,4 +113,3 @@ position_smoothing_speed = 2.0
 
 [node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["StrafeTarget"]]
 position = Vector2(200, 200)
-texture = ExtResource("4_jjvhh")
