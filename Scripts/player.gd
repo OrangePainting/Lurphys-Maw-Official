@@ -6,6 +6,7 @@ class_name Player extends CharacterBody2D
 @onready var direction := %DirectionComponent
 @onready var animation := %AnimationComponent
 @onready var strafe := %StrafeComponent
+@onready var health := %HealthComponent
 
 var last_move_direction := Vector2.RIGHT
 
@@ -23,7 +24,6 @@ func test_strafe() -> void:
 	print(get_tree().get_first_node_in_group("StrafeTarget"))
 	if get_tree().get_first_node_in_group("StrafeTarget"):
 		set_strafe_target(get_tree().get_first_node_in_group("StrafeTarget"))
-
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
@@ -63,6 +63,10 @@ func set_strafe_target(target: Node2D) -> void: strafe.set_target(target)
 
 func remove_strafe_target() -> void: strafe.remove_target()
 
+func get_health() -> float: return health.get_health()
+
+func get_max_health() -> float: return health.get_max_health()
+
 
 func on_dash_queued(_direction: Vector2) -> void:
 	animation.play_animation(&"dash")
@@ -70,3 +74,9 @@ func on_dash_queued(_direction: Vector2) -> void:
 
 func on_dash_started(_direction: Vector2) -> void:
 	FxManager.spawn_bubbles(position)
+
+## damage should be a positive health (calculation is current_health - damage)
+func hurt(damage: float) -> void:
+	if damage > 0: play_hurt()
+	health.change_health(-damage) # it's -damage since damage > 0, calculated as current_health - damage in the health component code
+	# TODO: determine if a postive damage (i.e. healing) should be in this func, or in another func
