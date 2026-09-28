@@ -21,9 +21,9 @@ func _ready() -> void:
 
 # for real strafe code, loop through nodes in Strafe group, and find nearest
 func test_strafe() -> void:
-	print(get_tree().get_first_node_in_group("StrafeTarget"))
-	if get_tree().get_first_node_in_group("StrafeTarget"):
-		set_strafe_target(get_tree().get_first_node_in_group("StrafeTarget"))
+	var strafe_target = get_tree().get_first_node_in_group("StrafeTarget")
+	if strafe_target: set_strafe_target(strafe_target)
+
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
@@ -55,25 +55,21 @@ func _physics_process(delta: float) -> void:
 	animation.update_state(velocity.length(), is_strafing)
 
 
-func play_hurt() -> void: animation.play_animation(&"hurt")
-
-func get_dash_charge_progress() -> float: return dash.get_charge_progress()
-
 func set_strafe_target(target: Node2D) -> void: strafe.set_target(target)
 
 func remove_strafe_target() -> void: strafe.remove_target()
+
+func get_dash_charge_progress() -> float: return dash.get_charge_progress()
+
+func on_dash_queued(_direction: Vector2) -> void: animation.play_animation(&"dash")
+
+func on_dash_started(_direction: Vector2) -> void: FxManager.spawn_bubbles(position)
 
 func get_health() -> float: return health.get_health()
 
 func get_max_health() -> float: return health.get_max_health()
 
-
-func on_dash_queued(_direction: Vector2) -> void:
-	animation.play_animation(&"dash")
-
-
-func on_dash_started(_direction: Vector2) -> void:
-	FxManager.spawn_bubbles(position)
+func play_hurt() -> void: animation.play_animation(&"hurt") # TODO: Add visual fx for this?
 
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
