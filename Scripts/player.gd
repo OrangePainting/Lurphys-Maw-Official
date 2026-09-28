@@ -71,6 +71,8 @@ func get_max_health() -> float: return health.get_max_health()
 
 func play_hurt() -> void: animation.play_animation(&"hurt") # TODO: Add visual fx for this?
 
+func check_die() -> void: if get_health() <= 0: pass # TODO: implement die mechanic here
+
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
 	if damage > 0: play_hurt()
