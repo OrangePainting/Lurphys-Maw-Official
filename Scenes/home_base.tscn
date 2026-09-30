@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dds73kn0fap01"]
+
+[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="1_51qb4"]
+[ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_yfo80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vao7y"]
+size = Vector2(1680, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51qb4"]
+size = Vector2(36.095, 980)
+
+[node name="HomeBase" type="Node2D" unique_id=652942257]
+
+[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("1_51qb4")]
+position = Vector2(130, 44)
+
+[node name="Player" parent="." unique_id=784674488 groups=["Player"] instance=ExtResource("2_yfo80")]
+position = Vector2(800, 450)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=185902133]
+limit_left = 0
+limit_top = 0
+limit_right = 1600
+limit_bottom = 900
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1588203404]
+
+[node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1577553748]
+position = Vector2(800, -20)
+shape = SubResource("RectangleShape2D_vao7y")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Top" unique_id=1480339718]
+offset_left = -800.0
+offset_top = 20.0
+offset_right = -760.0
+offset_bottom = 60.0
+color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=884583166]
+position = Vector2(800, 920)
+shape = SubResource("RectangleShape2D_vao7y")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Bottom" unique_id=1132082210]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=734175661]
+position = Vector2(-20, 450)
+shape = SubResource("RectangleShape2D_51qb4")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Left" unique_id=1250939505]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1094776153]
+position = Vector2(1620, 450)
+shape = SubResource("RectangleShape2D_51qb4")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Right" unique_id=36508249]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.5019608, 0.5019608, 1)
