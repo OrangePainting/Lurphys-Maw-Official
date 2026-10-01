@@ -4,6 +4,7 @@ class_name Player extends CharacterBody2D
 signal dash_queued(direction: Vector2)
 signal dash_started(direction: Vector2)
 signal dash_ended()
+signal player_hurt()
 #endregion
 
 #region Exports
@@ -265,11 +266,7 @@ var current_health: float = 100
 func change_health(delta_change: float) -> void:
 	current_health = clamp(current_health + delta_change, 0, max_health)
  
-func get_health() -> float: return current_health
- 
-func get_max_health() -> float: return max_health
- 
-func check_die() -> void: if get_health() <= 0: pass # TODO: implement die mechanic here
+func check_die() -> void: if current_health <= 0: pass # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
@@ -277,7 +274,9 @@ func hurt(damage: float) -> void:
 	change_health(-damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed
  
-func play_hurt() -> void: play_animation(&"hurt") # TODO: Add visual fx for this?
+func play_hurt() -> void:
+	player_hurt.emit()
+	play_animation(&"hurt") # TODO: Add visual fx for this?
 #endregion
 
 #region Signal Handlers
