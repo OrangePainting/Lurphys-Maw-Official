@@ -1,14 +1,13 @@
 extends Resource
-class_name Level
+class_name ImageMapping
 
 var tex: Texture2D
 var img: Image
 var mapping : Array[Array]
 
 
-func _init(imagePath : String) -> void:
-	tex = load(imagePath)
-	img = tex.get_image()
+func _init(image : Image) -> void:
+	img = image
 	mapping.resize(img.get_height())
 	for y in img.get_height():
 		var row: Array = []

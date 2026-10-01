@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lurphy's Maw"
-run/main_scene="uid://c482h17qwnv50"
+run/main_scene="uid://bn0s80vvhv5il"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 FxManager="*uid://ba24r8bkg84xr"
 LimboConsole="*uid://dyxornv8vwibg"
+RunManager="*uid://cv00gkoqcq26p"
+SaveManager="*uid://d05geple33ouh"
 
 [display]
 
@@ -32,6 +34,7 @@ enabled=PackedStringArray("res://addons/limbo_console/plugin.cfg", "res://addons
 [global_group]
 
 StrafeTarget=""
+Player=""
 
 [input]
 

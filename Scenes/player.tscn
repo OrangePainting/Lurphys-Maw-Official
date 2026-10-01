@@ -254,6 +254,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyidc"]
+radius = 31.144823
+
 [node name="Player" type="CharacterBody2D" unique_id=784674488]
 script = ExtResource("1_cvnsp")
 
@@ -271,7 +274,10 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1035400472]
-visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1635183959]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_pyidc")
 
 [node name="Components" type="Node" parent="." unique_id=1216039329]
 

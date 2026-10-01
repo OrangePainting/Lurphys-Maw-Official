@@ -11,7 +11,6 @@ var last_move_direction := Vector2.RIGHT
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("hi")
 	dash.dash_queued.connect(on_dash_queued)
 	dash.dash_started.connect(on_dash_started)
 	
@@ -26,7 +25,6 @@ func test_strafe() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print("hi")
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
 	
 	if input_direction != Vector2.ZERO:
