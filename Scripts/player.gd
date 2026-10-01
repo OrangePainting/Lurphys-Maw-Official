@@ -263,15 +263,15 @@ func test_strafe() -> void:
 var max_health: float = 100
 var current_health: float = 100
  
-func change_health(delta_change: float) -> void:
-	current_health = clamp(current_health + delta_change, 0, max_health)
+func set_health(new_health: float) -> void:
+	current_health = clamp(new_health, 0, max_health)
  
 func check_die() -> void: if current_health <= 0: pass # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
 	if damage > 0: play_hurt()
-	change_health(-damage) # it's -damage since damage > 0, calculated as current_health - damage
+	set_health(current_health - damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed
  
 func play_hurt() -> void:
