@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://tox2xmwxdom1"]
+
+[ext_resource type="PackedScene" uid="uid://dw2disphs2eot" path="res://Scenes/generic_enemy.tscn" id="1_6ktyy"]
+[ext_resource type="Script" uid="uid://dg7rew3suh2lx" path="res://Scripts/state_machine 2/ranged_attack_state.gd" id="2_8xkex"]
+
+[node name="GenericEnemy" unique_id=397981035 instance=ExtResource("1_6ktyy")]
+
+[node name="Walk" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="1" unique_id=1108984586]
+attack_range = 200.0
+attack_state_name = "rangedattack"
+
+[node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="2" unique_id=1834354741]
+script = ExtResource("2_8xkex")
