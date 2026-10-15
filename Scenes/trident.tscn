@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xk6m146jxfsw"]
+
+[ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/generic_weapon.tscn" id="1_0idcw"]
+[ext_resource type="Script" uid="uid://djuyhukrwcnyy" path="res://Scripts/trident.gd" id="2_r0hp4"]
+
+[node name="Generic Weapon" unique_id=530717815 instance=ExtResource("1_0idcw")]
+script = ExtResource("2_r0hp4")
