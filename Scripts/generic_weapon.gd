@@ -9,9 +9,9 @@ enum State {FREE, ACTIVE, COOLDOWN}
 
 @export var weapon_name := "Weapon"
 @export var damage := 10.0
-@export var attack_duration := 0.5
-@export var attack_cooldown := 0.5
-@export var offset_from_player := Vector2.ZERO
+@export var attack_duration := 0.1
+@export var attack_cooldown := 0.15
+@export var offset_from_player := Vector2(30, 0)
 @export var two_handed := false # uses up secondary as well (for anchor, cuz it acts like a greatsword)
 
 var state: State = State.FREE
@@ -32,6 +32,8 @@ func equip(new_holder: Node2D) -> void:
 	position = offset_from_player
 
 func unequip() -> void: holder = null
+
+func is_active() -> bool: return state == State.ACTIVE	
 
 func prevent_damage(amount: float) -> bool: return false # shield overrides this
 

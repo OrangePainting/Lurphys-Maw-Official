@@ -6,4 +6,4 @@
 [node name="Generic Projectile Weapon" unique_id=530717815 instance=ExtResource("1_twqt5")]
 script = ExtResource("2_07lfr")
 projectile = null
-dist_from_player = null
+dist_from_player = 50.0
