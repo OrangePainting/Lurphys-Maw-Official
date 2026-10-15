@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c0j2l4smleg1y"]
+
+[ext_resource type="Script" uid="uid://dn03o6tyyk4of" path="res://Scripts/generic_weapon.gd" id="1_x8q1h"]
+[ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="2_qwmac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li6ia"]
+size = Vector2(76, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_li6ia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qwmac")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Generic Weapon" type="Node2D" unique_id=530717815]
+script = ExtResource("1_x8q1h")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1257751927]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=175767989]
+shape = SubResource("RectangleShape2D_li6ia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1584208292]
+scale = Vector2(0.56249994, 0.15625)
+sprite_frames = SubResource("SpriteFrames_li6ia")
