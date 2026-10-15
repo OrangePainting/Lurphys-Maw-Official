@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://db1qblohx1y5y"]
+
+[ext_resource type="PackedScene" uid="uid://ithrafwynsnv" path="res://Scenes/projectile.tscn" id="1_2v102"]
+[ext_resource type="Texture2D" uid="uid://dio0mh3kj4nyy" path="res://Assets/art/enemies/mine-big.png" id="2_3k0l0"]
+[ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/torpedo.gd" id="2_yg6el"]
+
+[node name="Torpedo" unique_id=1093564105 instance=ExtResource("1_2v102")]
+script = ExtResource("2_yg6el")
+aoe_radius = null
+speed = null
+lifespan = null
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1769924593]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" parent="." index="1" unique_id=1180964676]
+texture = ExtResource("2_3k0l0")
