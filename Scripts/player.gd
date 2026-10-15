@@ -25,6 +25,7 @@ signal player_hurt()
 #region References
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var collision_shape: CollisionShape2D = %CollisionShape2D
+@onready var current_weapon: Weapon = %"Generic Weapon"
 #endregion
 
 #region BaseState
@@ -48,6 +49,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dash"):
 		attempt_dash(input_direction, last_move_direction)
 	update_dash(delta)
+	
+	if Input.is_action_just_pressed("Attack"):
+		var result = current_weapon.attack()
+		# add an animation here maybe
 	
 	# determines final velocity given input direction, dashing, & current velocity
 	velocity = resolve_velocity(input_direction, velocity, delta)
