@@ -20,6 +20,10 @@ signal player_hurt()
 @export var dash_cooldown := 2.5 # sec
 @export var dash_max_charges := 3 # later don't make this an export variable, as this could be an upgrade
 @export_group("")
+
+@export_group("Weapons")
+#@export var primary_weapon: PackedScene = preload(knife)
+#@export var secondary_weapon: PackedScene
 #endregion
 
 #region References
