@@ -12,19 +12,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_qwmac")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
 [node name="Generic Weapon" type="Node2D" unique_id=530717815]
 script = ExtResource("1_x8q1h")
-weapon_name = null
-damage = null
-attack_duration = null
-attack_cooldown = null
-offset_from_player = null
-two_handed = null
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1257751927]
 unique_name_in_owner = true
