@@ -3,5 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/generic_weapon.tscn" id="1_0idcw"]
 [ext_resource type="Script" uid="uid://djuyhukrwcnyy" path="res://Scripts/trident.gd" id="2_r0hp4"]
 
-[node name="Generic Weapon" unique_id=530717815 instance=ExtResource("1_0idcw")]
+[node name="Trident" unique_id=530717815 instance=ExtResource("1_0idcw")]
 script = ExtResource("2_r0hp4")
+dash_damage = 18.0
+weapon_name = "Weapon"
+damage = 10.0
+attack_duration = 0.5
+attack_cooldown = 0.5
+offset_from_player = Vector2(0, 0)
+two_handed = false

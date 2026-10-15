@@ -6,7 +6,12 @@ class_name Trident extends Weapon
 func _ready() -> void:
 	pass # Replace with function body.
 
+func equip(new_holder: Node2D) -> void:
+	super(new_holder)
+	(holder as Player).dash_started.connect(on_dash_started)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func unequip() -> void:
+	(holder as Player).dash_started.connect(on_dash_started)
+
+func on_dash_started(direction: Vector2) -> void:
+	start_attack((holder as Player).dash_duration)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ithrafwynsnv"]
+
+[ext_resource type="Texture2D" uid="uid://cwxd5tbvrc6cx" path="res://Assets/art/enemies/mine-small.png" id="1_f8cdk"]
+[ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwl2k"]
+
+[node name="Projectile" type="Area2D" unique_id=1093564105]
+script = ExtResource("1_yr2qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1769924593]
+shape = SubResource("CircleShape2D_jwl2k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180964676]
+texture = ExtResource("1_f8cdk")
