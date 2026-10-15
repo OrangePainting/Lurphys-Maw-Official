@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ithrafwynsnv"]
 
-[ext_resource type="Texture2D" uid="uid://cwxd5tbvrc6cx" path="res://Assets/art/enemies/mine-small.png" id="1_f8cdk"]
 [ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/projectile.gd" id="1_yr2qt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwl2k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f8cdk"]
+load_path = "res://.godot/imported/mine-small.png-d5304d7bf4ded5fcdc8160b858adb33c.ctex"
 
 [node name="Projectile" type="Area2D" unique_id=1093564105]
 script = ExtResource("1_yr2qt")
@@ -12,4 +14,6 @@ script = ExtResource("1_yr2qt")
 shape = SubResource("CircleShape2D_jwl2k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180964676]
-texture = ExtResource("1_f8cdk")
+texture = SubResource("CompressedTexture2D_f8cdk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
