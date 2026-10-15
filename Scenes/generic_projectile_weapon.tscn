@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://df57nb7b56vhr"]
+
+[ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/generic_weapon.tscn" id="1_twqt5"]
+[ext_resource type="Script" uid="uid://co3xf8qldtiux" path="res://Scripts/generic_projectile_weapon.gd" id="2_07lfr"]
+
+[node name="Generic Projectile Weapon" unique_id=530717815 instance=ExtResource("1_twqt5")]
+script = ExtResource("2_07lfr")
+projectile = null
+dist_from_player = null

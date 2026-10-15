@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bldqyl2lm55r"]
+
+[ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/generic_weapon.tscn" id="1_17xpe"]
+[ext_resource type="Script" uid="uid://b0yad6ou2lk6s" path="res://Scripts/shield.gd" id="2_oux8c"]
+
+[node name="Shield" unique_id=530717815 instance=ExtResource("1_17xpe")]
+script = ExtResource("2_oux8c")
+iframes = 0.5
+weapon_name = "Weapon"
+damage = 10.0
+attack_duration = 0.5
+attack_cooldown = 0.5
+offset_from_player = Vector2(0, 0)
+two_handed = false
