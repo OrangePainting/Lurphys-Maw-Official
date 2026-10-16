@@ -8,7 +8,7 @@ const SCRAP_SCENE := preload("res://Scenes/scrap.tscn")
 ## Drops `amount` pieces of scrap at `position`, each worth `value_each`.
 ## `position` is in `parent`'s coordinates, so use a parent at (0, 0), such as
 ## the level root, if you pass a world position.
-static func spawn(parent: Node, position: Vector2, amount: int, value_each := 1) -> void:
+static func spawn(parent: Node, position: Vector2, amount: int, value_each := 25) -> void:
 	for i in amount:
 		var scrap: Scrap = SCRAP_SCENE.instantiate()
 		scrap.value = value_each

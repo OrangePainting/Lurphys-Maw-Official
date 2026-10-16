@@ -14,6 +14,8 @@ position = Vector2(300, 100)
 physics_material_override = SubResource("PhysicsMaterial_vao7y")
 gravity_scale = 0.2
 script = ExtResource("1_nkhrt")
+magnet_enabled = false
+collect_range = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004846861]
 shape = SubResource("CircleShape2D_vao7y")
