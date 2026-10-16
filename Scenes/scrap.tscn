@@ -12,6 +12,7 @@ radius = 6.0
 [node name="Scrap" type="RigidBody2D" unique_id=1916870630]
 position = Vector2(300, 100)
 physics_material_override = SubResource("PhysicsMaterial_vao7y")
+gravity_scale = 0.2
 script = ExtResource("1_nkhrt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004846861]
