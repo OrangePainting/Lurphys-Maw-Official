@@ -10,6 +10,7 @@ signal health_changed(new_health, max_health)
 signal died
 
 func _ready():
+	LimboConsole.add_eval_input("enemy", self)
 	current_health = max_health
 
 func take_damage(amount: int):
@@ -21,4 +22,5 @@ func take_damage(amount: int):
 
 func die():
 	died.emit()
+	ScrapSpawner.spawn(get_parent().get_parent(), global_position, 3)
 	queue_free()
