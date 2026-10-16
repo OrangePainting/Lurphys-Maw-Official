@@ -36,8 +36,6 @@ var last_move_direction := Vector2.RIGHT
 func _ready() -> void:
 	facing_angle = sprite.rotation
 	dash_charges = dash_max_charges
-	dash.dash_queued.connect(on_dash_queued)
-	dash.dash_started.connect(on_dash_started)
 	
 	# testing strafing
 	#call_deferred("test_strafe")

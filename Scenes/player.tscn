@@ -274,6 +274,4 @@ autoplay = "idle"
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_pyidc")
 
-[connection signal="dash_queued" from="." to="." method="on_dash_queued"]
-[connection signal="dash_started" from="." to="." method="on_dash_started"]
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
