@@ -10,6 +10,7 @@ const SCRAP_SCENE := preload("res://Scenes/scrap.tscn")
 ## the level root, if you pass a world position.
 static func spawn(parent: Node, position: Vector2, amount: int, value_each := 1) -> void:
 	for i in amount:
+		print("hi")
 		var scrap: Scrap = SCRAP_SCENE.instantiate()
 		scrap.value = value_each
 		scrap.position = position

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://8q8bavv07qxc"]
+
+[ext_resource type="Texture2D" uid="uid://b003ssx61aukp" path="res://Levels/LevelImages/testlevel3.png" id="1_duycp"]
+[ext_resource type="Script" uid="uid://b1c0raiykmpry" path="res://Levels/level_res.gd" id="2_dyfwh"]
+[ext_resource type="Resource" uid="uid://1dxvv6e3wpcw" path="res://Levels/TestLevels/testlevel4.tres" id="2_l4257"]
+
+[resource]
+script = ExtResource("2_dyfwh")
+img = ExtResource("1_duycp")
+nextLevel = ExtResource("2_l4257")
+metadata/_custom_type_script = "uid://b1c0raiykmpry"

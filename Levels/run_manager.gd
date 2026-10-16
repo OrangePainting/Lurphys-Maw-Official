@@ -1,9 +1,15 @@
 extends Node
-## Autoload that remembers run data. Registered as "RunManager".
+
+var currentLevel : Level
+var root : Root
 
 signal scrap_changed(total: int)
 
 var scrap := 0
+
+func load_next_level():
+	currentLevel = currentLevel.nextLevel
+	root.load_scene.call_deferred(load("res://Scenes/LurphyLevel.tscn"))
 
 func add_scrap(amount: int) -> void:
 	scrap += amount
