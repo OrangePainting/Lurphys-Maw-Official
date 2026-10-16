@@ -21,7 +21,7 @@ func create_tilemap_pattern(levelRes : Level) -> TileMapPattern:
 			if c.a > .5 and c.g > .5:
 				%Player.position = layer.map_to_local(Vector2i(x,y))
 			if c.a > .5 and c.r > .5:
-				var e = load("res://Scenes/generic_melee_enemy.tscn").instantiate()
+				var e = load("res://Scenes/generic_ranged_enemy.tscn").instantiate()
 				add_sibling.call_deferred(e)
 				e.position = layer.map_to_local(Vector2i(x, y))
 				print(e.position)
