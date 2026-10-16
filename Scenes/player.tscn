@@ -274,4 +274,8 @@ autoplay = "idle"
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_pyidc")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1635183959]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_pyidc")
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

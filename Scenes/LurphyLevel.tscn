@@ -96,9 +96,6 @@ exitZoneCS = NodePath("ExitZone/CollisionPolygon2D")
 levelMan = NodePath("LevelManager")
 camera = NodePath("Player/Camera2D")
 
-[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_8gbba")]
-position = Vector2(130, 44)
-
 [node name="LevelManager" type="Node" parent="." unique_id=492081533]
 script = ExtResource("4_jjvhh")
 
