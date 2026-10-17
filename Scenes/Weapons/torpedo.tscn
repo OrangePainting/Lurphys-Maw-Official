@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://db1qblohx1y5y"]
 
-[ext_resource type="PackedScene" uid="uid://ithrafwynsnv" path="res://Scenes/projectile.tscn" id="1_2v102"]
 [ext_resource type="Texture2D" uid="uid://dio0mh3kj4nyy" path="res://Assets/art/enemies/mine-big.png" id="2_3k0l0"]
-[ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/torpedo.gd" id="2_yg6el"]
+[ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/Weapons/torpedo.gd" id="2_yg6el"]
 [ext_resource type="PackedScene" uid="uid://bwvjpd5plw1op" path="res://Scenes/explosion.tscn" id="3_r1qmv"]
 
-[node name="Torpedo" unique_id=1093564105 instance=ExtResource("1_2v102")]
+[node name="Torpedo" unique_id=1093564105]
 script = ExtResource("2_yg6el")
 explosion = ExtResource("3_r1qmv")
 

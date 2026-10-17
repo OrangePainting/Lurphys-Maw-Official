@@ -22,7 +22,7 @@ signal player_hurt()
 @export_group("")
 
 @export_group("Weapons")
-@export var start_primary_weapon: PackedScene = preload("res://Scenes/knife.tscn")
+@export var start_primary_weapon: PackedScene = preload("res://Scenes/Weapons/knife.tscn")
 @export var start_secondary_weapon: PackedScene
 @export_group("")
 #endregion

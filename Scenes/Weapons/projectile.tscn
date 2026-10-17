@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ithrafwynsnv"]
 
-[ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/Weapons/projectile.gd" id="1_4lkvf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwl2k"]
 
@@ -8,7 +8,7 @@
 load_path = "res://.godot/imported/mine-small.png-d5304d7bf4ded5fcdc8160b858adb33c.ctex"
 
 [node name="Projectile" type="Area2D" unique_id=1093564105]
-script = ExtResource("1_yr2qt")
+script = ExtResource("1_4lkvf")
 speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1769924593]
