@@ -10,3 +10,9 @@ damage = 0.0
 attack_duration = 0.6
 attack_cooldown = 3.0
 offset_from_player = Vector2(0, 0)
+
+[node name="Hitbox" parent="." index="0" unique_id=1257751927]
+scale = Vector2(1, 3)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1584208292]
+scale = Vector2(0.56249994, 0.625)

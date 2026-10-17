@@ -114,7 +114,8 @@ func swap_weapon(old: Weapon, scene: PackedScene) -> Weapon:
 
 func get_aim_direction() -> Vector2:
 	if has_strafe_target():
-		return global_position.direction_to(strafe_target.global_position)
+		#return global_position.direction_to(strafe_target.global_position)
+		return get_facing_dir()
 	return get_facing_dir()
 
 
