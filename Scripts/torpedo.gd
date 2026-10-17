@@ -6,9 +6,10 @@ class_name Torpedo extends Projectile
 
 func on_hit(body: Node2D) -> void:
 	var e := explosion.instantiate() as Explosion
-	add_child.call_deferred(e)
+	var pos = global_position
+	get_tree().current_scene.add_child.call_deferred(e)
 	e.damage = damage
 	e.weapon_shooting_this = weapon_shooting_this
-	e.global_position = global_position
+	e.set_deferred("global_position", pos)
 	queue_free()
 	

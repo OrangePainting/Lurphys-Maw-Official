@@ -9,6 +9,7 @@ load_path = "res://.godot/imported/mine-small.png-d5304d7bf4ded5fcdc8160b858adb3
 
 [node name="Projectile" type="Area2D" unique_id=1093564105]
 script = ExtResource("1_yr2qt")
+speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1769924593]
 shape = SubResource("CircleShape2D_jwl2k")
