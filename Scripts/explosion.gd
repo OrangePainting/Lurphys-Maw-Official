@@ -4,8 +4,6 @@ class_name Explosion extends Area2D
 # The projectile that has this explosion
 var weapon_shooting_this: Node2D
 
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body != weapon_shooting_this:
 		if body.has_method("take_damage"):

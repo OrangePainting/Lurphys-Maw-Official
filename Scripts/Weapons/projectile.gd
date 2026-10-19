@@ -9,10 +9,11 @@ var damage := 10.0
 var weapon_shooting_this: Node2D
 
 # sorry for the poor naming, I'll fix it later if it becomes a problem (i don't see it being a problem, more being annoying if anything)
-func setup(direction_: Vector2, damage_: float, coming_from: Node2D) -> void:
+func setup(direction_: Vector2, damage_: float, coming_from: Node2D, start_pos: Vector2) -> void:
 	direction = direction_
 	damage = damage_
 	weapon_shooting_this = coming_from
+	global_position = start_pos
 
 
 func _physics_process(delta: float) -> void:

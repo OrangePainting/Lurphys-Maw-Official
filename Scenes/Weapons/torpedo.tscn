@@ -1,15 +1,10 @@
-[gd_scene format=3 uid="uid://db1qblohx1y5y"]
+[gd_scene format=3 uid="uid://2knn2hyrddwv"]
 
-[ext_resource type="Texture2D" uid="uid://dio0mh3kj4nyy" path="res://Assets/art/enemies/mine-big.png" id="2_3k0l0"]
+[ext_resource type="PackedScene" uid="uid://ithrafwynsnv" path="res://Scenes/Weapons/projectile.tscn" id="1_qvy2q"]
 [ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/Weapons/torpedo.gd" id="2_yg6el"]
 [ext_resource type="PackedScene" uid="uid://bwvjpd5plw1op" path="res://Scenes/explosion.tscn" id="3_r1qmv"]
 
-[node name="Torpedo" unique_id=1093564105]
+[node name="Torpedo" unique_id=1093564105 instance=ExtResource("1_qvy2q")]
 script = ExtResource("2_yg6el")
 explosion = ExtResource("3_r1qmv")
-
-[node name="CollisionShape2D" parent="." index="0" unique_id=1769924593]
-scale = Vector2(3, 3)
-
-[node name="Sprite2D" parent="." index="1" unique_id=1180964676]
-texture = ExtResource("2_3k0l0")
+speed = 100.0
