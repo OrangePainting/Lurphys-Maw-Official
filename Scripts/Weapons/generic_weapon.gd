@@ -80,7 +80,7 @@ func on_attack_start() -> void:
 func on_attack_end() -> void:
 	pass # Replace with function body.
 
+
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body == holder: return # we can change this later if we don't want the player to be immune
 	if body.has_method("take_damage"): body.take_damage(damage)
-	
