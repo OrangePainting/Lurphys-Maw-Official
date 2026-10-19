@@ -2,24 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dw2disphs2eot" path="res://Scenes/generic_enemy.tscn" id="1_6ktyy"]
 [ext_resource type="Script" uid="uid://dg7rew3suh2lx" path="res://Scripts/state_machine 2/ranged_attack_state.gd" id="2_8xkex"]
-[ext_resource type="PackedScene" uid="uid://bj1beo7kt2myc" path="res://Scenes/bullet.tscn" id="3_j2d70"]
 
 [node name="GenericEnemy" unique_id=397981035 instance=ExtResource("1_6ktyy")]
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=342215696]
-frame = 4
-frame_progress = 0.97307724
-
 [node name="Walk" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="1" unique_id=1108984586]
-attack_range = 300.0
+attack_range = 200.0
 attack_state_name = "rangedattack"
 
-[node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="2" unique_id=1834354741 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="2" unique_id=1834354741]
 script = ExtResource("2_8xkex")
-character_body_2d = NodePath("../..")
-animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-muzzle = NodePath("../../Muzzle")
-bullet_scene = ExtResource("3_j2d70")
-
-[node name="Muzzle" type="Marker2D" parent="." index="5" unique_id=1665100626]
-position = Vector2(47, -4)
