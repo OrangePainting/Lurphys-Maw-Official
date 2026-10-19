@@ -5,7 +5,8 @@
 
 [node name="Trident" unique_id=530717815 instance=ExtResource("1_0idcw")]
 script = ExtResource("2_r0hp4")
-dash_damage = 20.0
+dash_damage = 200.0
+damage = 100.0
 attack_duration = 0.15
 attack_cooldown = 0.4
 offset_from_player = Vector2(5, 0)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dkq1n51xs3f58" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bjeyd77mj8o57" path="res://Assets/art/player/player-idle.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://bldqyl2lm55r" path="res://Scenes/Weapons/shield.tscn" id="2_3smsa"]
-[ext_resource type="PackedScene" uid="uid://bgl5rmin37yxx" path="res://Scenes/Weapons/torpedo_launcher.tscn" id="2_8erm5"]
+[ext_resource type="PackedScene" uid="uid://xk6m146jxfsw" path="res://Scenes/Weapons/trident.tscn" id="2_8erm5"]
 [ext_resource type="Texture2D" uid="uid://bexsb8c66madl" path="res://Assets/art/player/player-fast.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://bqhe5wfw1e32c" path="res://Assets/art/player/player-hurt.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://ckrdom0eu77gj" path="res://Assets/art/player/player-swiming.png" id="5_3smsa"]
