@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bn0s80vvhv5il"]
+
+[ext_resource type="Script" uid="uid://b3lauo0tdkyij" path="res://root.gd" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://c482h17qwnv50" path="res://Scenes/LurphyLevel.tscn" id="2_pyidc"]
+[ext_resource type="Resource" uid="uid://ug5joy5ioyry" path="res://Levels/TestLevels/testlevel1.tres" id="3_vvh5c"]
+
+[node name="Root" type="Node" unique_id=942068586]
+script = ExtResource("1_pq8q7")
+startingScene = ExtResource("2_pyidc")
+startingLevel = ExtResource("3_vvh5c")
