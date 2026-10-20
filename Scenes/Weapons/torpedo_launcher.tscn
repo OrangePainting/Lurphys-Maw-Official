@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bgl5rmin37yxx"]
+
+[ext_resource type="PackedScene" uid="uid://df57nb7b56vhr" path="res://Scenes/Weapons/generic_projectile_weapon.tscn" id="1_jwxcj"]
+[ext_resource type="Script" uid="uid://ycsdkb3c0n1g" path="res://Scripts/Weapons/torpedo_launcher.gd" id="2_o4w71"]
+[ext_resource type="PackedScene" uid="uid://2knn2hyrddwv" path="res://Scenes/Weapons/torpedo.tscn" id="3_ueoh0"]
+
+[node name="Torpedo Launcher" unique_id=530717815 instance=ExtResource("1_jwxcj")]
+script = ExtResource("2_o4w71")
+projectile = ExtResource("3_ueoh0")
+damage = 100.0
+attack_duration = 0.05
+attack_cooldown = 0.75

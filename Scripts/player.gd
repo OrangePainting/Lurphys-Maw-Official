@@ -20,11 +20,17 @@ signal player_hurt()
 @export var dash_cooldown := 2.5 # sec
 @export var dash_max_charges := 3 # later don't make this an export variable, as this could be an upgrade
 @export_group("")
+
+@export_group("Weapons")
+@export var start_primary_weapon: PackedScene = preload("res://Scenes/Weapons/knife.tscn")
+@export var start_secondary_weapon: PackedScene
+@export_group("")
 #endregion
 
 #region References
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var collision_shape: CollisionShape2D = %CollisionShape2D
+@onready var weapon_container : Node2D = %WeaponContainer
 #endregion
 
 #region BaseState
@@ -36,6 +42,8 @@ var last_move_direction := Vector2.RIGHT
 func _ready() -> void:
 	facing_angle = sprite.rotation
 	dash_charges = dash_max_charges
+	equip_primary(start_primary_weapon)
+	equip_secondary(start_secondary_weapon)
 	
 	# testing strafing
 	#call_deferred("test_strafe")
@@ -48,6 +56,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dash"):
 		attempt_dash(input_direction, last_move_direction)
 	update_dash(delta)
+	
+	iframe_timer = maxf(iframe_timer - delta, 0.0)
+	
+	if Input.is_action_pressed("AttackPrimary") and primary_weapon != null:
+		primary_weapon.attack(get_aim_direction())
+	if Input.is_action_pressed("AttackSecondary") and can_use_secondary():
+		secondary_weapon.attack(get_aim_direction())
 	
 	# determines final velocity given input direction, dashing, & current velocity
 	velocity = resolve_velocity(input_direction, velocity, delta)
@@ -68,7 +83,56 @@ func _physics_process(delta: float) -> void:
 	
 	update_direction(facing, is_strafing and not is_dash_facing)
 	update_animation_state(velocity.length(), is_strafing)
+	update_weapon_aim()
 #endregion
+
+#region
+var primary_weapon: Weapon
+var secondary_weapon: Weapon
+
+func equip_primary(scene: PackedScene) -> void: primary_weapon = swap_weapon(primary_weapon, scene)
+
+func equip_secondary(scene: PackedScene) -> void: secondary_weapon = swap_weapon(secondary_weapon, scene)
+
+
+func can_use_secondary() -> bool:
+	return secondary_weapon != null and not (primary_weapon != null and primary_weapon.two_handed)
+
+
+func swap_weapon(old: Weapon, scene: PackedScene) -> Weapon:
+	if old != null:
+		old.unequip()
+		old.queue_free()
+	
+	if scene == null: return null
+	
+	var new_weapon := scene.instantiate() as Weapon
+	weapon_container.add_child(new_weapon)
+	new_weapon.equip(self)
+	return new_weapon
+
+
+func get_aim_direction() -> Vector2:
+	if has_strafe_target():
+		#return global_position.direction_to(strafe_target.global_position)
+		return get_facing_dir()
+	return get_facing_dir()
+
+
+func update_weapon_aim() -> void:
+	if (primary_weapon != null and primary_weapon.is_active()) or \
+		(secondary_weapon != null and secondary_weapon.is_active()): return
+	
+	weapon_container.rotation = get_aim_direction().angle()
+	weapon_container.scale.y = -1.0 if absf(weapon_container.rotation) > PI / 2.0 else 1.0
+#endregion
+
+#region Iframes
+var iframe_timer := 0.0
+
+func start_iframes(time: float) -> void: iframe_timer = maxf(iframe_timer, time)
+#endregion
+
 
 #region Movement
 func calculate_move_velocity(input_direction: Vector2,
@@ -270,6 +334,10 @@ func check_die() -> void: if current_health <= 0: pass # TODO: implement die mec
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
+	if iframe_timer > 0.0: return
+	if secondary_weapon != null and secondary_weapon.prevent_damage(damage): return
+	if primary_weapon != null and primary_weapon.prevent_damage(damage): return
+	
 	if damage > 0: play_hurt()
 	set_health(current_health - damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed
