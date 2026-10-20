@@ -278,10 +278,6 @@ autoplay = "idle"
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_pyidc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1635183959]
-rotation = 1.5707964
-shape = SubResource("CircleShape2D_pyidc")
-
 [node name="WeaponContainer" type="Node2D" parent="." unique_id=1998341528]
 unique_name_in_owner = true
 
