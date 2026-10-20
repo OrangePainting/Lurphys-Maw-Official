@@ -260,6 +260,7 @@ func test_strafe() -> void:
 #endregion
 
 #region Health
+@export var oxyDecay: float = 0.1 #Set in inspector to test oxygen decay over time
 var max_health: float = 100
 var current_health: float = 100
  
@@ -274,6 +275,9 @@ func hurt(damage: float) -> void:
 	set_health(current_health - damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed
  
+func getHealth() -> float:
+	return current_health
+
 func play_hurt() -> void:
 	player_hurt.emit()
 	play_animation(&"hurt") # TODO: Add visual fx for this?
