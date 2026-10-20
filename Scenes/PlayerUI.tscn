@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cos8xnr64nkoc"]
 
-[ext_resource type="Script" uid="uid://b7wy0wwkpdpot" path="res://Scripts/UI Scripts/UpdateHealth.gd" id="1_hfrq2"]
 [ext_resource type="Texture2D" uid="uid://oft8c3rm8qe" path="res://Assets/art/Temp UI/Screenshot 2026-10-13 172556.png" id="2_jrycd"]
 
-[node name="Control" type="Control" unique_id=1677651346]
+[node name="PlayerUI" type="Control" unique_id=1677651346]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +26,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 value = 50.0
 show_percentage = false
-script = ExtResource("1_hfrq2")
 
 [node name="Items" type="BoxContainer" parent="." unique_id=537075131]
 show_behind_parent = true
