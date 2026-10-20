@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtgag8hcehgvu"]
 
-[ext_resource type="Script" uid="uid://bo4ol0exxw7ao" path="res://examples/automatic_lod/automatic_lod.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://bo4ol0exxw7ao" path="res://Mold/examples/automatic_lod/automatic_lod.gd" id="1_script"]
 
 [sub_resource type="Environment" id="Environment_lod"]
 background_mode = 1
