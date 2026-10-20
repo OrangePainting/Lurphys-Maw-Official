@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cos8xnr64nkoc"]
 
+[ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
 [ext_resource type="Texture2D" uid="uid://oft8c3rm8qe" path="res://Assets/art/Temp UI/Screenshot 2026-10-13 172556.png" id="2_jrycd"]
 
 [node name="PlayerUI" type="Control" unique_id=1677651346]
@@ -11,6 +12,7 @@ offset_left = -2.0
 offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hfrq2")
 
 [node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
 layout_mode = 1
@@ -20,6 +22,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 
 [node name="HealthBar" type="ProgressBar" parent="HealthBarHolder" unique_id=760369393]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 20)
 layout_mode = 2
 size_flags_horizontal = 4

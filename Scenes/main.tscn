@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cos8xnr64nkoc" path="res://Scenes/PlayerUI.tscn" id="6_6bp64"]
-[ext_resource type="Script" uid="uid://b7wy0wwkpdpot" path="res://Scripts/UI Scripts/UpdateHealth.gd" id="7_344ge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("4_kry3j")
@@ -117,5 +116,4 @@ position_smoothing_speed = 2.0
 position = Vector2(200, 200)
 
 [node name="PlayerUI" parent="." unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("6_6bp64")]
-script = ExtResource("7_344ge")
 player = NodePath("../Player")
