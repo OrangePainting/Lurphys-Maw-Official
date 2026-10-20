@@ -274,7 +274,7 @@ autoplay = "idle"
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_pyidc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1635183959]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=356651189]
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_pyidc")
 
