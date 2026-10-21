@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/lurphy_level.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://douu3xbpeg8uj" path="res://Scenes/Weapons/knife.tscn" id="5_1nusx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("4_kry3j")
@@ -106,6 +106,8 @@ tile_set = SubResource("TileSet_0jy1n")
 [node name="Player" parent="." unique_id=1996954412 groups=["Player"] instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(-106, 13)
+start_primary_weapon = ExtResource("5_1nusx")
+start_secondary_weapon = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1207779249]
 visible = false

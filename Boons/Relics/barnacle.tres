@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://4rw35artvwmw"]
+
+[ext_resource type="Script" uid="uid://cqvpb6qkxqd4l" path="res://Boons/Relics/relic.gd" id="1_251y2"]
+
+[sub_resource type="GDScript" id="GDScript_nhfen"]
+script/source = "extends RelicScript
+
+func on_damage_taken(damage : int, source : Node) -> int:
+	return damage/2
+"
+
+[resource]
+script = ExtResource("1_251y2")
+relicScript = SubResource("GDScript_nhfen")
+displayName = "Barnacle"
+description = "Reduces incoming damage."
+metadata/_custom_type_script = "uid://cqvpb6qkxqd4l"
