@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cos8xnr64nkoc"]
+
+[ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
+[ext_resource type="Texture2D" uid="uid://oft8c3rm8qe" path="res://Assets/art/Temp UI/Screenshot 2026-10-13 172556.png" id="2_jrycd"]
+
+[node name="PlayerUI" type="Control" unique_id=1677651346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfrq2")
+
+[node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="HealthBar" type="ProgressBar" parent="HealthBarHolder" unique_id=760369393]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 50.0
+show_percentage = false
+
+[node name="Items" type="BoxContainer" parent="." unique_id=537075131]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 200.0
+offset_right = 100.0
+offset_bottom = 452.0
+vertical = true
+
+[node name="Item 1" type="TextureButton" parent="Items" unique_id=381306114]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("2_jrycd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item 2" type="TextureButton" parent="Items" unique_id=1276789270]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("2_jrycd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item 3" type="TextureButton" parent="Items" unique_id=553899783]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("2_jrycd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item 4" type="TextureButton" parent="Items" unique_id=791451335]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("2_jrycd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WeaponContainer" type="BoxContainer" parent="." unique_id=630274045]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 520.0
+offset_right = 110.0
+offset_bottom = 590.0
+
+[node name="Weapon" type="TextureButton" parent="WeaponContainer" unique_id=475317893]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("2_jrycd")
+ignore_texture_size = true
+stretch_mode = 0
