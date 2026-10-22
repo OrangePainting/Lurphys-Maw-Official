@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2knn2hyrddwv"]
 
 [ext_resource type="PackedScene" uid="uid://ithrafwynsnv" path="res://Scenes/Weapons/projectile.tscn" id="1_qvy2q"]
-[ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/Weapons/torpedo.gd" id="2_yg6el"]
+[ext_resource type="Script" uid="uid://ba2sws5nva774" path="res://Scripts/Player/Weapons/torpedo.gd" id="2_yg6el"]
 [ext_resource type="PackedScene" uid="uid://bwvjpd5plw1op" path="res://Scenes/explosion.tscn" id="3_r1qmv"]
 
 [node name="Torpedo" unique_id=1093564105 instance=ExtResource("1_qvy2q")]

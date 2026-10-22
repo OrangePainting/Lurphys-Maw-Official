@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cel2ti3mg1krf"]
 
 [ext_resource type="PackedScene" uid="uid://dw2disphs2eot" path="res://Scenes/generic_enemy.tscn" id="1_38r51"]
-[ext_resource type="Script" uid="uid://1nlj6klq3l6m" path="res://Scripts/state_machine 2/melee_attack_state.gd" id="2_ki2c4"]
+[ext_resource type="Script" uid="uid://1nlj6klq3l6m" path="res://Scripts/Player/state_machine 2/melee_attack_state.gd" id="2_ki2c4"]
 
 [node name="GenericEnemy" unique_id=397981035 instance=ExtResource("1_38r51")]
 

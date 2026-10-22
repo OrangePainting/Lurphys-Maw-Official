@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 func spawn_bubbles(position: Vector2) -> void:
 	var b = Bubbles.instantiate()
-	add_child(b)
 	b.position = position
+	add_child(b)

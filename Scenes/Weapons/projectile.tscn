@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ithrafwynsnv"]
 
-[ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/Weapons/projectile.gd" id="1_4lkvf"]
+[ext_resource type="Script" uid="uid://bfgxao6ykjlgl" path="res://Scripts/Player/Weapons/projectile.gd" id="1_4lkvf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwl2k"]
 

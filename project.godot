@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lurphy's Maw"
-run/main_scene="uid://bn0s80vvhv5il"
+run/main_scene="uid://bml4jab2n556a"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

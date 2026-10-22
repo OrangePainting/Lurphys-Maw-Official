@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0j2l4smleg1y"]
 
-[ext_resource type="Script" uid="uid://dn03o6tyyk4of" path="res://Scripts/Weapons/generic_weapon.gd" id="1_oi11b"]
+[ext_resource type="Script" uid="uid://dn03o6tyyk4of" path="res://Scripts/Player/Weapons/generic_weapon.gd" id="1_oi11b"]
 [ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="2_0tbcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li6ia"]

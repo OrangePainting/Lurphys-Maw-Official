@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bldqyl2lm55r"]
 
 [ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/Weapons/generic_weapon.tscn" id="1_jxbso"]
-[ext_resource type="Script" uid="uid://b0yad6ou2lk6s" path="res://Scripts/Weapons/shield.gd" id="2_mnsdq"]
+[ext_resource type="Script" uid="uid://b0yad6ou2lk6s" path="res://Scripts/Player/Weapons/shield.gd" id="2_mnsdq"]
 
 [node name="Shield" unique_id=530717815 instance=ExtResource("1_jxbso")]
 script = ExtResource("2_mnsdq")

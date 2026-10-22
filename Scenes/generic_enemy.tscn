@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dw2disphs2eot"]
 
-[ext_resource type="Script" uid="uid://swpio06inr7q" path="res://Scripts/state_machine 2/enemy_base.gd" id="1_wbj67"]
+[ext_resource type="Script" uid="uid://swpio06inr7q" path="res://Scripts/Player/state_machine 2/enemy_base.gd" id="1_wbj67"]
 [ext_resource type="Texture2D" uid="uid://bmtnk0wx8qy12" path="res://Assets/art/enemies 2/Attack2.png" id="2_i8enf"]
 [ext_resource type="Texture2D" uid="uid://gtbwejog75lw" path="res://Assets/art/enemies 2/Idle.png" id="3_sk4ee"]
 [ext_resource type="Texture2D" uid="uid://1a75qvo3f6ff" path="res://Assets/art/enemies 2/Walk.png" id="4_6rrt2"]
-[ext_resource type="Script" uid="uid://4mx1dsbqt83x" path="res://Scripts/state_machine 2/state_machine_controller.gd" id="5_6x7hq"]
-[ext_resource type="Script" uid="uid://rwiljftdbt0o" path="res://Scripts/state_machine 2/node_finite_state_machine.gd" id="6_mf8ex"]
-[ext_resource type="Script" uid="uid://c36i8ln48rmvf" path="res://Scripts/state_machine 2/idle_state.gd" id="7_0cx7b"]
-[ext_resource type="Script" uid="uid://bnxhyx0kmhe8i" path="res://Scripts/state_machine 2/walk_state.gd" id="8_wtfti"]
+[ext_resource type="Script" uid="uid://4mx1dsbqt83x" path="res://Scripts/Player/state_machine 2/state_machine_controller.gd" id="5_6x7hq"]
+[ext_resource type="Script" uid="uid://rwiljftdbt0o" path="res://Scripts/Player/state_machine 2/node_finite_state_machine.gd" id="6_mf8ex"]
+[ext_resource type="Script" uid="uid://c36i8ln48rmvf" path="res://Scripts/Player/state_machine 2/idle_state.gd" id="7_0cx7b"]
+[ext_resource type="Script" uid="uid://bnxhyx0kmhe8i" path="res://Scripts/Player/state_machine 2/walk_state.gd" id="8_wtfti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewxjc"]
 atlas = ExtResource("2_i8enf")

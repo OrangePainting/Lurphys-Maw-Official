@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjxt3sk5lmasl"]
 
-[ext_resource type="Script" uid="uid://dkq1n51xs3f58" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://dkq1n51xs3f58" path="res://Scripts/Player/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bjeyd77mj8o57" path="res://Assets/art/player/player-idle.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://bldqyl2lm55r" path="res://Scenes/Weapons/shield.tscn" id="2_3smsa"]
 [ext_resource type="PackedScene" uid="uid://xk6m146jxfsw" path="res://Scenes/Weapons/trident.tscn" id="2_8erm5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bqhe5wfw1e32c" path="res://Assets/art/player/player-hurt.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://ckrdom0eu77gj" path="res://Assets/art/player/player-swiming.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://cf2sd1cxa5xha" path="res://Assets/art/player/player-rush.png" id="5_x3wgy"]
+[ext_resource type="Script" uid="uid://ebq40uvb6spd" path="res://Relics/relic_manager.gd" id="9_f1ek2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li6ia"]
 radius = 13.0
@@ -264,15 +265,15 @@ unique_name_in_owner = true
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_li6ia")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=298180870]
+[node name="Area2D" type="Area2D" parent="." unique_id=1035400472]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Area2D" unique_id=298180870]
 unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_li6ia")
 animation = &"idle"
 autoplay = "idle"
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1035400472]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1635183959]
 rotation = 1.5707964
@@ -281,6 +282,9 @@ shape = SubResource("CircleShape2D_pyidc")
 [node name="WeaponContainer" type="Node2D" parent="." unique_id=1998341528]
 unique_name_in_owner = true
 
+[node name="RelicManager" type="Node" parent="." unique_id=1480538018]
+script = ExtResource("9_f1ek2")
+
 [connection signal="dash_queued" from="." to="." method="on_dash_queued"]
 [connection signal="dash_started" from="." to="." method="on_dash_started"]
-[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="animation_finished" from="Area2D/Sprite" to="." method="_on_sprite_animation_finished"]
