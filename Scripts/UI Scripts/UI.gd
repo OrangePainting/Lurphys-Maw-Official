@@ -2,7 +2,14 @@ extends Control
 
 @onready var health_bar = %HealthBar
 @onready var pause_menu = $PauseMenu/MenuHolder
-@onready var stats_menu = $StatsMenu/StatsHolder
+@onready var stats_menu = $StatsMenu/StatsHolder 
+@onready var itemButtons = { #dictionary of items
+	1: $"Items/Item 1",
+	2: $"Items/Item 2",
+	3: $"Items/Item 3",
+	4: $"Items/Item 4"
+}
+@onready var weaponButton = $WeaponContainer/Weapon
 
 var paused = false;
 
@@ -18,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#health_bar.value = player.getHealth() #TODO: change once global health is set up or another method is decided
+	health_bar.value = player.getHealth() #TODO: change once global health is set up or another method is decided
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
 		
@@ -32,7 +39,23 @@ func pauseMenu() -> void:
 		paused = true
 		pause_menu.show()
 		Engine.time_scale = 0	
-	
+
+#sets the item the player holds. Needs all components. Call as integration of the relic system
+func setItem(itemNumber : int, sprite : Texture2D, brief_desc : String, image_desc: Texture2D) -> void:
+	var item = itemButtons[itemNumber]
+	item.texture_normal = sprite
+	item.setBriefDescription(brief_desc)
+	item.setDetailedDescription(image_desc)
+
+func getItem(itemNumber : int) -> Texture2D:
+	return itemButtons[itemNumber].texture_normal
+
+func setWeapon(sprite : Texture2D) -> void:
+	weaponButton.texture_normal = sprite
+
+func getWeapon() -> Texture2D:
+	return weaponButton.texture_normal
+
 func _on_resume_pressed() -> void:
 	pause_menu.hide()
 	Engine.time_scale = 1
