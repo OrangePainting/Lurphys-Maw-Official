@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
 [ext_resource type="Script" uid="uid://dxoo7u6ilja08" path="res://Scripts/UI Scripts/ShowDescription.gd" id="2_hfrq2"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hfrq2"]
-
 [sub_resource type="Gradient" id="Gradient_8tgur"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q0wog"]
@@ -18,7 +16,7 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmldq"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qv4fw"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_if446"]
 
 [sub_resource type="Gradient" id="Gradient_kioar"]
 
@@ -33,8 +31,6 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_djfqe"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kioar"]
-
 [sub_resource type="Gradient" id="Gradient_nrpdu"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bau5p"]
@@ -47,8 +43,6 @@ gradient = SubResource("Gradient_q0wog")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c0r8r"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a5jvy"]
 
 [sub_resource type="Gradient" id="Gradient_g2qpm"]
 
@@ -63,8 +57,6 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tvgmv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nrpdu"]
-
 [sub_resource type="Gradient" id="Gradient_mnx5q"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b8nrl"]
@@ -77,6 +69,8 @@ gradient = SubResource("Gradient_bau5p")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0316b"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q0wog"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jrycd"]
 
@@ -186,7 +180,6 @@ custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = SubResource("PlaceholderTexture2D_hfrq2")
 texture_pressed = SubResource("GradientTexture2D_q0wog")
 texture_hover = SubResource("GradientTexture2D_g2qpm")
 ignore_texture_size = true
@@ -210,12 +203,17 @@ offset_right = 100.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_mmldq")
 
+[node name="BaseImage1" type="TextureRect" parent="Items/Item 1" unique_id=1342039604]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("PlaceholderTexture2D_if446")
+
 [node name="Item 2" type="TextureButton" parent="Items" unique_id=1276789270 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = SubResource("PlaceholderTexture2D_qv4fw")
 texture_pressed = SubResource("GradientTexture2D_efi3g")
 texture_hover = SubResource("GradientTexture2D_mnx5q")
 ignore_texture_size = true
@@ -239,12 +237,17 @@ offset_right = 100.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_djfqe")
 
+[node name="BaseImage2" type="TextureRect" parent="Items/Item 2" unique_id=72654177]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("PlaceholderTexture2D_if446")
+
 [node name="Item 3" type="TextureButton" parent="Items" unique_id=553899783 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = SubResource("PlaceholderTexture2D_kioar")
 texture_pressed = SubResource("GradientTexture2D_bau5p")
 texture_hover = SubResource("GradientTexture2D_cecjq")
 ignore_texture_size = true
@@ -268,12 +271,17 @@ offset_right = 100.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_c0r8r")
 
+[node name="BaseImage3" type="TextureRect" parent="Items/Item 3" unique_id=1347773631]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("PlaceholderTexture2D_if446")
+
 [node name="Item 4" type="TextureButton" parent="Items" unique_id=791451335 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = SubResource("PlaceholderTexture2D_a5jvy")
 texture_pressed = SubResource("GradientTexture2D_8q3x4")
 texture_hover = SubResource("GradientTexture2D_2rqgf")
 ignore_texture_size = true
@@ -297,6 +305,12 @@ offset_right = 100.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_tvgmv")
 
+[node name="BaseImage4" type="TextureRect" parent="Items/Item 4" unique_id=1030740493]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("PlaceholderTexture2D_if446")
+
 [node name="WeaponContainer" type="BoxContainer" parent="." unique_id=630274045]
 layout_mode = 0
 offset_left = 40.0
@@ -308,7 +322,6 @@ mouse_filter = 2
 [node name="Weapon" type="TextureButton" parent="WeaponContainer" unique_id=475317893 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_nrpdu")
 texture_pressed = SubResource("GradientTexture2D_b8nrl")
 texture_hover = SubResource("GradientTexture2D_658u6")
 ignore_texture_size = true
@@ -331,6 +344,12 @@ offset_left = 70.0
 offset_right = 110.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_0316b")
+
+[node name="BaseImageWeapon" type="TextureRect" parent="WeaponContainer/Weapon" unique_id=112295043]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = SubResource("PlaceholderTexture2D_q0wog")
 
 [node name="PauseMenu" type="MarginContainer" parent="." unique_id=518233458]
 layout_mode = 1

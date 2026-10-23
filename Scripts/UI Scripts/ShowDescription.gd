@@ -1,7 +1,7 @@
 extends Node
 
-@export var brief_description: Control
-@export var detailed_description: Control
+@export var brief_description: RichTextLabel
+@export var detailed_description: TextureRect #open to change based on what the description will be, it's too hard coded right now
 
 var pressed_before = false
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +21,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func setBriefDescription(new_desc: String) -> void:
+	brief_description.text = new_desc
+
+func getBriefDescription() -> String:
+	return brief_description.text
+
+func setDetailedDescription(new_desc: TextureRect) -> void: #remember to update if the type of detailed_description changes
+	detailed_description = new_desc
+
+func getDetailedDescription() -> TextureRect:
+	return detailed_description
 
 func _on_mouse_entered() -> void:
 	if brief_description:
