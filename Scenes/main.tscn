@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
-[ext_resource type="PackedScene" uid="uid://cos8xnr64nkoc" path="res://Scenes/PlayerUI.tscn" id="6_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("4_kry3j")
@@ -114,6 +113,3 @@ position_smoothing_speed = 2.0
 
 [node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["StrafeTarget"]]
 position = Vector2(200, 200)
-
-[node name="PlayerUI" parent="." unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("6_6bp64")]
-player = NodePath("../Player")

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/lurphy_level.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cos8xnr64nkoc" path="res://Scenes/PlayerUI.tscn" id="5_1nusx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("4_kry3j")
@@ -120,5 +120,8 @@ position = Vector2(200, 200)
 [node name="ExitZone" type="Area2D" parent="." unique_id=1593117747]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ExitZone" unique_id=1480571046]
+
+[node name="PlayerUI" parent="." unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("5_1nusx")]
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]
