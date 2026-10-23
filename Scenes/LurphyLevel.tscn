@@ -121,7 +121,9 @@ position = Vector2(200, 200)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ExitZone" unique_id=1480571046]
 
-[node name="PlayerUI" parent="." unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("5_1nusx")]
-player = NodePath("../Player")
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1604176815]
+
+[node name="PlayerUI" parent="UILayer" unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("5_1nusx")]
+player = NodePath("../../Player")
 
 [connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]
