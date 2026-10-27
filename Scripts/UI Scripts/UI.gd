@@ -25,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	health_bar.value = player.getHealth() #TODO: change once global health is set up or another method is decided
+	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
 		
