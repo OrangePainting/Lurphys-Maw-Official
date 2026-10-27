@@ -328,6 +328,13 @@ func test_strafe() -> void:
 var max_health: float = 100
 var current_health: float = 100
  
+#simple getter/setters
+func get_oxyDecay() -> float:
+	return oxyDecay
+
+func set_oxyDecay(new_decay: float) -> void:
+	oxyDecay = new_decay
+
 func set_health(new_health: float) -> void:
 	current_health = clamp(new_health, 0, max_health)
  
