@@ -343,7 +343,9 @@ func set_health(new_health: float) -> void:
 func get_health() -> float:
 	return current_health
  
-func check_die() -> void: if current_health <= 0: pass # TODO: implement die mechanic here
+func check_die() -> void: 
+	if current_health <= 0: 
+		pass # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:

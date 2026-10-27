@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
 [ext_resource type="Script" uid="uid://dxoo7u6ilja08" path="res://Scripts/UI Scripts/ShowDescription.gd" id="2_hfrq2"]
+[ext_resource type="Texture2D" uid="uid://b3nkvap7miji2" path="res://Assets/art/LurphySlot.png" id="3_jrycd"]
 
 [sub_resource type="Gradient" id="Gradient_8tgur"]
 
@@ -15,8 +16,6 @@ gradient = SubResource("Gradient_qv4fw")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmldq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_if446"]
 
 [sub_resource type="Gradient" id="Gradient_kioar"]
 
@@ -69,8 +68,6 @@ gradient = SubResource("Gradient_bau5p")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0316b"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q0wog"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jrycd"]
 
@@ -207,7 +204,7 @@ texture = SubResource("PlaceholderTexture2D_mmldq")
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
-texture = SubResource("PlaceholderTexture2D_if446")
+texture = ExtResource("3_jrycd")
 
 [node name="Item 2" type="TextureButton" parent="Items" unique_id=1276789270 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
@@ -241,7 +238,7 @@ texture = SubResource("PlaceholderTexture2D_djfqe")
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
-texture = SubResource("PlaceholderTexture2D_if446")
+texture = ExtResource("3_jrycd")
 
 [node name="Item 3" type="TextureButton" parent="Items" unique_id=553899783 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
@@ -275,7 +272,7 @@ texture = SubResource("PlaceholderTexture2D_c0r8r")
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
-texture = SubResource("PlaceholderTexture2D_if446")
+texture = ExtResource("3_jrycd")
 
 [node name="Item 4" type="TextureButton" parent="Items" unique_id=791451335 node_paths=PackedStringArray("brief_description", "detailed_description")]
 custom_minimum_size = Vector2(60, 60)
@@ -309,7 +306,7 @@ texture = SubResource("PlaceholderTexture2D_tvgmv")
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
-texture = SubResource("PlaceholderTexture2D_if446")
+texture = ExtResource("3_jrycd")
 
 [node name="WeaponContainer" type="BoxContainer" parent="." unique_id=630274045]
 layout_mode = 0
@@ -349,7 +346,7 @@ texture = SubResource("PlaceholderTexture2D_0316b")
 layout_mode = 0
 offset_right = 70.0
 offset_bottom = 70.0
-texture = SubResource("PlaceholderTexture2D_q0wog")
+texture = ExtResource("3_jrycd")
 
 [node name="PauseMenu" type="MarginContainer" parent="." unique_id=518233458]
 layout_mode = 1
