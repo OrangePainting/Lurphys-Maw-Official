@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="1_51qb4"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_yfo80"]
+[ext_resource type="PackedScene" uid="uid://bo5k6xvbcswb6" path="res://Scenes/interactable.tscn" id="3_yfo80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vao7y"]
 size = Vector2(1680, 40)
@@ -64,3 +65,15 @@ shape = SubResource("RectangleShape2D_51qb4")
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="UpgradeShop" parent="." unique_id=1955158050 instance=ExtResource("3_yfo80")]
+position = Vector2(500, 450)
+display_name = "Upgrades"
+prompt_text = "Open Shop"
+color = Color(0.9490196, 0.7490196, 0.2509804, 1)
+
+[node name="RunPortal" parent="." unique_id=1234090924 instance=ExtResource("3_yfo80")]
+position = Vector2(1200, 450)
+display_name = "Dive"
+prompt_text = "Start run"
+color = Color(0.4, 0.9019608, 0.6, 1)
