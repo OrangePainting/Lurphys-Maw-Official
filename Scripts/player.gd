@@ -12,6 +12,7 @@ signal player_hurt()
 @export var speed := 300.0
 @export var acceleration := 300.0
 @export var friction := 1500.0
+@export var oxyDecay: = 0.1 #Set in inspector to test oxygen decay over time
  
 @export_group("Dash")
 @export var dash_distance := 150.0
@@ -47,6 +48,9 @@ func _ready() -> void:
 	
 	# testing strafing
 	#call_deferred("test_strafe")
+
+func _process(delta: float) -> void:
+	current_health -= oxyDecay * delta
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
@@ -324,11 +328,9 @@ func test_strafe() -> void:
 #endregion
 
 #region Health
-@export var oxyDecay: float = 0.1 #Set in inspector to test oxygen decay over time
 var max_health: float = 100
 var current_health: float = 100
- 
-#simple getter/setters
+
 func get_oxyDecay() -> float:
 	return oxyDecay
 
@@ -350,9 +352,6 @@ func hurt(damage: float) -> void:
 	set_health(current_health - damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed
  
-func getHealth() -> float:
-	return current_health
-
 func play_hurt() -> void:
 	player_hurt.emit()
 	play_animation(&"hurt") # TODO: Add visual fx for this?
