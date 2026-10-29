@@ -32,6 +32,7 @@ signal player_hurt()
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var collision_shape: CollisionShape2D = %CollisionShape2D
 @onready var weapon_container : Node2D = %WeaponContainer
+@onready var relic_manager : RelicManager = $RelicManager
 #endregion
 
 #region BaseState
@@ -347,7 +348,7 @@ func hurt(damage: float) -> void:
 	if iframe_timer > 0.0: return
 	if secondary_weapon != null and secondary_weapon.prevent_damage(damage): return
 	if primary_weapon != null and primary_weapon.prevent_damage(damage): return
-	
+	damage = relic_manager.apply_damage_taken(damage, null)
 	if damage > 0: play_hurt()
 	set_health(current_health - damage) # it's -damage since damage > 0, calculated as current_health - damage
 	# TODO: determine if a postive damage (i.e. healing) should be allowed

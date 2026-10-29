@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://4rw35artvwmw"]
+
+[sub_resource type="GDScript" id="GDScript_nhfen"]
+script/source = "extends Relic
+
+## Halves all incoming damage.
+func on_damage_taken(damage : float, source : Node) -> float:
+	return damage/2
+"
+
+[resource]
+script = SubResource("GDScript_nhfen")
+displayName = "Barnacle"
+description = "Reduces incoming damage."
+metadata/_custom_type_script = "uid://cqvpb6qkxqd4l"
