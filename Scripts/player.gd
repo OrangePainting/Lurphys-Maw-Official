@@ -339,8 +339,13 @@ func set_oxyDecay(new_decay: float) -> void:
 
 func set_health(new_health: float) -> void:
 	current_health = clamp(new_health, 0, max_health)
+	
+func get_health() -> float:
+	return current_health
  
-func check_die() -> void: if current_health <= 0: pass # TODO: implement die mechanic here
+func check_die() -> void: 
+	if current_health <= 0: 
+		pass # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
