@@ -129,7 +129,8 @@ position_smoothing_speed = 2.0
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1604176815]
 
-[node name="PlayerUI" parent="UILayer" unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("5_1nusx")]
+[node name="PlayerUI" parent="UILayer" unique_id=1677651346 node_paths=PackedStringArray("player", "stat_texts") instance=ExtResource("5_1nusx")]
 player = NodePath("../../Player")
+stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), null, null]
 
 [connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]
