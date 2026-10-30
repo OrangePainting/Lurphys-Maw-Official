@@ -16,8 +16,6 @@ gradient = SubResource("Gradient_8tgur")
 gradient = SubResource("Gradient_qv4fw")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmldq"]
-
 [sub_resource type="Gradient" id="Gradient_kioar"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_efi3g"]
@@ -28,8 +26,6 @@ gradient = SubResource("Gradient_kioar")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mnx5q"]
 gradient = SubResource("Gradient_a5jvy")
 fill_to = Vector2(0, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_djfqe"]
 
 [sub_resource type="Gradient" id="Gradient_nrpdu"]
 
@@ -42,8 +38,6 @@ gradient = SubResource("Gradient_nrpdu")
 gradient = SubResource("Gradient_q0wog")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c0r8r"]
-
 [sub_resource type="Gradient" id="Gradient_g2qpm"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8q3x4"]
@@ -55,8 +49,6 @@ gradient = SubResource("Gradient_g2qpm")
 gradient = SubResource("Gradient_efi3g")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tvgmv"]
-
 [sub_resource type="Gradient" id="Gradient_mnx5q"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b8nrl"]
@@ -67,8 +59,6 @@ gradient = SubResource("Gradient_mnx5q")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_658u6"]
 gradient = SubResource("Gradient_bau5p")
 fill_to = Vector2(0, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0316b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jrycd"]
 
@@ -145,6 +135,7 @@ offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfrq2")
+default_texture = ExtResource("3_jrycd")
 stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
 
 [node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
@@ -201,7 +192,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = SubResource("PlaceholderTexture2D_mmldq")
+texture = ExtResource("3_jrycd")
 
 [node name="BaseImage1" type="TextureRect" parent="Items/Item 1" unique_id=1342039604]
 layout_mode = 0
@@ -236,7 +227,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = SubResource("PlaceholderTexture2D_djfqe")
+texture = ExtResource("3_jrycd")
 
 [node name="BaseImage2" type="TextureRect" parent="Items/Item 2" unique_id=72654177]
 layout_mode = 0
@@ -271,7 +262,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = SubResource("PlaceholderTexture2D_c0r8r")
+texture = ExtResource("3_jrycd")
 
 [node name="BaseImage3" type="TextureRect" parent="Items/Item 3" unique_id=1347773631]
 layout_mode = 0
@@ -306,7 +297,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = SubResource("PlaceholderTexture2D_tvgmv")
+texture = ExtResource("3_jrycd")
 
 [node name="BaseImage4" type="TextureRect" parent="Items/Item 4" unique_id=1030740493]
 layout_mode = 0
@@ -347,7 +338,7 @@ layout_mode = 0
 offset_left = 70.0
 offset_right = 110.0
 offset_bottom = 40.0
-texture = SubResource("PlaceholderTexture2D_0316b")
+texture = ExtResource("3_jrycd")
 
 [node name="BaseImageWeapon" type="TextureRect" parent="WeaponContainer/Weapon" unique_id=112295043]
 layout_mode = 0

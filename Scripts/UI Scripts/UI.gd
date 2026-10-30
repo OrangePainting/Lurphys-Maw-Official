@@ -15,7 +15,7 @@ var paused = false;
 
 @export var health: float = 100
 @export var player: Node #TODO: change. Need a global so UI can know how much health the player has.
-# Called when the node enters the scene tree for the first time.
+@export var default_texture: Texture2D
 @export var stat_texts: Array[RichTextLabel] = [] #add stats into this array
 
 
@@ -101,4 +101,4 @@ func set_stat_texts_size(new_size: int) -> void:
 	
 func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design decisions on what to do when an item is used
 	if !destroyed:
-		setItem(item_num, null, "", null)
+		setItem(item_num, default_texture, "", default_texture)
