@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 FxManager="*uid://ba24r8bkg84xr"
 LimboConsole="*uid://dyxornv8vwibg"
-RunManager="*uid://bh7peywymjp2s"
 
 [display]
 

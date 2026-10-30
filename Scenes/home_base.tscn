@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dds73kn0fap01"]
 
 [ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="1_51qb4"]
+[ext_resource type="PackedScene" uid="uid://dfjy0havli5j" path="res://Scenes/upgrade_shop.tscn" id="1_hl0j8"]
+[ext_resource type="Script" uid="uid://durlu02sjfbtm" path="res://Scripts/home_base/home_base.gd" id="1_m6o4o"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_yfo80"]
 [ext_resource type="PackedScene" uid="uid://bo5k6xvbcswb6" path="res://Scenes/interactable.tscn" id="3_yfo80"]
 
@@ -11,6 +13,10 @@ size = Vector2(1680, 40)
 size = Vector2(36.095, 980)
 
 [node name="HomeBase" type="Node2D" unique_id=652942257]
+script = ExtResource("1_m6o4o")
+
+[node name="UpgradeShop" parent="." unique_id=1167888441 instance=ExtResource("1_hl0j8")]
+unique_name_in_owner = true
 
 [node name="Background" parent="." unique_id=1103033396 instance=ExtResource("1_51qb4")]
 position = Vector2(130, 44)
@@ -66,13 +72,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0.5019608, 0.5019608, 1)
 
-[node name="UpgradeShop" parent="." unique_id=1955158050 instance=ExtResource("3_yfo80")]
+[node name="UpgradeStation" parent="." unique_id=1955158050 instance=ExtResource("3_yfo80")]
+unique_name_in_owner = true
 position = Vector2(500, 450)
-display_name = "Upgrades"
-prompt_text = "Open Shop"
-color = Color(0.9490196, 0.7490196, 0.2509804, 1)
 
 [node name="RunPortal" parent="." unique_id=1234090924 instance=ExtResource("3_yfo80")]
+unique_name_in_owner = true
 position = Vector2(1200, 450)
 display_name = "Dive"
 prompt_text = "Start run"

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dfjy0havli5j"]
+
+[ext_resource type="Script" uid="uid://drt2wrd4n8vja" path="res://Scripts/home_base/upgrade_shop.gd" id="1_xshi7"]
+
+[node name="UpgradeShop" type="CanvasLayer" unique_id=1167888441]
+layer = 10
+script = ExtResource("1_xshi7")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=274740703]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1771439985]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center" unique_id=1484099070]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel" unique_id=59258198]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin" unique_id=539293318]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Center/Panel/Margin/VBox" unique_id=95614329]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Center/Panel/Margin/VBox/Header" unique_id=400349697]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Upgrades"
+
+[node name="CurrencyLabel" type="Label" parent="Center/Panel/Margin/VBox/Header" unique_id=2093401537]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Coins: 0"
+
+[node name="HSeparator" type="HSeparator" parent="Center/Panel/Margin/VBox" unique_id=1996386146]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="Center/Panel/Margin/VBox" unique_id=1699506928]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Center/Panel/Margin/VBox" unique_id=927395334]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
