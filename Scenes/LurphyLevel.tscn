@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/lurphy_level.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
 
