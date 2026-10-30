@@ -36,6 +36,7 @@ func pauseMenu() -> void:
 	if paused:
 		paused = false
 		pause_menu.hide()
+		stats_menu.hide()
 		Engine.time_scale = 1
 	
 	else:
