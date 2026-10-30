@@ -98,3 +98,7 @@ func get_stat_texts_size() -> int: #returns the size variable, not the max index
 
 func set_stat_texts_size(new_size: int) -> void:
 	stat_texts.resize(new_size)
+	
+func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design decisions on what to do when an item is used
+	if !destroyed:
+		setItem(item_num, null, "", null)
