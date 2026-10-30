@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bn0s80vvhv5il"]
+[gd_scene format=3 uid="uid://iua3h4yq7fjt"]
 
 [ext_resource type="Script" uid="uid://b3lauo0tdkyij" path="res://Levels/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://sc63xemccbnq" path="res://Scenes/LurphyLevel.tscn" id="2_jy6sh"]

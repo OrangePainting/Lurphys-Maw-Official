@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 FxManager="*uid://ba24r8bkg84xr"
 LimboConsole="*uid://dyxornv8vwibg"
 RunManager="*uid://cv00gkoqcq26p"
+SaveManager="*uid://d05geple33ouh"
 
 [display]
 
@@ -119,6 +120,10 @@ Pause={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
+}
+"Relic 1"={
+"deadzone": 0.2,
+"events": []
 }
 
 [physics]

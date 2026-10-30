@@ -70,6 +70,7 @@ func _on_stats_pressed() -> void:
 	stats_menu.show()
 
 func _on_main_menu_pressed() -> void:
+	Engine.time_scale = 1
 	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn")) #TODO: make a main menu to go to
 
 func _on_quit_pressed() -> void:
