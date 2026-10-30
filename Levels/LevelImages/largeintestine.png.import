@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3nkvap7miji2"
-path="res://.godot/imported/LurphySlot.png-a78e51b42e67f55a331374d2feb8668f.ctex"
+uid="uid://b57dl8hjygr1r"
+path="res://.godot/imported/largeintestine.png-e16e27e5cef5cc463484afdfee171f6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/LurphySlot.png"
-dest_files=["res://.godot/imported/LurphySlot.png-a78e51b42e67f55a331374d2feb8668f.ctex"]
+source_file="res://Levels/LevelImages/largeintestine.png"
+dest_files=["res://.godot/imported/largeintestine.png-e16e27e5cef5cc463484afdfee171f6e.ctex"]
 
 [params]
 

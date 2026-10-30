@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://c482h17qwnv50"]
+[gd_scene format=3 uid="uid://sc63xemccbnq"]
 
-[ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Scripts/lurphy_level.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c7t0qvqlgq01n" path="res://Levels/lurphy_level.gd" id="1_v7whf"]
+[ext_resource type="Script" uid="uid://b0rvmwh0iax38" path="res://Scenes/enemy_manager.gd" id="2_5r5ni"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_1nusx"]
 [ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
-[ext_resource type="PackedScene" uid="uid://cos8xnr64nkoc" path="res://Scenes/PlayerUI.tscn" id="5_1nusx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("4_kry3j")
@@ -90,14 +91,21 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_21xkr")
 
 [node name="LurphyLevel" type="Node2D" unique_id=1755036456 node_paths=PackedStringArray("exitZone", "exitZoneCS", "levelMan", "camera")]
-script = ExtResource("1_jjgbg")
+script = ExtResource("1_v7whf")
 exitZone = NodePath("ExitZone")
 exitZoneCS = NodePath("ExitZone/CollisionPolygon2D")
 levelMan = NodePath("LevelManager")
 camera = NodePath("Player/Camera2D")
 
-[node name="LevelManager" type="Node" parent="." unique_id=492081533]
+[node name="EnemyManager" type="Node" parent="." unique_id=1878971094]
+script = ExtResource("2_5r5ni")
+
+[node name="LevelManager" type="Node" parent="." unique_id=492081533 node_paths=PackedStringArray("enemyMan")]
 script = ExtResource("4_jjvhh")
+enemyMan = NodePath("../EnemyManager")
+
+[node name="Background" parent="." unique_id=1103033396 instance=ExtResource("3_1nusx")]
+z_index = -1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1079247556]
 texture_filter = 1
@@ -114,16 +122,8 @@ limit_top = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
-[node name="TestTarget" type="Sprite2D" parent="." unique_id=2068717330 groups=["StrafeTarget"]]
-position = Vector2(200, 200)
-
 [node name="ExitZone" type="Area2D" parent="." unique_id=1593117747]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ExitZone" unique_id=1480571046]
-
-[node name="UILayer" type="CanvasLayer" parent="." unique_id=1604176815]
-
-[node name="PlayerUI" parent="UILayer" unique_id=1677651346 node_paths=PackedStringArray("player") instance=ExtResource("5_1nusx")]
-player = NodePath("../../Player")
 
 [connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]

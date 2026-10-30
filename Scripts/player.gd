@@ -12,7 +12,6 @@ signal player_hurt()
 @export var speed := 300.0
 @export var acceleration := 300.0
 @export var friction := 1500.0
-@export var oxyDecay: = 0.1 #Set in inspector to test oxygen decay over time
  
 @export_group("Dash")
 @export var dash_distance := 150.0
@@ -48,9 +47,6 @@ func _ready() -> void:
 	
 	# testing strafing
 	#call_deferred("test_strafe")
-
-func _process(delta: float) -> void:
-	current_health -= oxyDecay * delta
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
@@ -330,22 +326,11 @@ func test_strafe() -> void:
 #region Health
 var max_health: float = 100
 var current_health: float = 100
-
-func get_oxyDecay() -> float:
-	return oxyDecay
-
-func set_oxyDecay(new_decay: float) -> void:
-	oxyDecay = new_decay
-
+ 
 func set_health(new_health: float) -> void:
 	current_health = clamp(new_health, 0, max_health)
-	
-func get_health() -> float:
-	return current_health
  
-func check_die() -> void: 
-	if current_health <= 0: 
-		pass # TODO: implement die mechanic here
+func check_die() -> void: if current_health <= 0: pass # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
