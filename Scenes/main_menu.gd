@@ -14,4 +14,4 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_pressed() -> void:
-	pass # Replace with function body.
+	RunManager.root.load_scene(load("res://Scenes/LurphyLevel.tscn")) #needs updating is jank MVP solution

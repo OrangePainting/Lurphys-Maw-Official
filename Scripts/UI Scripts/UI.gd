@@ -70,7 +70,7 @@ func _on_stats_pressed() -> void:
 	stats_menu.show()
 
 func _on_main_menu_pressed() -> void:
-	pass #TODO: make a main menu to go to
+	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn")) #TODO: make a main menu to go to
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
