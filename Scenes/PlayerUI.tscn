@@ -134,7 +134,7 @@ gradient = SubResource("Gradient_em753")
 gradient = SubResource("Gradient_hmt36")
 fill_to = Vector2(0, 1)
 
-[node name="PlayerUI" type="Control" unique_id=1677651346]
+[node name="PlayerUI" type="Control" unique_id=1677651346 node_paths=PackedStringArray("stat_texts")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,6 +144,7 @@ offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfrq2")
+stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
 
 [node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
 layout_mode = 1
