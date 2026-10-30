@@ -2,7 +2,9 @@ class_name EnemyBase
 extends CharacterBody2D
 
 @export_group("Enemy Stats")
-@export var max_health: int = 100
+@export var max_health: float = 100.0
+
+@onready var health_bar: ProgressBar = $HealthBar
 
 var current_health: int
 
@@ -12,10 +14,19 @@ signal died
 func _ready():
 	LimboConsole.add_eval_input("enemy", self)
 	current_health = max_health
+	
+	if health_bar:
+		health_bar.max_value = max_health
+		health_bar.value = current_health
+		health_bar.visible = false
 
-func take_damage(amount: int):
+func take_damage(amount: float):
 	current_health -= amount
 	health_changed.emit(current_health, max_health)
+	
+	if health_bar:
+		health_bar.value = current_health
+		health_bar.visible = true
 	
 	if current_health <= 0:
 		die()

@@ -146,6 +146,20 @@ height = 68.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gaug"]
 radius = 574.0078
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72obx"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.6039216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1l4i"]
+bg_color = Color(0.7502538, 0.15841538, 0.19699514, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="GenericEnemy" type="CharacterBody2D" unique_id=397981035]
 script = ExtResource("1_wbj67")
 
@@ -183,6 +197,16 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=29084061]
 shape = SubResource("CircleShape2D_2gaug")
 debug_color = Color(0.8299594, 0.3887253, 0.17481488, 0.41960785)
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=676770682]
+offset_left = -38.0
+offset_top = -41.0
+offset_right = 44.0
+offset_bottom = -28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_72obx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x1l4i")
+value = 10.0
+show_percentage = false
 
 [connection signal="body_entered" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_entered"]
 [connection signal="body_exited" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_exited"]

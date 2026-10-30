@@ -13,8 +13,9 @@ func _physics_process(delta: float):
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D):
-	if body.is_in_group("Player") and body.has_method("take_damage"):
-		body.take_damage(damage)
+	print("Player hit")
+	if body.is_in_group("Player") and body.has_method("hurt"):
+		body.hurt(damage)
 	
 	queue_free()
 

@@ -3,12 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dw2disphs2eot" path="res://Scenes/generic_enemy.tscn" id="1_38r51"]
 [ext_resource type="Script" uid="uid://1nlj6klq3l6m" path="res://Scripts/state_machine 2/melee_attack_state.gd" id="2_ki2c4"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbj67"]
+height = 50.0
+
 [node name="GenericEnemy" unique_id=397981035 instance=ExtResource("1_38r51")]
 
 [node name="Walk" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="1" unique_id=1108984586]
 attack_range = 70.0
 
-[node name="MeleeAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="2" unique_id=477140740 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+[node name="MeleeAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(1653754808) index="2" unique_id=477140740 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "attack_hitbox")]
 script = ExtResource("2_ki2c4")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+attack_hitbox = NodePath("../../AttackHitbox")
+
+[node name="CollisionShape2D" parent="AttackArea2D" parent_id_path=PackedInt32Array(1460243674) index="0" unique_id=29084061]
+position = Vector2(8, 2)
+
+[node name="AttackHitbox" type="Area2D" parent="." index="5" unique_id=585378861]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" index="0" unique_id=1668034617]
+position = Vector2(22, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wbj67")
+debug_color = Color(0.98872274, 0, 0.3040195, 0.41960785)
