@@ -24,8 +24,13 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 @export_group("Parameters")
 @export_range(0, 100, 1) var start_alive_chance := 50
 @export var num_generations := 10
-@export var birth_floor := 5 # >= birth_floor -> becomes alive
-@export var death_cap := 3 # <= death cap -> becomes dead
+@export var birth_floor := 5 ## >= birth_floor -> becomes alive
+@export var death_cap := 3 ## <= death cap -> becomes dead
+@export var use_same_grid := false ## use the same grid for cellular automata (dynamic)
+
+@export_group("Layout")
+@export var start_radius := 5 ## radius of space around the start square (will be empty)
+@export var end_radius := 3 ## radius of space around the end square (will be empty)
 
 #TODO add more parameters
 
@@ -65,14 +70,14 @@ func generate() -> Array:
 	rng.seed = level_seed
 	
 	# fill the grid randomly
-	# fill_start_state(rng)
+	fill_start_state(rng)
 	
 	# run cellular automata
 	# for generation in num_generations: run_generation()
 	
 	return []
 
-
+## fills the starting state of the grid with a random set of cells
 func fill_start_state(rng: RandomNumberGenerator) -> void:
 	grid.resize(width * height)
 	for y in height: for x in width:
@@ -83,3 +88,27 @@ func fill_start_state(rng: RandomNumberGenerator) -> void:
 				grid[get_idx(x, y)] = cell.ALIVE
 			else:
 				grid[get_idx(x, y)] = cell.DEAD
+
+## counts the number of alive neighbors around a cell
+func get_alive_neighbors(cells: Array[int], x: int, y: int) -> int:
+	var total := 0
+	var x_dirs := [-1, 0, 1]
+	var y_dirs := [-1, 0, 1]
+	
+	for y_dir in y_dirs: for x_dir in x_dirs:
+		if not (x_dir == 0 and y_dir == 0): 
+			total += cells[get_idx(x + x_dir, y + y_dir)]
+	
+	return total
+
+## runs a generation of cellular automata
+func run_generation() -> void:
+	var grid_copy := grid if use_same_grid else grid.duplicate(true)
+	
+	for y in range(1, height - 1): for x in range(1, width - 1):
+		var index := get_idx(x, y)
+		var num_alive := get_alive_neighbors(grid_copy, x, y)
+		if grid_copy[index] == cell.DEAD and num_alive >= birth_floor:
+			grid[index] = cell.ALIVE
+		elif grid_copy[index] == cell.ALIVE and num_alive >= death_cap:
+			grid[index] = cell.DEAD 
