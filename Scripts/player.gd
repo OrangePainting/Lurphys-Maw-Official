@@ -188,10 +188,13 @@ func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool
 	dash_queued.emit(queued_dash_direction)
 	
 	# play dash sfx (for testing purposes)
-	var dash_sfx := SfxManagerSpatial.play_at_node(SFX_DASH, self)
+	
+	#var dash_sfx := SfxManagerSpatial.play_at_node(SFX_DASH, self)
 	#var dash_sfx := SfxManagerSpatial.play_at(SFX_DASH, global_position)
-	dash_sfx.pitch_scale = 2.0 # example modifying pitch
-	dash_sfx.volume_db = -20.0 # example modifying volume
+	#dash_sfx.pitch_scale = 2.0 # example modifying pitch
+	#dash_sfx.volume_db = -20.0 # example modifying volume
+	
+	var dash_sfx_id: int = SfxManagerNonspatial.play(SFX_DASH)
 	
 	return true
  
