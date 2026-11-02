@@ -87,7 +87,7 @@ func generate() -> Array:
 	connect_caves()
 	
 	var start := find_first_water_cell()
-	var end := 0
+	var end := 0 # get the furthest cell from the start pos
 	var dists := get_distances_from(start)
 	for index in dists.size(): if dists[index] > dists[end]: end = index 
 	
@@ -193,6 +193,9 @@ func make_tunnel(start: int, end: int) -> void:
 	
 	var max_step_size := maxf(absf(start_pos.x - end_pos.x), absf(start_pos.y - end_pos.y))
 	var steps := maxi(int(max_step_size), 1)
+	for step in steps + 1:
+		var mid_point := start_pos.lerp(end_pos, float(step) / steps)
+		clear_radius(get_idx(roundi(mid_point.x), roundi(mid_point.y)), tunnel_width)
 
 ## do a dfs and return every cell that it touches
 func do_dfs(start: int, labels: Array[int]) -> Array[int]:
