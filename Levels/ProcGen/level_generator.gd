@@ -135,7 +135,7 @@ func run_generation() -> void:
 		var num_alive := get_alive_neighbors(grid_copy, x, y)
 		if grid_copy[index] == cell.DEAD and num_alive >= birth_floor:
 			grid[index] = cell.ALIVE
-		elif grid_copy[index] == cell.ALIVE and num_alive >= death_cap:
+		elif grid_copy[index] == cell.ALIVE and num_alive <= death_cap:
 			grid[index] = cell.DEAD 
 
 ## connect the caves together so it doesn't look like static
