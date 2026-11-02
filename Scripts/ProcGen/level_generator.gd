@@ -46,8 +46,12 @@ func _ready() -> void:
 	if output_path == "":
 		print("you need an output path!")
 		return
-	# generate image
-	print("saved image")
+	
+	var cells := generate()
+	var image := make_image(cells)
+	var error := image.save_png(output_path)
+	if error != OK: print("error occured")
+	else: print("saved image")
 	
 
 func get_idx(x: int, y: int) -> int: return y * width + x
@@ -73,16 +77,25 @@ func generate() -> Array:
 	fill_start_state(rng)
 	
 	# run cellular automata
-	# for generation in num_generations: run_generation()
+	for generation in num_generations: run_generation()
+	
+	# figure out how to make it feel level like
 	
 	return []
+
+func make_image(cells: Array) -> Image:
+	var image := Image.create(width, height, false, Image.FORMAT_RGBA8)
+	for y in height: for x in width:
+		image.set_pixel(x, y, cells[y][x])
+	
+	return image
 
 ## fills the starting state of the grid with a random set of cells
 func fill_start_state(rng: RandomNumberGenerator) -> void:
 	grid.resize(width * height)
 	for y in height: for x in width:
 		if (x == 0) or (y == 0) or (x == width - 1) or (y == height - 1):
-			grid[get_idx(x, y)] == cell.ALIVE
+			grid[get_idx(x, y)] = cell.ALIVE
 		else:
 			if rng.randi_range(0, 100) < start_alive_chance:
 				grid[get_idx(x, y)] = cell.ALIVE
