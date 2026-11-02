@@ -4,14 +4,4 @@
 
 [node name="ProcGen" type="Node" unique_id=268479683]
 script = ExtResource("1_mmho3")
-width = null
-height = null
-start_alive_chance = null
-num_generations = null
-birth_floor = null
-death_cap = null
-use_same_grid = null
-start_radius = null
-end_radius = null
-level_seed = null
 output_path = "res://Levels/ProceduralLevels/TestLevel.png"

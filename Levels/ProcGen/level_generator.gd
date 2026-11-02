@@ -86,9 +86,11 @@ func generate() -> Array:
 	# figure out how to make it feel level like
 	connect_caves()
 	
-	
 	var start := find_first_water_cell()
-	var end := 0 # figure out where to put the ending cell
+	var end := 0
+	var dists := get_distances_from(start)
+	for index in dists.size(): if dists[index] > dists[end]: end = index 
+	
 	var level := build_level(start, end)
 	
 	return level
@@ -192,7 +194,41 @@ func make_tunnel(start: int, end: int) -> void:
 	var max_step_size := maxf(absf(start_pos.x - end_pos.x), absf(start_pos.y - end_pos.y))
 	var steps := maxi(int(max_step_size), 1)
 
+## do a dfs and return every cell that it touches
+func do_dfs(start: int, labels: Array[int]) -> Array[int]:
+	var cave: Array[int] = []
+	var stack: Array[int] = [start]
+	labels[start] = 1
+	
+	while not stack.is_empty():
+		var index: int = stack.pop_back()
+		cave.append(index)
+		for neighbor in get_neighbors(index):
+			if grid[neighbor] == cell.DEAD and labels[neighbor] == 0:
+				labels[neighbor] = 1
+				stack.append(neighbor)
+	
+	return cave
 
+## return the distances of each square from the starting square, using bfs
+func get_distances_from(start: int) -> Array[int]:
+	var dists: Array[int] = []
+	dists.resize(width * height)
+	dists.fill(-1)
+	
+	var queue: Array[int] = [start]
+	var head := 0
+	dists[start] = 0
+	
+	while head < queue.size():
+		var index := queue[head]
+		head += 1
+		for neighbor in get_neighbors(index):
+			if grid[neighbor] == cell.DEAD and dists[neighbor] == -1:
+				dists[neighbor] = dists[index] + 1
+				queue.append(neighbor)
+	
+	return dists
 
 ## gets the first water cell available
 func find_first_water_cell() -> int:
