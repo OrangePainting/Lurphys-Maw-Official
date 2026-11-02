@@ -29,8 +29,13 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 @export var use_same_grid := false ## use the same grid for cellular automata (dynamic)
 
 @export_group("Layout")
-@export var start_radius := 5 ## radius of space around the start square (will be empty)
+@export var start_clear_radius := 5 ## radius of space around the start square (will be empty)
 @export var end_radius := 3 ## radius of space around the end square (will be empty)
+
+@export_group("Cave Parameters")
+@export var link_caves := true
+@export var min_cave_size := 15
+@export var tunnel_width := 2
 
 #TODO add more parameters
 
@@ -79,8 +84,11 @@ func generate() -> Array:
 	for generation in num_generations: run_generation()
 	
 	# figure out how to make it feel level like
+	connect_caves()
+	
+	
 	var start := find_first_water_cell()
-	var end := 0
+	var end := 0 # figure out where to put the ending cell
 	var level := build_level(start, end)
 	
 	return level
@@ -127,6 +135,64 @@ func run_generation() -> void:
 			grid[index] = cell.ALIVE
 		elif grid_copy[index] == cell.ALIVE and num_alive >= death_cap:
 			grid[index] = cell.DEAD 
+
+## connect the caves together so it doesn't look like static
+func connect_caves() -> void:
+	var labels: Array[int] = []
+	labels.resize(width * height)
+	var caves: Array[Array] = []
+	
+	for start in width * height:
+		if grid[start] == cell.DEAD and labels[start] == 0:
+			caves.append(do_dfs(start, labels))
+		
+		caves.sort_custom(func(a, b): return a.size() > b.size())
+		
+	var caves_to_add: Array[Array] = []
+	for cave in range(1, caves.size()): # skip the biggest cluster
+		if link_caves and caves[cave].size() >= min_cave_size:
+			caves_to_add.append(caves[cave])
+		else:
+			for index in caves[cave]:
+				grid[index] = cell.ALIVE
+	
+	var connected_cave: Array[int] = []
+	connected_cave.append_array(caves[0])
+	for cave_to_add in caves_to_add:
+		var cave: Array[int] = []
+		cave.append_array(cave_to_add)
+		var target := nearest_cell(connected_cave, get_center(cave))
+		var start := nearest_cell(cave, Vector2(target % width, target / width))
+		make_tunnel(start, target)
+		connected_cave.append_array(cave)
+
+## get the centroid of a group of cells
+func get_center(cells: Array[int]) -> Vector2:
+	var sum := Vector2.ZERO
+	for index in cells: sum += Vector2(index % width, index / width)
+	return sum / cells.size()
+
+## get the cell nearest to the target
+func nearest_cell(cells: Array[int], target: Vector2) -> int:
+	var best_cell := cells[0]
+	var best_dist := -1.0
+	for index in cells:
+		var dist := Vector2(index % width, index / width).distance_squared_to(target)
+		if best_dist == -1 or dist < best_dist:
+			best_dist = dist
+			best_cell = index
+	
+	return best_cell
+
+## make a tunnel between two caves
+func make_tunnel(start: int, end: int) -> void:
+	var start_pos := Vector2(start % width, start / width)
+	var end_pos := Vector2(end % width, end / width)
+	
+	var max_step_size := maxf(absf(start_pos.x - end_pos.x), absf(start_pos.y - end_pos.y))
+	var steps := maxi(int(max_step_size), 1)
+
+
 
 ## gets the first water cell available
 func find_first_water_cell() -> int:
