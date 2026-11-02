@@ -47,8 +47,7 @@ func _ready() -> void:
 		print("you need an output path!")
 		return
 	
-	var cells := generate()
-	var image := make_image(cells)
+	var image := make_image(generate())
 	var error := image.save_png(output_path)
 	if error != OK: print("error occured")
 	else: print("saved image")
