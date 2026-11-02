@@ -79,8 +79,11 @@ func generate() -> Array:
 	for generation in num_generations: run_generation()
 	
 	# figure out how to make it feel level like
+	var start := find_first_water_cell()
+	var end := 0
+	var level := build_level(start, end)
 	
-	return []
+	return level
 
 func make_image(cells: Array) -> Image:
 	var image := Image.create(width, height, false, Image.FORMAT_RGBA8)
@@ -124,3 +127,49 @@ func run_generation() -> void:
 			grid[index] = cell.ALIVE
 		elif grid_copy[index] == cell.ALIVE and num_alive >= death_cap:
 			grid[index] = cell.DEAD 
+
+## gets the first water cell available
+func find_first_water_cell() -> int:
+	for x in range(1, width - 1): for y in range(1, height - 1):
+		if grid[get_idx(x, y)] == cell.DEAD:
+			return get_idx(x, y)
+	return -1
+
+## gets a raidus of cells around the target
+func get_radius(target: int, radius: int) -> Array[int]:
+	var target_x := target % width
+	var target_y := target / width
+	
+	var min_x = mini(target_x + radius, width - 2) + 1
+	var max_x = maxi(target_x - radius, 1)
+	var min_y = mini(target_y + radius, height - 2) + 1
+	var max_y = maxi(target_y - radius, 1)
+	
+	
+	var cells: Array[int] = []
+	
+	for y in range(max_y , min_y): for x in range(max_x, min_x):
+		if Vector2(x - target_x, y - target_y).length() <= radius:
+			cells.append(get_idx(x, y))
+	
+	return cells
+
+func clear_radius(target: int, radius: int) -> void:
+	for index in get_radius(target, radius): grid[index] = cell.DEAD
+
+
+func build_level(start: int, end: int) -> Array:
+	var output := []
+	
+	for y in height:
+		var row := []
+		for x in width:
+			row.append(WALL_COLOR if grid[get_idx(x, y)] == cell.ALIVE else WATER_COLOR)
+		output.append(row)
+	
+	for index in get_radius(end, end_radius):
+		output[index / width][index % width] = END_COLOR
+	
+	output[start / width][start % width] = START_COLOR
+	
+	return output
