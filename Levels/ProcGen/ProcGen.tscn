@@ -4,4 +4,7 @@
 
 [node name="ProcGen" type="Node" unique_id=268479683]
 script = ExtResource("1_mmho3")
+end_radius = 10
+min_cave_size = 100
+tunnel_width = 20
 output_path = "res://Levels/ProceduralLevels/TestLevel.png"

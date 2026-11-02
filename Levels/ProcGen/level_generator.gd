@@ -26,7 +26,7 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 @export var num_generations := 10
 @export var birth_floor := 5 ## >= birth_floor -> becomes alive
 @export var death_cap := 3 ## <= death cap -> becomes dead
-@export var use_same_grid := false ## use the same grid for cellular automata (dynamic)
+@export var use_same_grid := true ## use the same grid for cellular automata (dynamic if true)
 
 @export_group("Layout")
 @export var start_clear_radius := 5 ## radius of space around the start square (will be empty)
@@ -34,13 +34,13 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 
 @export_group("Cave Parameters")
 @export var link_caves := true
-@export var min_cave_size := 15
+@export var min_cave_size := 30
 @export var tunnel_width := 2
 
 #TODO add more parameters
 
 @export_group("Output")
-@export var level_seed := 0
+@export var level_seed := -1 ## -1 means random seed
 @export_file("*.png") var output_path := ""
 
 
@@ -56,6 +56,9 @@ func _ready() -> void:
 	var error := image.save_png(output_path)
 	if error != OK: print("error occured")
 	else: print("saved image")
+	
+	print("quitting the level generator: ")
+	get_tree().quit(69)
 	
 
 func get_idx(x: int, y: int) -> int: return y * width + x
@@ -75,7 +78,10 @@ func get_neighbors(index: int) -> Array[int]:
 ## return an array of each color
 func generate() -> Array:
 	var rng := RandomNumberGenerator.new()
-	rng.seed = level_seed
+	if level_seed != -1: # use a random seed if the seed is -1
+		rng.seed = level_seed
+	else:
+		rng.randomize()
 	
 	# fill the grid randomly
 	fill_start_state(rng)
@@ -87,6 +93,8 @@ func generate() -> Array:
 	connect_caves()
 	
 	var start := find_first_water_cell()
+	clear_radius(start, start_clear_radius)
+	
 	var end := 0 # get the furthest cell from the start pos
 	var dists := get_distances_from(start)
 	for index in dists.size(): if dists[index] > dists[end]: end = index 
@@ -109,7 +117,7 @@ func fill_start_state(rng: RandomNumberGenerator) -> void:
 		if (x == 0) or (y == 0) or (x == width - 1) or (y == height - 1):
 			grid[get_idx(x, y)] = cell.ALIVE
 		else:
-			if rng.randi_range(0, 100) < start_alive_chance:
+			if rng.randi_range(0, 99) < start_alive_chance:
 				grid[get_idx(x, y)] = cell.ALIVE
 			else:
 				grid[get_idx(x, y)] = cell.DEAD
@@ -148,7 +156,7 @@ func connect_caves() -> void:
 		if grid[start] == cell.DEAD and labels[start] == 0:
 			caves.append(do_dfs(start, labels))
 		
-		caves.sort_custom(func(a, b): return a.size() > b.size())
+	caves.sort_custom(func(a, b): return a.size() > b.size())
 		
 	var caves_to_add: Array[Array] = []
 	for cave in range(1, caves.size()): # skip the biggest cluster
