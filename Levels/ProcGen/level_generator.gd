@@ -37,8 +37,6 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 @export var min_cave_size := 30
 @export var tunnel_width := 2
 
-#TODO add more parameters
-
 @export_group("Output")
 @export var level_seed := -1 ## -1 means random seed
 @export_file("*.png") var output_path := ""
