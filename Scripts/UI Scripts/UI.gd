@@ -31,6 +31,15 @@ func _process(delta: float) -> void:
 	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
+	#TODO: update for better placement of script/less hard coded
+	if Input.is_action_just_pressed("Active 1"):
+		use_Item(1, true) #hard coded destroyed, when relics fully implemented please update
+	if Input.is_action_just_pressed("Active 2"):
+		use_Item(2, true)
+	if Input.is_action_just_pressed("Active 3"):
+		use_Item(3, true)
+	if Input.is_action_just_pressed("Active 4"):
+		use_Item(4, true)
 		
 func pauseMenu() -> void:
 	if paused:
@@ -100,5 +109,5 @@ func set_stat_texts_size(new_size: int) -> void:
 	stat_texts.resize(new_size)
 	
 func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design decisions on what to do when an item is used
-	if !destroyed:
+	if destroyed:
 		setItem(item_num, default_texture, "", default_texture)
