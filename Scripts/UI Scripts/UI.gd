@@ -3,6 +3,7 @@ extends Control
 @onready var health_bar = %HealthBar
 @onready var pause_menu = $PauseMenu/MenuHolder
 @onready var stats_menu = $StatsMenu/StatsHolder 
+@onready var settings_menu = $PauseMenu/SettingsMenu
 @onready var itemButtons = { #dictionary of items
 	1: $"Items/Item 1",
 	2: $"Items/Item 2",
@@ -24,6 +25,7 @@ func _ready() -> void:
 	health_bar.value = health
 	pause_menu.hide()
 	stats_menu.hide()
+	settings_menu.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,6 +48,7 @@ func pauseMenu() -> void:
 		paused = false
 		pause_menu.hide()
 		stats_menu.hide()
+		settings_menu.hide()
 		Engine.time_scale = 1
 	
 	else:
@@ -80,7 +83,7 @@ func _on_stats_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	Engine.time_scale = 1
-	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn")) #TODO: make a main menu to go to
+	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn"))
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
@@ -111,3 +114,8 @@ func set_stat_texts_size(new_size: int) -> void:
 func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design decisions on what to do when an item is used
 	if destroyed:
 		setItem(item_num, default_texture, "", default_texture)
+
+
+func _on_settings_pressed() -> void:
+	pause_menu.hide()
+	settings_menu.show()
