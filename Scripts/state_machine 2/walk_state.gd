@@ -4,7 +4,6 @@ extends NodeState
 @export var animated_sprite_2d : AnimatedSprite2D
 @export var speed : float = 150.0
 @export var attack_range: float = 80.0
-@export var attack_state_name: String = "meleeattack"
 
 var player : CharacterBody2D
 var max_speed : float
@@ -27,17 +26,8 @@ func on_physics_process(delta: float):
 	var distance = current_pos.distance_to(player_pos)
 	var direction = current_pos.direction_to(player_pos)
 
-	var attack_node = state_machine.node_states.get(attack_state_name.to_lower())
-	
-	var transition_to_attack: bool = false
-	
-	if attack_node and attack_node.has_method("should_trigger_attack"):
-		transition_to_attack = attack_node.should_trigger_attack(distance)
-	else:
-		transition_to_attack = distance <= attack_range
-	
-	if transition_to_attack:
-		state_machine.transition_to(attack_state_name)
+	if distance <= attack_range:
+		state_machine.transition_to("attack")
 		return
 
 	if direction.x != 0:
