@@ -3,7 +3,7 @@ extends Control
 @onready var health_bar = %HealthBar
 @onready var pause_menu = $PauseMenu/MenuHolder
 @onready var stats_menu = $StatsMenu/StatsHolder 
-@onready var settings_menu = $PauseMenu/SettingsMenu
+@onready var settings_menu = $PauseMenu/SettingsMaster
 @onready var itemButtons = { #dictionary of items
 	1: $"Items/Item 1",
 	2: $"Items/Item 2",
