@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3okwcpk6vl42"]
+
+[ext_resource type="PackedScene" uid="uid://c0j2l4smleg1y" path="res://Scenes/Weapons/generic_weapon.tscn" id="1_vglly"]
+
+[node name="Anchor" unique_id=530717815 instance=ExtResource("1_vglly")]
+damage = 50.0
+attack_duration = 0.35
+attack_cooldown = 0.7
+offset_from_player = Vector2(60, 0)

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cn4jo1uyq1ima"]
+
+[ext_resource type="Script" uid="uid://dufmfsve7rodt" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://oft8c3rm8qe" path="res://Assets/art/Temp UI/Screenshot 2026-10-13 172556.png" id="2_1ehe0"]
+[ext_resource type="FontFile" uid="uid://beyj3kfbpysym" path="res://Assets/fonts/BoldPixels.ttf" id="2_48xlc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28flt"]
+
+[sub_resource type="Gradient" id="Gradient_28flt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_28flt"]
+gradient = SubResource("Gradient_28flt")
+
+[sub_resource type="Gradient" id="Gradient_48xlc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48xlc"]
+gradient = SubResource("Gradient_48xlc")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_48xlc"]
+
+[sub_resource type="Gradient" id="Gradient_1ehe0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ehe0"]
+gradient = SubResource("Gradient_1ehe0")
+
+[sub_resource type="Gradient" id="Gradient_ce3w2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ce3w2"]
+gradient = SubResource("Gradient_ce3w2")
+fill_to = Vector2(0, 1)
+
+[node name="Main Menu" type="Control" unique_id=708855415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Menu Container" type="MarginContainer" parent="." unique_id=650742758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background Image" type="TextureRect" parent="Menu Container" unique_id=1594412190]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_1ehe0")
+expand_mode = 1
+
+[node name="Start" type="TextureButton" parent="Menu Container" unique_id=2002897989]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = SubResource("PlaceholderTexture2D_28flt")
+texture_pressed = SubResource("GradientTexture2D_28flt")
+texture_hover = SubResource("GradientTexture2D_48xlc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StartText" type="RichTextLabel" parent="Menu Container/Start" unique_id=486006518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_48xlc")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="Menu Container" unique_id=215098341]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = SubResource("PlaceholderTexture2D_48xlc")
+texture_pressed = SubResource("GradientTexture2D_1ehe0")
+texture_hover = SubResource("GradientTexture2D_ce3w2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QuitText" type="RichTextLabel" parent="Menu Container/Quit" unique_id=381196648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_48xlc")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu Container/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu Container/Quit" to="." method="_on_quit_pressed"]
