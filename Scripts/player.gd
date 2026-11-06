@@ -194,7 +194,7 @@ func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool
 	#dash_sfx.pitch_scale = 2.0 # example modifying pitch
 	#dash_sfx.volume_db = -20.0 # example modifying volume
 	
-	var dash_sfx_id: int = SfxManagerNonspatial.play(SFX_DASH)
+	#var dash_sfx_id: int = SfxManagerNonspatial.play(SFX_DASH)
 	
 	return true
  
