@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bn0s80vvhv5il"]
+[gd_scene format=3 uid="uid://blc3oifj74eht"]
 
-[ext_resource type="Script" uid="uid://b3lauo0tdkyij" path="res://Levels/root.gd" id="1_pq8q7"]
-[ext_resource type="PackedScene" uid="uid://sc63xemccbnq" path="res://Scenes/LurphyLevel.tscn" id="2_jy6sh"]
-[ext_resource type="Resource" uid="uid://c8qtoespptnvo" path="res://Levels/TestLevels/intestine.tres" id="3_jy6sh"]
+[ext_resource type="Script" path="res://Levels/root.gd" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://c482h17qwnv50" path="res://Scenes/LurphyLevel.tscn" id="2_jy6sh"]
+[ext_resource type="Resource" path="res://Levels/TestLevels/intestine.tres" id="3_jy6sh"]
 
 [node name="Root" type="Node" unique_id=942068586]
 script = ExtResource("1_pq8q7")
