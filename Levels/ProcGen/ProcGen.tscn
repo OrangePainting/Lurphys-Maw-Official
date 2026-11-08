@@ -22,4 +22,4 @@ num_enemies = null
 enemy_min_spacing = null
 enemy_min_start_dist = null
 enemy_min_end_dist = null
-enemy_open_space = null
+enemy_min_open_space = null

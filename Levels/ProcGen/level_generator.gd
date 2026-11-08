@@ -282,11 +282,30 @@ func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> A
 	var possible_pos: Array[int] = [] # possible positions for the enemies to spawn at
 	
 	for index in dists.size():
+		# tons of guard clauses, until we can finally add it here
 		if dists[index] < enemy_min_start_dist: continue
 		var enemy_pos := Vector2(index % width, index / width)
 		if enemy_pos.distance_to(end_pos) < end_radius + enemy_min_end_dist: continue
-		if not cell_has_space(enemy_pos, enemy_open_space)
-
+		if not cell_has_space(enemy_pos, enemy_min_open_space): continue
+		possible_pos.append(index)
+	
+	possible_pos.shuffle()
+	
+	var placed_enemies: Array[int] = []
+	for index in possible_pos:
+		if placed_enemies.size() >= num_enemies: break
+		var flag := false
+		var index_pos := Vector2(index % width, index / width)
+		for index2 in placed_enemies:
+			var index2pos := Vector2(index2 % width, index2 / width)
+			if index_pos.distance_to(index2pos) < enemy_min_spacing:
+				flag = true # enemy is too close
+				break
+		if not flag: placed_enemies.append(index)
+	
+	print("only could place %d enemies out of %d total" % [placed_enemies.size(), num_enemies])
+	return placed_enemies
+	
 
 func build_level(start: int, end: int) -> Array:
 	var output := []
