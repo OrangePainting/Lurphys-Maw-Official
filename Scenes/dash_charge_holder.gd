@@ -4,15 +4,17 @@ extends HBoxContainer
 
 var dash_charge_texture = "res://icon.svg" #TODO: update when dash charge exists as a sprite
 var num_charges: int = 0
+var total_charges: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	num_charges = player.dash_max_charges
+	total_charges = player.dash_max_charges
 	for i in num_charges:
 		var charge = TextureRect.new()
 		charge.texture = load(dash_charge_texture)
 		charge.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		charge.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		charge.custom_minimum_size = Vector2(size.x/num_charges, size.y)
+		charge.custom_minimum_size = Vector2(size.x/total_charges, size.y)
 		add_child(charge)
 
 
@@ -30,6 +32,6 @@ func _process(delta: float) -> void:
 				charge.texture = load(dash_charge_texture)
 				charge.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 				charge.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-				charge.custom_minimum_size = Vector2(size.x/num_charges, size.y)
+				charge.custom_minimum_size = Vector2(size.x/total_charges, size.y)
 				add_child(charge)
 		num_charges = cur_charges
