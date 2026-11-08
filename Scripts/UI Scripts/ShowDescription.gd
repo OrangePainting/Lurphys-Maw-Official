@@ -27,8 +27,8 @@ func setBriefDescription(new_desc: String) -> void:
 func getBriefDescription() -> String:
 	return brief_description.text
 
-func setDetailedDescription(new_desc: Texture2D) -> void: #remember to update if the type of detailed_description changes
-	detailed_description.texture = new_desc
+func setDetailedDescription(new_desc: TextureRect) -> void: #remember to update if the type of detailed_description changes
+	detailed_description = new_desc
 
 func getDetailedDescription() -> TextureRect:
 	return detailed_description

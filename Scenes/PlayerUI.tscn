@@ -16,6 +16,8 @@ gradient = SubResource("Gradient_8tgur")
 gradient = SubResource("Gradient_qv4fw")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmldq"]
+
 [sub_resource type="Gradient" id="Gradient_kioar"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_efi3g"]
@@ -26,6 +28,8 @@ gradient = SubResource("Gradient_kioar")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mnx5q"]
 gradient = SubResource("Gradient_a5jvy")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_djfqe"]
 
 [sub_resource type="Gradient" id="Gradient_nrpdu"]
 
@@ -38,6 +42,8 @@ gradient = SubResource("Gradient_nrpdu")
 gradient = SubResource("Gradient_q0wog")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c0r8r"]
+
 [sub_resource type="Gradient" id="Gradient_g2qpm"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8q3x4"]
@@ -49,6 +55,8 @@ gradient = SubResource("Gradient_g2qpm")
 gradient = SubResource("Gradient_efi3g")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tvgmv"]
+
 [sub_resource type="Gradient" id="Gradient_mnx5q"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b8nrl"]
@@ -59,6 +67,8 @@ gradient = SubResource("Gradient_mnx5q")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_658u6"]
 gradient = SubResource("Gradient_bau5p")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0316b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jrycd"]
 
@@ -85,18 +95,6 @@ gradient = SubResource("Gradient_cecjq")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hmt36"]
 gradient = SubResource("Gradient_8q3x4")
 fill_to = Vector2(0, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmldq"]
-
-[sub_resource type="Gradient" id="Gradient_le1si"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nrpdu"]
-gradient = SubResource("Gradient_le1si")
-
-[sub_resource type="Gradient" id="Gradient_62y6v"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p5poj"]
-gradient = SubResource("Gradient_62y6v")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_le1si"]
 
@@ -147,7 +145,6 @@ offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfrq2")
-default_texture = ExtResource("3_jrycd")
 stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
 
 [node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
@@ -204,7 +201,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = ExtResource("3_jrycd")
+texture = SubResource("PlaceholderTexture2D_mmldq")
 
 [node name="BaseImage1" type="TextureRect" parent="Items/Item 1" unique_id=1342039604]
 layout_mode = 0
@@ -239,7 +236,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = ExtResource("3_jrycd")
+texture = SubResource("PlaceholderTexture2D_djfqe")
 
 [node name="BaseImage2" type="TextureRect" parent="Items/Item 2" unique_id=72654177]
 layout_mode = 0
@@ -274,7 +271,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = ExtResource("3_jrycd")
+texture = SubResource("PlaceholderTexture2D_c0r8r")
 
 [node name="BaseImage3" type="TextureRect" parent="Items/Item 3" unique_id=1347773631]
 layout_mode = 0
@@ -309,7 +306,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_right = 100.0
 offset_bottom = 40.0
-texture = ExtResource("3_jrycd")
+texture = SubResource("PlaceholderTexture2D_tvgmv")
 
 [node name="BaseImage4" type="TextureRect" parent="Items/Item 4" unique_id=1030740493]
 layout_mode = 0
@@ -350,7 +347,7 @@ layout_mode = 0
 offset_left = 70.0
 offset_right = 110.0
 offset_bottom = 40.0
-texture = ExtResource("3_jrycd")
+texture = SubResource("PlaceholderTexture2D_0316b")
 
 [node name="BaseImageWeapon" type="TextureRect" parent="WeaponContainer/Weapon" unique_id=112295043]
 layout_mode = 0
@@ -368,8 +365,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MenuHolder" type="VBoxContainer" parent="PauseMenu" unique_id=1857121039]
-visible = false
-custom_minimum_size = Vector2(350, 500)
+custom_minimum_size = Vector2(350, 400)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -377,7 +373,7 @@ size_flags_vertical = 4
 
 [node name="Resume" type="TextureButton" parent="PauseMenu/MenuHolder" unique_id=1461874578]
 custom_minimum_size = Vector2(250, 100)
-custom_maximum_size = Vector2(250, 100)
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_jrycd")
@@ -402,7 +398,7 @@ vertical_alignment = 1
 
 [node name="Stats" type="TextureButton" parent="PauseMenu/MenuHolder" unique_id=1789814529]
 custom_minimum_size = Vector2(250, 100)
-custom_maximum_size = Vector2(250, 100)
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_p5poj")
@@ -424,34 +420,9 @@ text = "Stats"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="PauseMenu/MenuHolder" unique_id=413305273]
-custom_minimum_size = Vector2(250, 100)
-custom_maximum_size = Vector2(250, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = SubResource("PlaceholderTexture2D_mmldq")
-texture_pressed = SubResource("GradientTexture2D_nrpdu")
-texture_hover = SubResource("GradientTexture2D_p5poj")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="SettingsText" type="RichTextLabel" parent="PauseMenu/MenuHolder/Settings" unique_id=424286872]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MainMenu" type="TextureButton" parent="PauseMenu/MenuHolder" unique_id=1661402838]
 custom_minimum_size = Vector2(250, 100)
-custom_maximum_size = Vector2(250, 100)
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_le1si")
@@ -475,7 +446,7 @@ vertical_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="PauseMenu/MenuHolder" unique_id=2105074049]
 custom_minimum_size = Vector2(250, 100)
-custom_maximum_size = Vector2(250, 100)
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_kp2qe")
@@ -497,32 +468,6 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsMenu" type="VBoxContainer" parent="PauseMenu" unique_id=777695127]
-custom_minimum_size = Vector2(350, 500)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-
-[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMenu" unique_id=581031186]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Adjust Volume
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMenu" unique_id=769118173]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-step = 0.01
-value = 100.0
-
 [node name="StatsMenu" type="MarginContainer" parent="." unique_id=590737166]
 layout_mode = 1
 anchors_preset = 15
@@ -533,8 +478,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="StatsHolder" type="VBoxContainer" parent="StatsMenu" unique_id=646092252]
-visible = false
-custom_minimum_size = Vector2(350, 500)
+custom_minimum_size = Vector2(350, 400)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -621,7 +565,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="WeaponContainer/Weapon" to="WeaponContainer/Weapon" method="_on_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/Stats" to="." method="_on_stats_pressed"]
-[connection signal="pressed" from="PauseMenu/MenuHolder/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="StatsMenu/StatsHolder/Return" to="." method="_on_stats_return_pressed"]
