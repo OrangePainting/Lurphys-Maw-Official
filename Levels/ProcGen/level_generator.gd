@@ -286,7 +286,7 @@ func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> A
 		if dists[index] < enemy_min_start_dist: continue
 		var enemy_pos := Vector2(index % width, index / width)
 		if enemy_pos.distance_to(end_pos) < end_radius + enemy_min_end_dist: continue
-		if not cell_has_space(enemy_pos, enemy_min_open_space): continue
+		if not cell_has_space(index, enemy_min_open_space): continue
 		possible_pos.append(index)
 	
 	possible_pos.shuffle()
@@ -305,7 +305,17 @@ func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> A
 	
 	print("only could place %d enemies out of %d total" % [placed_enemies.size(), num_enemies])
 	return placed_enemies
+
+# check to see if every cell within this cell's radius is water or not
+func cell_has_space(index: int, min_radius: int) -> bool:
+	var center_x := index % width
+	var center_y := index / width
+	for y in range(center_y - min_radius, center_y + min_radius + 1):
+		for x in range(center_x - min_radius, center_x + min_radius + 1):
+			if x < 0 or y < 0 or x >= width or y >= height: return false # touching edge
+			if grid[get_idx(x, y)] != cell.DEAD: return false
 	
+	return true
 
 func build_level(start: int, end: int) -> Array:
 	var output := []
