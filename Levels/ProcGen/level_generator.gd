@@ -105,7 +105,8 @@ func generate() -> Array:
 	var dists := get_distances_from(start)
 	for index in dists.size(): if dists[index] > dists[end]: end = index 
 	
-	var level := build_level(start, end)
+	var enemies := place_enemies(rng, end, dists)
+	var level := build_level(start, end, enemies)
 	
 	return level
 
@@ -317,7 +318,7 @@ func cell_has_space(index: int, min_radius: int) -> bool:
 	
 	return true
 
-func build_level(start: int, end: int) -> Array:
+func build_level(start: int, end: int, enemies: Array[int]) -> Array:
 	var output := []
 	
 	for y in height:
@@ -325,6 +326,9 @@ func build_level(start: int, end: int) -> Array:
 		for x in width:
 			row.append(WALL_COLOR if grid[get_idx(x, y)] == cell.ALIVE else WATER_COLOR)
 		output.append(row)
+	
+	for enemy_index in enemies:
+		output[enemy_index / width][enemy_index % width] = ENEMY_COLOR
 	
 	for index in get_radius(end, end_radius):
 		output[index / width][index % width] = END_COLOR
