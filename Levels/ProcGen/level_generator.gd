@@ -16,6 +16,7 @@ const WALL_COLOR := Color(0, 0, 1, 1)
 const START_COLOR := Color(1, 1, 1, 1)
 const END_COLOR := Color(0, 0, 0, 1)
 const WATER_COLOR := Color(0, 0, 0, 0)
+const ENEMY_COLOR := Color(1, 0, 0, 1)
 
 @export_group("Dimensions")
 @export var width := 256
@@ -40,6 +41,13 @@ const WATER_COLOR := Color(0, 0, 0, 0)
 @export_group("Output")
 @export var level_seed := -1 ## -1 means random seed
 @export_file("*.png") var output_path := ""
+
+@export_group("Enemies")
+@export var num_enemies := 10
+@export var enemy_min_spacing := 30 # min spacing between 2 different enemies
+@export var enemy_min_start_dist := 40 # no enemies around the start in this radius
+@export var enemy_min_end_dist := 15 # no enemies around the exit in this radius
+@export var enemy_open_space := 3 # min empyy space around enemy needed for it to spawn
 
 
 var grid: Array[int] = []
