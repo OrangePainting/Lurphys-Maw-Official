@@ -15,12 +15,19 @@ run/main_scene="uid://bn0s80vvhv5il"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ktyv6fg0ui6g"
+
 [autoload]
 
 FxManager="*uid://ba24r8bkg84xr"
 LimboConsole="*uid://dyxornv8vwibg"
 RunManager="*uid://cv00gkoqcq26p"
 SaveManager="*uid://d05geple33ouh"
+MusicManager="*uid://b84k07dtwx6c6"
+SfxManagerNonspatial="*uid://0rtse1kign5j"
+SfxManagerSpatial="*uid://ckck5qousbvix"
 
 [display]
 
