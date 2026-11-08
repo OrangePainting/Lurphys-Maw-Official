@@ -4,7 +4,22 @@
 
 [node name="ProcGen" type="Node" unique_id=268479683]
 script = ExtResource("1_mmho3")
+width = null
+height = null
 start_alive_chance = 58
+num_generations = null
+birth_floor = null
+death_cap = null
+use_same_grid = null
+start_clear_radius = null
 end_radius = 10
+link_caves = null
+min_cave_size = null
 tunnel_width = 15
+level_seed = null
 output_path = "res://Levels/ProceduralLevels/TestLevel.png"
+num_enemies = null
+enemy_min_spacing = null
+enemy_min_start_dist = null
+enemy_min_end_dist = null
+enemy_open_space = null

@@ -47,7 +47,7 @@ const ENEMY_COLOR := Color(1, 0, 0, 1)
 @export var enemy_min_spacing := 30 # min spacing between 2 different enemies
 @export var enemy_min_start_dist := 40 # no enemies around the start in this radius
 @export var enemy_min_end_dist := 15 # no enemies around the exit in this radius
-@export var enemy_open_space := 3 # min empyy space around enemy needed for it to spawn
+@export var enemy_min_open_space := 3 # min empyy space around enemy needed for it to spawn
 
 
 var grid: Array[int] = []
@@ -275,6 +275,17 @@ func get_radius(target: int, radius: int) -> Array[int]:
 
 func clear_radius(target: int, radius: int) -> void:
 	for index in get_radius(target, radius): grid[index] = cell.DEAD
+
+## place enemy cells
+func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> Array:
+	var end_pos := Vector2(end % width, end / width)
+	var possible_pos: Array[int] = [] # possible positions for the enemies to spawn at
+	
+	for index in dists.size():
+		if dists[index] < enemy_min_start_dist: continue
+		var enemy_pos := Vector2(index % width, index / width)
+		if enemy_pos.distance_to(end_pos) < end_radius + enemy_min_end_dist: continue
+		if not cell_has_space(enemy_pos, enemy_open_space)
 
 
 func build_level(start: int, end: int) -> Array:
