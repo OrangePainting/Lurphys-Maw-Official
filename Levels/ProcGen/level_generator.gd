@@ -105,7 +105,7 @@ func generate() -> Array:
 	var dists := get_distances_from(start)
 	for index in dists.size(): if dists[index] > dists[end]: end = index 
 	
-	var enemies := place_enemies(rng, end, dists)
+	var enemies := place_enemies(rng, start, end, dists)
 	var level := build_level(start, end, enemies)
 	
 	return level
@@ -278,7 +278,8 @@ func clear_radius(target: int, radius: int) -> void:
 	for index in get_radius(target, radius): grid[index] = cell.DEAD
 
 ## place enemy cells
-func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> Array:
+func place_enemies(rng: RandomNumberGenerator, start: int, end: int, dists: Array[int]) -> Array[int]:
+	var start_pos := Vector2(start % width, start / width)
 	var end_pos := Vector2(end % width, end / width)
 	var possible_pos: Array[int] = [] # possible positions for the enemies to spawn at
 	
@@ -286,6 +287,7 @@ func place_enemies(rng: RandomNumberGenerator, end: int, dists: Array[int]) -> A
 		# tons of guard clauses, until we can finally add it here
 		if dists[index] < enemy_min_start_dist: continue
 		var enemy_pos := Vector2(index % width, index / width)
+		if enemy_pos.distance_to(start_pos) < enemy_min_start_dist: continue # forgot to check for start
 		if enemy_pos.distance_to(end_pos) < end_radius + enemy_min_end_dist: continue
 		if not cell_has_space(index, enemy_min_open_space): continue
 		possible_pos.append(index)
