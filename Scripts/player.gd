@@ -34,10 +34,6 @@ signal player_hurt()
 @onready var weapon_container : Node2D = %WeaponContainer
 #endregion
 
-#region SFX
-const SFX_DASH: AudioStream = preload("res://Assets/audio/sfx/metal_pipe_falling.mp3");
-#endregion
-
 #region BaseState
 var last_move_direction := Vector2.RIGHT
 #endregion
@@ -188,16 +184,6 @@ func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool
 	is_dash_queued = true
 	dash_delay_timer = dash_delay
 	dash_queued.emit(queued_dash_direction)
-	
-	# play dash sfx (for testing purposes)
-	
-	#var dash_sfx := SfxManagerSpatial.play_at_node(SFX_DASH, self)
-	#var dash_sfx := SfxManagerSpatial.play_at(SFX_DASH, global_position)
-	#dash_sfx.pitch_scale = 2.0 # example modifying pitch
-	#dash_sfx.volume_db = -20.0 # example modifying volume
-	
-	#var dash_sfx_id: int = SfxManagerNonspatial.play(SFX_DASH)
-	
 	return true
  
  
