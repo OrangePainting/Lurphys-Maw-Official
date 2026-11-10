@@ -16,7 +16,7 @@ var paused = false;
 
 @export var health: float = 100
 @export var player: Node #TODO: change. Need a global so UI can know how much health the player has.
-# Called when the node enters the scene tree for the first time.
+@export var default_texture: Texture2D
 @export var stat_texts: Array[RichTextLabel] = [] #add stats into this array
 
 
@@ -25,6 +25,7 @@ func _ready() -> void:
 	health_bar.value = health
 	pause_menu.hide()
 	stats_menu.hide()
+	settings_menu.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,12 +33,22 @@ func _process(delta: float) -> void:
 	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
+	#TODO: update for better placement of script/less hard coded
+	if Input.is_action_just_pressed("Active 1"):
+		use_Item(1, true) #hard coded destroyed, when relics fully implemented please update
+	if Input.is_action_just_pressed("Active 2"):
+		use_Item(2, true)
+	if Input.is_action_just_pressed("Active 3"):
+		use_Item(3, true)
+	if Input.is_action_just_pressed("Active 4"):
+		use_Item(4, true)
 		
 func pauseMenu() -> void:
 	if paused:
 		paused = false
 		pause_menu.hide()
 		stats_menu.hide()
+		settings_menu.hide()
 		Engine.time_scale = 1
 	
 	else:
@@ -72,7 +83,7 @@ func _on_stats_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	Engine.time_scale = 1
-	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn")) #TODO: make a main menu to go to
+	RunManager.root.load_scene(load("res://Scenes/main_menu.tscn"))
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
@@ -99,3 +110,12 @@ func get_stat_texts_size() -> int: #returns the size variable, not the max index
 
 func set_stat_texts_size(new_size: int) -> void:
 	stat_texts.resize(new_size)
+	
+func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design decisions on what to do when an item is used
+	if destroyed:
+		setItem(item_num, default_texture, "", default_texture)
+
+
+func _on_settings_pressed() -> void:
+	pause_menu.hide()
+	settings_menu.show()
