@@ -14,3 +14,4 @@ func _on_run_portal_interacted() -> void:
 	# PLACEHOLDER: swap this for loading the real run scene once the team
 	# decides how runs start.
 	print("Portal used")
+	RunManager.start_run()
