@@ -1,28 +1,33 @@
 [gd_resource type="AudioStreamInteractive" format=3 uid="uid://2rbaxr3d7v77"]
 
-[ext_resource type="AudioStream" uid="uid://bfklpmpvjvroa" path="res://Assets/audio/music/lurphysmawjimbattleintro.ogg" id="1_1bd7w"]
-[ext_resource type="AudioStream" uid="uid://blrxwtgqjcog4" path="res://Assets/audio/music/lurphysmawjimbattleloop.ogg" id="2_hwcbr"]
+[ext_resource type="AudioStream" uid="uid://xtbxfa2x7620" path="res://Assets/audio/music/jimbattleintro.ogg" id="1_hwcbr"]
+[ext_resource type="AudioStream" uid="uid://c754h857aemqs" path="res://Assets/audio/music/jimbattleloop.ogg" id="2_sn6oj"]
+[ext_resource type="AudioStream" uid="uid://7jia3oaoqbxx" path="res://Assets/audio/music/mainmenu.ogg" id="3_hwcbr"]
 
 [resource]
-clip_count = 2
+clip_count = 3
 clip_0/name = &"jimbattleintro"
-clip_0/stream = ExtResource("1_1bd7w")
+clip_0/stream = ExtResource("1_hwcbr")
 clip_0/auto_advance = 1
 clip_0/next_clip = 1
 clip_1/name = &"jimbattleloop"
-clip_1/stream = ExtResource("2_hwcbr")
+clip_1/stream = ExtResource("2_sn6oj")
 clip_1/auto_advance = 0
+clip_2/name = &"menu"
+clip_2/stream = ExtResource("3_hwcbr")
+clip_2/auto_advance = 0
+initial_clip = 2
 _transitions = {
 Vector2i(0, 1): {
-"fade_beats": 0.5,
+"fade_beats": 0.2,
 "fade_mode": 0,
 "from_time": 3,
 "to_time": 1
 },
-Vector2i(1, 1): {
-"fade_beats": 0.1,
+Vector2i(2, -1): {
+"fade_beats": 1.0,
 "fade_mode": 3,
-"from_time": 3,
+"from_time": 0,
 "to_time": 1
 }
 }
