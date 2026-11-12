@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 			for i in range(num_charges - cur_charges):
 				var last  = get_child(get_child_count()-1)
 				remove_child(last)
+				last.queue_free()
 		else:
 			for i in range(cur_charges - num_charges):
 				var charge = TextureRect.new()
