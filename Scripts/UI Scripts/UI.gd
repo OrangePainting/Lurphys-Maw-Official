@@ -19,7 +19,15 @@ var paused = false;
 @export var player: Node #TODO: change. Need a global so UI can know how much health the player has.
 @export var default_texture: Texture2D
 @export var stat_texts: Array[RichTextLabel] = [] #add stats into this array
+@export var exit_shape: CollisionPolygon2D
 
+@export_group("Exit Marker")
+@export var marker_radius := 70.0
+@export var marker_hide_distance := 200.0
+
+@onready var exit_marker: Node2D = $"Exit Marker"
+var exit_pos := Vector2.ZERO
+var has_exit := false
 
 func _ready() -> void:
 	health_bar.max_value = health
@@ -31,6 +39,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	update_exit_marker()
 	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
 	dash_charges_label.text = "Dash Charges: %d" % player.dash_charges
 	if Input.is_action_just_pressed("Pause"):
@@ -57,6 +66,21 @@ func pauseMenu() -> void:
 		paused = true
 		pause_menu.show()
 		Engine.time_scale = 0
+
+func update_exit_marker() -> void:
+	if not has_exit:
+		find_exit()
+	if not has_exit or exit_pos - player.global_position < marker_hide_distance:
+		exit_marker.hide()
+		return
+	
+	var vec_to_exit: Vector2 = exit_pos - player.global_position
+	var dir := vec_to_exit.normalized()
+	var player_screen = get_viewport().get_canvas_transform() * player.global_position
+	exit_marker.global_position = player_screen + dir * marker_radius
+	exit_marker.rotation = dir.angle()
+	exit_marker.show()
+	
 
 #sets the item the player holds. Needs all components. Call as integration of the relic system
 func setItem(itemNumber : int, sprite : Texture2D, brief_desc : String, image_desc: Texture2D) -> void:
