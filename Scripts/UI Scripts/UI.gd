@@ -68,9 +68,7 @@ func pauseMenu() -> void:
 		Engine.time_scale = 0
 
 func update_exit_marker() -> void:
-	if not has_exit:
-		find_exit()
-	if not has_exit or exit_pos - player.global_position < marker_hide_distance:
+	if not has_exit or (exit_pos - player.global_position).length() < marker_hide_distance:
 		exit_marker.hide()
 		return
 	
@@ -80,7 +78,10 @@ func update_exit_marker() -> void:
 	exit_marker.global_position = player_screen + dir * marker_radius
 	exit_marker.rotation = dir.angle()
 	exit_marker.show()
-	
+
+func set_exit(exit_position: Vector2) -> void:
+	exit_pos = exit_position
+	has_exit = true
 
 #sets the item the player holds. Needs all components. Call as integration of the relic system
 func setItem(itemNumber : int, sprite : Texture2D, brief_desc : String, image_desc: Texture2D) -> void:

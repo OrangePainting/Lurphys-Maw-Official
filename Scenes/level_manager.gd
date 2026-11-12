@@ -5,6 +5,7 @@ var spawnPos : Vector2
 @onready var lurphyLevel : LurphyLevel = get_parent()
 var levelDimensions : Vector2
 @export var enemyMan : EnemyManager
+var exitPos: Vector2
 
 func update_level_to_levelres(levelRes : Level):
 	var mapping = levelRes.imgMapping
@@ -26,3 +27,9 @@ func update_level_to_levelres(levelRes : Level):
 					enemyMan.spawn_enemy(load("res://Scenes/generic_melee_enemy.tscn"), layer.map_to_local(Vector2(x,y)))
 	layer.set_pattern(Vector2i(0, 0), newPattern)
 	lurphyLevel.exitZoneCS.polygon = Geometry2D.convex_hull(exitZoneArray)
+	if not exitZoneArray.is_empty():
+		var sum := Vector2.ZERO
+		for point in exitZoneArray:
+			sum += point
+		exitPos = sum / exitZoneArray.size()
+	print("exitPos: ", exitPos, " tiles: ", exitZoneArray.size())

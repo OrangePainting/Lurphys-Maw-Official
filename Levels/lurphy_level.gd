@@ -17,6 +17,7 @@ func _ready() -> void:
 	camera.limit_bottom = levelMan.levelDimensions.y
 	camera.make_current()
 	camera.reset_smoothing.call_deferred()
+	$UILayer/PlayerUI.set_exit(levelMan.exitPos)
 
 
 func _on_exit_zone_body_entered(body: Node2D) -> void:

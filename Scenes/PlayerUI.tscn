@@ -137,7 +137,7 @@ gradient = SubResource("Gradient_em753")
 gradient = SubResource("Gradient_hmt36")
 fill_to = Vector2(0, 1)
 
-[node name="PlayerUI" type="Control" unique_id=1677651346 node_paths=PackedStringArray("stat_texts")]
+[node name="PlayerUI" type="Control" unique_id=1677651346 node_paths=PackedStringArray("stat_texts", "exit_shape")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,11 +147,10 @@ offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfrq2")
-health = null
 default_texture = ExtResource("3_jrycd")
 stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
-marker_radius = null
-marker_hide_distance = null
+exit_shape = NodePath("Exit Marker")
+marker_hide_distance = 0.0
 
 [node name="Top Bar Container" type="HBoxContainer" parent="." unique_id=608787821]
 layout_mode = 1
@@ -619,9 +618,8 @@ text = "Return"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit Marker" type="Polygon2D" parent="." unique_id=1677403705]
-visible = false
-color = Color(1, 0.85, 0.2, 1)
+[node name="Exit Marker" type="CollisionPolygon2D" parent="." unique_id=1997965812]
+z_index = 5
 polygon = PackedVector2Array(14, 0, -8, -9, -4, 0, -8, 9)
 
 [connection signal="mouse_entered" from="Items/Item 1" to="Items/Item 1" method="_on_mouse_entered"]
