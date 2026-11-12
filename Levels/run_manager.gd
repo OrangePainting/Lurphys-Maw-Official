@@ -34,7 +34,7 @@ func load_next_level():
 func add_scrap(amount: int) -> void:
 	scrap += amount
 	scrap_changed.emit(scrap)
-	print("Scrap total: ", scrap) # temporary, delete once the HUD shows it
+	#print("Scrap total: ", scrap) # temporary, delete once the HUD shows it
 
 func spend_scrap(amount: int) -> bool:
 	if amount > scrap:
