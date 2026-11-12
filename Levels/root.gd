@@ -8,7 +8,7 @@ var currentScene
 func _ready() -> void:
 	RunManager.root = self
 	#RunManager.currentLevel = startingLevel
-	RunManager.currentLevel = RunManager.generate_level()
+	#RunManager.currentLevel = RunManager.generate_level()
 	load_scene(startingScene)
 
 func load_scene(scene : PackedScene):
