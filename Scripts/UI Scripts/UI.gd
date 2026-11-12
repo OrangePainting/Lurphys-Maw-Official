@@ -19,7 +19,6 @@ var paused = false;
 @export var player: Node #TODO: change. Need a global so UI can know how much health the player has.
 @export var default_texture: Texture2D
 @export var stat_texts: Array[RichTextLabel] = [] #add stats into this array
-@export var exit_shape: CollisionPolygon2D
 
 @export_group("Exit Marker")
 @export var marker_radius := 70.0
