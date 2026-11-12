@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn4jo1uyq1ima"]
 
 [ext_resource type="Script" uid="uid://dufmfsve7rodt" path="res://Scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://oft8c3rm8qe" path="res://Assets/art/Temp UI/Screenshot 2026-10-13 172556.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://dwargmlna2d7u" path="res://Assets/art/Temp UI/Title Screen.png" id="2_1ehe0"]
 [ext_resource type="FontFile" uid="uid://beyj3kfbpysym" path="res://Assets/fonts/BoldPixels.ttf" id="2_48xlc"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28flt"]
