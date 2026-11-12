@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bo5k6xvbcswb6"]
+
+[ext_resource type="Script" uid="uid://brty0adqca08e" path="res://Scripts/home_base/interactable.gd" id="1_8s6bd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vao7y"]
+size = Vector2(140, 140)
+
+[node name="Interactable" type="Area2D" unique_id=1955158050]
+script = ExtResource("1_8s6bd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=381295573]
+shape = SubResource("RectangleShape2D_vao7y")
+
+[node name="Visual" type="ColorRect" parent="." unique_id=2102806170]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="NameLabel" type="Label" parent="." unique_id=2076127352]
+offset_left = -100.0
+offset_top = -90.0
+offset_right = 100.0
+offset_bottom = -60.0
+horizontal_alignment = 1
+
+[node name="PromptLabel" type="Label" parent="." unique_id=1279909112]
+offset_left = -100.0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 90.0
+horizontal_alignment = 1
