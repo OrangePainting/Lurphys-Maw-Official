@@ -6,9 +6,5 @@ class_name Shield extends Weapon
 func prevent_damage(amount: float) -> bool:
 	if state != State.ACTIVE: return false # do we want it to be passive (i.e. also works on free?)
 	(holder as Player).start_iframes(iframes)
-	end_active()
+	timer = iframes
 	return true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

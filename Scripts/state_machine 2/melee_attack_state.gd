@@ -5,7 +5,7 @@ extends NodeState
 
 @export_group("Damage & Hitbox")
 @export var attack_hitbox: Area2D
-@export var damage: float = 20.0
+@export var damage: float = 5.0
 
 @export_group("Attack Ranges & Cooldown")
 @export var dash_range: float = 250.0
