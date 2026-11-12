@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqwqn77v7b0do"]
 
-[ext_resource type="Texture2D" uid="uid://duff75mie6gp" path="res://icon.svg" id="1_itaa7"]
 [ext_resource type="Script" uid="uid://ip23kc2mqd8b" path="res://Scenes/scrap.gd" id="1_nkhrt"]
+[ext_resource type="Texture2D" uid="uid://dr6rql582thdq" path="res://Assets/art/items/placeholder_scrap.png" id="2_nkhrt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vao7y"]
 bounce = 0.3
@@ -19,5 +19,5 @@ script = ExtResource("1_nkhrt")
 shape = SubResource("CircleShape2D_vao7y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2031948755]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_itaa7")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_nkhrt")
