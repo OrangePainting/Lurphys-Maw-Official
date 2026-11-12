@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crbc3bbs2pk1p"]
+
+[ext_resource type="Script" uid="uid://8pu73k4kd3hs" path="res://Levels/ProcGen/level_generator.gd" id="1_mmho3"]
+
+[node name="ProcGen" type="Node" unique_id=268479683]
+script = ExtResource("1_mmho3")
+start_alive_chance = 58
+end_radius = 10
+tunnel_width = 15
+output_path = "res://Levels/ProceduralLevels/TestLevel.png"
