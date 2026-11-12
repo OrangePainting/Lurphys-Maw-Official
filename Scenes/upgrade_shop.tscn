@@ -41,7 +41,7 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="Center/Panel/Margin/VBox/Header" unique_id=400349697]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Upgrades"
+text = "Upgrades (Don't work yet!)"
 
 [node name="CurrencyLabel" type="Label" parent="Center/Panel/Margin/VBox/Header" unique_id=2093401537]
 unique_name_in_owner = true
