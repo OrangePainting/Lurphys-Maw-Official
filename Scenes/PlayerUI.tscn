@@ -493,7 +493,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MenuHolder" type="VBoxContainer" parent="PauseMenu" unique_id=1857121039]
-visible = false
 custom_minimum_size = Vector2(350, 500)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
@@ -636,22 +635,7 @@ custom_maximum_size = Vector2(175, 500)
 layout_mode = 2
 
 [node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=581031186]
-[node name="SettingsMenu" type="VBoxContainer" parent="PauseMenu" unique_id=777695127]
-custom_minimum_size = Vector2(350, 500)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-
-[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMenu" unique_id=581031186]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Adjust Volume
-"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Rebind Dash" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=268295685]
 custom_minimum_size = Vector2(175, 70)
@@ -941,15 +925,6 @@ theme_override_fonts/normal_font = ExtResource("3_qv4fw")
 text = "Press and Input - Rebind Active Item 4"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMenu" unique_id=769118173]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-step = 0.01
-value = 100.0
 
 [node name="StatsMenu" type="MarginContainer" parent="." unique_id=590737166]
 layout_mode = 1
