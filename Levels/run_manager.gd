@@ -13,6 +13,7 @@ signal scrap_changed(total: int)
 var scrap := 0
 
 func start_run() -> void:
+	MusicManager.play(MusicManager.Music.RUN)
 	how_far = 0
 	run_seed = randi()
 	currentLevel = generate_level()

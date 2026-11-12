@@ -6,6 +6,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	MusicManager.play(MusicManager.Music.HOME)
 	_upgrade_station.interacted.connect(_shop.open)
 	_run_portal.interacted.connect(_on_run_portal_interacted)
 
