@@ -4,6 +4,7 @@ extends Control
 @onready var pause_menu = $PauseMenu/MenuHolder
 @onready var stats_menu = $StatsMenu/StatsHolder 
 @onready var settings_menu = $PauseMenu/SettingsMenu
+@onready var dash_charges_label = %DashChargesLabel
 @onready var itemButtons = { #dictionary of items
 	1: $"Items/Item 1",
 	2: $"Items/Item 2",
@@ -31,6 +32,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
+	dash_charges_label.text = "Dash Charges: %d" % player.dash_charges
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
 	#TODO: update for better placement of script/less hard coded
@@ -54,7 +56,7 @@ func pauseMenu() -> void:
 	else:
 		paused = true
 		pause_menu.show()
-		Engine.time_scale = 0	
+		Engine.time_scale = 0
 
 #sets the item the player holds. Needs all components. Call as integration of the relic system
 func setItem(itemNumber : int, sprite : Texture2D, brief_desc : String, image_desc: Texture2D) -> void:
