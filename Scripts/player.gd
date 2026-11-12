@@ -55,6 +55,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	current_health -= oxyDecay * delta
+	check_die()
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_vector("SwimLeft", "SwimRight", "SwimUp", "SwimDown")
@@ -358,7 +359,7 @@ func get_health() -> float:
  
 func check_die() -> void: 
 	if current_health <= 0: 
-		pass # TODO: implement die mechanic here
+		RunManager.root.load_scene(load("res://Scenes/home_base.tscn")) # TODO: implement die mechanic here
  
 ## damage should be a positive health (calculation is current_health - damage)
 func hurt(damage: float) -> void:
