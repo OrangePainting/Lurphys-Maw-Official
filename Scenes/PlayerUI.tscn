@@ -180,6 +180,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Dash Charges: X"
 
+[node name="ScrapLabel" type="Label" parent="Top Bar Container" unique_id=1025320898]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Scrap: X"
+
 [node name="Items" type="BoxContainer" parent="." unique_id=537075131]
 show_behind_parent = true
 layout_mode = 0
