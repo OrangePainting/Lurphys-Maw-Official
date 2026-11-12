@@ -13,7 +13,7 @@ func _physics_process(delta: float):
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D):
-	print("Player hit")
+	#print("Player hit")
 	if body.is_in_group("Player") and body.has_method("hurt"):
 		body.hurt(damage)
 	
