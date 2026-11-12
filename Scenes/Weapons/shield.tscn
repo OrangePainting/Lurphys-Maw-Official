@@ -23,7 +23,7 @@ animations = [{
 script = ExtResource("2_mnsdq")
 iframes = 3.0
 damage = 0.0
-attack_duration = 0.6
+attack_duration = 3.0
 attack_cooldown = 3.0
 offset_from_player = Vector2(0, 0)
 

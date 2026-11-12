@@ -82,3 +82,22 @@ position = Vector2(1200, 450)
 display_name = "Dive"
 prompt_text = "Start run"
 color = Color(0.4, 0.9019608, 0.6, 1)
+
+[node name="Label" type="Label" parent="." unique_id=750667052]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 850.0
+offset_top = 450.0
+offset_right = 890.0
+offset_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WASD/Arrow Keys to Move
+Space to Dash
+Z to primary weapon
+X to use secondary weapon
+E to interact
+Have Fun!"
