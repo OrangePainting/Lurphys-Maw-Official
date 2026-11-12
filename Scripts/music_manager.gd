@@ -38,6 +38,10 @@ func play(track: Music, fade_time := 1.0) -> void:
 	active_stream = idle_stream
 	idle_stream = tmp
 	
+	active_stream.stream = STREAMS[track]
+	active_stream.volume_db = -80
+	active_stream.play()
+	
 	if tween: tween.kill()
 	tween = create_tween().set_parallel(true).set_ignore_time_scale(true)
 	tween.tween_property(active_stream, "volume_db", 0.0, fade_time)
