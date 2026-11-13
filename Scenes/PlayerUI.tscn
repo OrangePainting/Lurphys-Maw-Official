@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dxoo7u6ilja08" path="res://Scripts/UI Scripts/ShowDescription.gd" id="2_hfrq2"]
 [ext_resource type="Texture2D" uid="uid://b3nkvap7miji2" path="res://Assets/art/LurphySlot.png" id="3_jrycd"]
 [ext_resource type="FontFile" uid="uid://beyj3kfbpysym" path="res://Assets/fonts/BoldPixels.ttf" id="3_qv4fw"]
-[ext_resource type="Script" uid="uid://3o82m0n8q0vq" path="res://Scenes/rebind.gd" id="5_kioar"]
 
 [sub_resource type="Gradient" id="Gradient_8tgur"]
 
@@ -125,129 +124,17 @@ gradient = SubResource("Gradient_658u6")
 gradient = SubResource("Gradient_p5poj")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kioar"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a5jvy"]
 
 [sub_resource type="Gradient" id="Gradient_ynv3k"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_le1si"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kp2qe"]
 gradient = SubResource("Gradient_ynv3k")
 
 [sub_resource type="Gradient" id="Gradient_2706v"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ynv3k"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4euyy"]
 gradient = SubResource("Gradient_2706v")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2706v"]
-
-[sub_resource type="Gradient" id="Gradient_kp2qe"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8nbg3"]
-gradient = SubResource("Gradient_kp2qe")
-
-[sub_resource type="Gradient" id="Gradient_h1s4f"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_aq1od"]
-gradient = SubResource("Gradient_h1s4f")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4euyy"]
-
-[sub_resource type="Gradient" id="Gradient_024fy"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s0p4d"]
-gradient = SubResource("Gradient_024fy")
-
-[sub_resource type="Gradient" id="Gradient_8nbg3"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5btyy"]
-gradient = SubResource("Gradient_8nbg3")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3fgs3"]
-
-[sub_resource type="Gradient" id="Gradient_aq1od"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1xg3"]
-gradient = SubResource("Gradient_aq1od")
-
-[sub_resource type="Gradient" id="Gradient_4euyy"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_j6c6m"]
-gradient = SubResource("Gradient_4euyy")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oi5x2"]
-
-[sub_resource type="Gradient" id="Gradient_s0p4d"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_73x6w"]
-gradient = SubResource("Gradient_s0p4d")
-
-[sub_resource type="Gradient" id="Gradient_5btyy"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ya7i2"]
-gradient = SubResource("Gradient_5btyy")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4jbkf"]
-
-[sub_resource type="Gradient" id="Gradient_3fgs3"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8j4sq"]
-gradient = SubResource("Gradient_3fgs3")
-
-[sub_resource type="Gradient" id="Gradient_f1xg3"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kf3w1"]
-gradient = SubResource("Gradient_f1xg3")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qv4fw"]
-
-[sub_resource type="Gradient" id="Gradient_j6c6m"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uedj5"]
-gradient = SubResource("Gradient_j6c6m")
-
-[sub_resource type="Gradient" id="Gradient_oi5x2"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b16w7"]
-gradient = SubResource("Gradient_oi5x2")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k3rgi"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mhdyn"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gpu4v"]
-
-[sub_resource type="Gradient" id="Gradient_73x6w"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tt5r2"]
-gradient = SubResource("Gradient_73x6w")
-
-[sub_resource type="Gradient" id="Gradient_ya7i2"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2p7m4"]
-gradient = SubResource("Gradient_ya7i2")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ac1q"]
-
-[sub_resource type="Gradient" id="Gradient_4jbkf"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4soim"]
-gradient = SubResource("Gradient_4jbkf")
-
-[sub_resource type="Gradient" id="Gradient_8j4sq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xs2nm"]
-gradient = SubResource("Gradient_8j4sq")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gtoah"]
-
-[sub_resource type="Gradient" id="Gradient_kf3w1"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_otfws"]
-gradient = SubResource("Gradient_kf3w1")
-
-[sub_resource type="Gradient" id="Gradient_uedj5"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_75ex0"]
-gradient = SubResource("Gradient_uedj5")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8tgur"]
 
@@ -621,187 +508,53 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsMaster" type="HBoxContainer" parent="PauseMenu" unique_id=1602267369]
+[node name="SettingsMaster" type="VBoxContainer" parent="PauseMenu" unique_id=1619067179]
 custom_minimum_size = Vector2(350, 500)
-custom_maximum_size = Vector2(350, -1)
+custom_maximum_size = Vector2(350, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("5_kioar")
 
-[node name="SettingsLeft" type="VBoxContainer" parent="PauseMenu/SettingsMaster" unique_id=2139253613]
-custom_minimum_size = Vector2(175, 500)
-custom_maximum_size = Vector2(175, 500)
+[node name="SettingsText" type="RichTextLabel" parent="PauseMenu/SettingsMaster" unique_id=649544268]
+custom_minimum_size = Vector2(350, 50)
+custom_maximum_size = Vector2(350, 50)
 layout_mode = 2
-
-[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=581031186]
-layout_mode = 2
-
-[node name="Rebind Dash" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=268295685]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, 70)
-layout_mode = 2
-size_flags_horizontal = 0
-texture_normal = SubResource("PlaceholderTexture2D_kioar")
-texture_pressed = SubResource("GradientTexture2D_le1si")
-texture_hover = SubResource("GradientTexture2D_ynv3k")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindDashText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Dash" unique_id=967689415]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Dash"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Up" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=813903317]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource("PlaceholderTexture2D_2706v")
-texture_pressed = SubResource("GradientTexture2D_8nbg3")
-texture_hover = SubResource("GradientTexture2D_aq1od")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindUpText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Up" unique_id=1743404095]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Swim Up"
+text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rebind Left" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=996162122]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
+[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster" unique_id=581031186]
+custom_minimum_size = Vector2(350, 25)
+custom_maximum_size = Vector2(350, 25)
 layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_4euyy")
-texture_pressed = SubResource("GradientTexture2D_s0p4d")
-texture_hover = SubResource("GradientTexture2D_5btyy")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindLeftText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Left" unique_id=1340756183]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Swim Left"
+text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rebind Atk1" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=699706313]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_3fgs3")
-texture_pressed = SubResource("GradientTexture2D_f1xg3")
-texture_hover = SubResource("GradientTexture2D_j6c6m")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindAtk1Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Atk1" unique_id=1896945613]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Attack Primary"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Item1" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=1814583514]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_oi5x2")
-texture_pressed = SubResource("GradientTexture2D_73x6w")
-texture_hover = SubResource("GradientTexture2D_ya7i2")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindItem1Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Item1" unique_id=1801910087]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Active Item 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Item3" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsLeft" unique_id=400277834]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_4jbkf")
-texture_pressed = SubResource("GradientTexture2D_8j4sq")
-texture_hover = SubResource("GradientTexture2D_kf3w1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindItem3Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsLeft/Rebind Item3" unique_id=1089429004]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Active Item 3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingsRight" type="VBoxContainer" parent="PauseMenu/SettingsMaster" unique_id=588702343]
-custom_minimum_size = Vector2(175, 500)
-custom_maximum_size = Vector2(175, 500)
-layout_mode = 2
-
-[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=769118173]
-custom_minimum_size = Vector2(300, 50)
-custom_maximum_size = Vector2(300, 50)
+[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMaster" unique_id=769118173]
+custom_minimum_size = Vector2(350, 50)
+custom_maximum_size = Vector2(350, 50)
 layout_mode = 2
 step = 0.01
 value = 100.0
 
-[node name="Rebind Rush" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=1285283354]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
+[node name="ReturnSettings" type="TextureButton" parent="PauseMenu/SettingsMaster" unique_id=821948840]
+custom_minimum_size = Vector2(350, 100)
+custom_maximum_size = Vector2(350, 100)
 layout_mode = 2
-size_flags_horizontal = 8
-texture_normal = SubResource("PlaceholderTexture2D_qv4fw")
-texture_pressed = SubResource("GradientTexture2D_uedj5")
-texture_hover = SubResource("GradientTexture2D_b16w7")
+size_flags_vertical = 8
+texture_normal = SubResource("PlaceholderTexture2D_a5jvy")
+texture_pressed = SubResource("GradientTexture2D_kp2qe")
+texture_hover = SubResource("GradientTexture2D_4euyy")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RebindRushText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Rush" unique_id=1580114042]
+[node name="ReturnText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/ReturnSettings" unique_id=708832850]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -810,119 +563,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Rush"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Down" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=1664939130]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-size_flags_horizontal = 8
-texture_normal = SubResource("PlaceholderTexture2D_k3rgi")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindDownText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Down" unique_id=2013329065]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Swim Down"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Right" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=459867337]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_mhdyn")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindRightText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Right" unique_id=948036856]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Swim Right"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Atk2" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=2061320925]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_gpu4v")
-texture_pressed = SubResource("GradientTexture2D_tt5r2")
-texture_hover = SubResource("GradientTexture2D_2p7m4")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindAtk2Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Atk2" unique_id=1528679558]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Attack Secondary"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Item2" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=212516170]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_1ac1q")
-texture_pressed = SubResource("GradientTexture2D_4soim")
-texture_hover = SubResource("GradientTexture2D_xs2nm")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindItem2Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Item2" unique_id=765516506]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Active Item 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rebind Item4" type="TextureButton" parent="PauseMenu/SettingsMaster/SettingsRight" unique_id=2085659060]
-custom_minimum_size = Vector2(175, 70)
-custom_maximum_size = Vector2(175, -1)
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_gtoah")
-texture_pressed = SubResource("GradientTexture2D_otfws")
-texture_hover = SubResource("GradientTexture2D_75ex0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RebindItem4Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster/SettingsRight/Rebind Item4" unique_id=758853966]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Press and Input - Rebind Active Item 4"
+text = "Return"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -936,7 +577,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="StatsHolder" type="VBoxContainer" parent="StatsMenu" unique_id=646092252]
-visible = false
 custom_minimum_size = Vector2(350, 500)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
@@ -1027,4 +667,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="PauseMenu/MenuHolder/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenu/SettingsMaster/ReturnSettings" to="." method="_on_return_settings_pressed"]
 [connection signal="pressed" from="StatsMenu/StatsHolder/Return" to="." method="_on_stats_return_pressed"]

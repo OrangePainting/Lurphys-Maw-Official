@@ -119,3 +119,8 @@ func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design 
 func _on_settings_pressed() -> void:
 	pause_menu.hide()
 	settings_menu.show()
+
+
+func _on_return_settings_pressed() -> void:
+	settings_menu.hide()
+	pause_menu.show()
