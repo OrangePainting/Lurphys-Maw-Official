@@ -162,15 +162,20 @@ script = ExtResource("1_hfrq2")
 default_texture = ExtResource("3_jrycd")
 stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
 
-[node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
+[node name="health + scrap" type="HBoxContainer" parent="." unique_id=359337672]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 27.0
+offset_bottom = 20.0
 grow_horizontal = 2
+
+[node name="HealthBarHolder" type="MarginContainer" parent="health + scrap" unique_id=1882935089]
+custom_minimum_size = Vector2(1000, 0)
+custom_maximum_size = Vector2(950, -1)
+layout_mode = 2
 mouse_filter = 2
 
-[node name="HealthBar" type="ProgressBar" parent="HealthBarHolder" unique_id=760369393]
+[node name="HealthBar" type="ProgressBar" parent="health + scrap/HealthBarHolder" unique_id=760369393]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 20)
 layout_mode = 2
@@ -178,6 +183,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 value = 50.0
 show_percentage = false
+
+[node name="Scrap Number" type="RichTextLabel" parent="health + scrap" unique_id=749584584]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/normal_font = ExtResource("3_qv4fw")
+text = "Scrap: "
+vertical_alignment = 1
 
 [node name="Items" type="BoxContainer" parent="." unique_id=537075131]
 show_behind_parent = true
