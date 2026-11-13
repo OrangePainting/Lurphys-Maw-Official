@@ -1,6 +1,6 @@
 extends Control
 
-@onready var health_bar = %HealthBar
+@onready var health_bar = $"health + scrap/HealthBarHolder/Health Bar"
 @onready var pause_menu = $PauseMenu/MenuHolder
 @onready var stats_menu = $StatsMenu/StatsHolder 
 @onready var settings_menu = $PauseMenu/SettingsMaster

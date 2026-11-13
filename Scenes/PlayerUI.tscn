@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
 [ext_resource type="Script" uid="uid://dxoo7u6ilja08" path="res://Scripts/UI Scripts/ShowDescription.gd" id="2_hfrq2"]
 [ext_resource type="Texture2D" uid="uid://b3nkvap7miji2" path="res://Assets/art/LurphySlot.png" id="3_jrycd"]
+[ext_resource type="Texture2D" uid="uid://cve0wts7yuq3u" path="res://Assets/art/Temp UI/Healthbar_Top.png" id="3_kioar"]
 [ext_resource type="FontFile" uid="uid://beyj3kfbpysym" path="res://Assets/fonts/BoldPixels.ttf" id="3_qv4fw"]
+[ext_resource type="Texture2D" uid="uid://cnuygb8iugy13" path="res://Assets/art/Temp UI/Healthbar_Bottom.png" id="4_a5jvy"]
 
 [sub_resource type="Gradient" id="Gradient_8tgur"]
 
@@ -175,14 +177,15 @@ custom_maximum_size = Vector2(950, -1)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="HealthBar" type="ProgressBar" parent="health + scrap/HealthBarHolder" unique_id=760369393]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 20)
+[node name="Health Bar" type="TextureProgressBar" parent="health + scrap/HealthBarHolder" unique_id=2102407821]
+custom_minimum_size = Vector2(150, 30)
+custom_maximum_size = Vector2(150, 30)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 50.0
-show_percentage = false
+step = 0.01
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_kioar")
+texture_progress = ExtResource("4_a5jvy")
 
 [node name="Scrap Number" type="RichTextLabel" parent="health + scrap" unique_id=749584584]
 custom_minimum_size = Vector2(200, 0)
