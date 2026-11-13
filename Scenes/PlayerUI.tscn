@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://cks0b8klj80s8" path="res://Scripts/UI Scripts/UI.gd" id="1_hfrq2"]
 [ext_resource type="Script" uid="uid://dxoo7u6ilja08" path="res://Scripts/UI Scripts/ShowDescription.gd" id="2_hfrq2"]
 [ext_resource type="Texture2D" uid="uid://b3nkvap7miji2" path="res://Assets/art/LurphySlot.png" id="3_jrycd"]
+[ext_resource type="Texture2D" uid="uid://cve0wts7yuq3u" path="res://Assets/art/Temp UI/Healthbar_Top.png" id="3_kioar"]
 [ext_resource type="FontFile" uid="uid://beyj3kfbpysym" path="res://Assets/fonts/BoldPixels.ttf" id="3_qv4fw"]
+[ext_resource type="Texture2D" uid="uid://cnuygb8iugy13" path="res://Assets/art/Temp UI/Healthbar_Bottom.png" id="4_a5jvy"]
 
 [sub_resource type="Gradient" id="Gradient_8tgur"]
 
@@ -124,6 +126,18 @@ gradient = SubResource("Gradient_658u6")
 gradient = SubResource("Gradient_p5poj")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a5jvy"]
+
+[sub_resource type="Gradient" id="Gradient_ynv3k"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kp2qe"]
+gradient = SubResource("Gradient_ynv3k")
+
+[sub_resource type="Gradient" id="Gradient_2706v"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4euyy"]
+gradient = SubResource("Gradient_2706v")
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8tgur"]
 
 [sub_resource type="Gradient" id="Gradient_em753"]
@@ -150,22 +164,36 @@ script = ExtResource("1_hfrq2")
 default_texture = ExtResource("3_jrycd")
 stat_texts = [NodePath("StatsMenu/StatsHolder/Stat1"), NodePath("StatsMenu/StatsHolder/Stat2"), NodePath("StatsMenu/StatsHolder/Stat3"), NodePath("StatsMenu/StatsHolder/Stat4")]
 
-[node name="HealthBarHolder" type="MarginContainer" parent="." unique_id=1882935089]
+[node name="health + scrap" type="HBoxContainer" parent="." unique_id=359337672]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 27.0
+offset_bottom = 20.0
 grow_horizontal = 2
+
+[node name="HealthBarHolder" type="MarginContainer" parent="health + scrap" unique_id=1882935089]
+custom_minimum_size = Vector2(1000, 0)
+custom_maximum_size = Vector2(950, -1)
+layout_mode = 2
 mouse_filter = 2
 
-[node name="HealthBar" type="ProgressBar" parent="HealthBarHolder" unique_id=760369393]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 20)
+[node name="Health Bar" type="TextureProgressBar" parent="health + scrap/HealthBarHolder" unique_id=2102407821]
+custom_minimum_size = Vector2(150, 30)
+custom_maximum_size = Vector2(150, 30)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 50.0
-show_percentage = false
+step = 0.01
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_kioar")
+texture_progress = ExtResource("4_a5jvy")
+
+[node name="Scrap Number" type="RichTextLabel" parent="health + scrap" unique_id=749584584]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/normal_font = ExtResource("3_qv4fw")
+text = "Scrap: "
+vertical_alignment = 1
 
 [node name="Items" type="BoxContainer" parent="." unique_id=537075131]
 show_behind_parent = true
@@ -368,7 +396,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MenuHolder" type="VBoxContainer" parent="PauseMenu" unique_id=1857121039]
-visible = false
 custom_minimum_size = Vector2(350, 500)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
@@ -497,31 +524,66 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsMenu" type="VBoxContainer" parent="PauseMenu" unique_id=777695127]
+[node name="SettingsMaster" type="VBoxContainer" parent="PauseMenu" unique_id=1619067179]
 custom_minimum_size = Vector2(350, 500)
+custom_maximum_size = Vector2(350, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 2
 
-[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMenu" unique_id=581031186]
-custom_minimum_size = Vector2(0, 50)
+[node name="SettingsText" type="RichTextLabel" parent="PauseMenu/SettingsMaster" unique_id=649544268]
+custom_minimum_size = Vector2(350, 50)
+custom_maximum_size = Vector2(350, 50)
 layout_mode = 2
+size_flags_vertical = 0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_qv4fw")
-text = "Adjust Volume
-"
+text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMenu" unique_id=769118173]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
+[node name="Sound Text" type="RichTextLabel" parent="PauseMenu/SettingsMaster" unique_id=581031186]
+visible = false
+custom_minimum_size = Vector2(350, 25)
+custom_maximum_size = Vector2(350, 25)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_qv4fw")
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound Control" type="HSlider" parent="PauseMenu/SettingsMaster" unique_id=769118173]
+visible = false
+custom_minimum_size = Vector2(350, 50)
+custom_maximum_size = Vector2(350, 50)
+layout_mode = 2
 step = 0.01
 value = 100.0
+
+[node name="ReturnSettings" type="TextureButton" parent="PauseMenu/SettingsMaster" unique_id=821948840]
+custom_minimum_size = Vector2(350, 100)
+custom_maximum_size = Vector2(350, 100)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = SubResource("PlaceholderTexture2D_a5jvy")
+texture_pressed = SubResource("GradientTexture2D_kp2qe")
+texture_hover = SubResource("GradientTexture2D_4euyy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ReturnText" type="RichTextLabel" parent="PauseMenu/SettingsMaster/ReturnSettings" unique_id=708832850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_qv4fw")
+text = "Return"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StatsMenu" type="MarginContainer" parent="." unique_id=590737166]
 layout_mode = 1
@@ -533,7 +595,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="StatsHolder" type="VBoxContainer" parent="StatsMenu" unique_id=646092252]
-visible = false
 custom_minimum_size = Vector2(350, 500)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
@@ -624,4 +685,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="PauseMenu/MenuHolder/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/MenuHolder/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenu/SettingsMaster/ReturnSettings" to="." method="_on_return_settings_pressed"]
 [connection signal="pressed" from="StatsMenu/StatsHolder/Return" to="." method="_on_stats_return_pressed"]

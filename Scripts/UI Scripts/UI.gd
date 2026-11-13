@@ -1,9 +1,10 @@
 extends Control
 
-@onready var health_bar = %HealthBar
+@onready var health_bar = $"health + scrap/HealthBarHolder/Health Bar"
 @onready var pause_menu = $PauseMenu/MenuHolder
 @onready var stats_menu = $StatsMenu/StatsHolder 
-@onready var settings_menu = $PauseMenu/SettingsMenu
+@onready var settings_menu = $PauseMenu/SettingsMaster
+@onready var scrap_text = $"health + scrap/Scrap Number"
 @onready var itemButtons = { #dictionary of items
 	1: $"Items/Item 1",
 	2: $"Items/Item 2",
@@ -13,6 +14,7 @@ extends Control
 @onready var weaponButton = $WeaponContainer/Weapon
 
 var paused = false;
+var num_scrap = 0;
 
 @export var health: float = 100
 @export var player: Node #TODO: change. Need a global so UI can know how much health the player has.
@@ -21,6 +23,8 @@ var paused = false;
 
 
 func _ready() -> void:
+	num_scrap = RunManager.scrap
+	set_scrap(num_scrap)
 	health_bar.max_value = health
 	health_bar.value = health
 	pause_menu.hide()
@@ -31,6 +35,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	health_bar.value = player.get_health() #TODO: change once global health is set up or another method is decided
+	if RunManager.scrap != num_scrap:
+		num_scrap = RunManager.scrap
+		set_scrap(num_scrap)
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
 	#TODO: update for better placement of script/less hard coded
@@ -119,3 +126,10 @@ func use_Item(item_num: int, destroyed: bool)->void: #update based on ui design 
 func _on_settings_pressed() -> void:
 	pause_menu.hide()
 	settings_menu.show()
+
+func _on_return_settings_pressed() -> void:
+	settings_menu.hide()
+	pause_menu.show()
+
+func set_scrap(new_scrap: int) -> void:
+	scrap_text.text = "Scrap: " + str(new_scrap)
