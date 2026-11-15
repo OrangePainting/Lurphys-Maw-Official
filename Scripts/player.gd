@@ -172,6 +172,8 @@ var dash_recharge_timer := 0.0
  
 func is_dash_active() -> bool: return is_dashing or is_dash_queued
  
+func get_dash_charges() -> int: return dash_charges 
+
 func attempt_dash(input_direction: Vector2, previous_direction: Vector2) -> bool:
 	if dash_charges <= 0 or is_dash_active(): return false
 	if dash_charges >= dash_max_charges: dash_recharge_timer = dash_cooldown
