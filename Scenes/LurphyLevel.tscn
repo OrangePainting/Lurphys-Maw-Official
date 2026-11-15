@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://sc63xemccbnq"]
 
 [ext_resource type="Script" uid="uid://bv3jswenqgrps" path="res://Levels/lurphy_level.gd" id="1_v7whf"]
-[ext_resource type="Script" uid="uid://b0rvmwh0iax38" path="res://Scenes/enemy_manager.gd" id="2_5r5ni"]
+[ext_resource type="Script" uid="uid://b0rvmwh0iax38" path="res://Scripts/enemy_manager.gd" id="2_5r5ni"]
 [ext_resource type="PackedScene" uid="uid://cjxt3sk5lmasl" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bqfvfbu7f2feg" path="res://Scenes/background.tscn" id="3_1nusx"]
-[ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scenes/level_manager.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://wk8aoavnqkrp" path="res://Scripts/level_manager.gd" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ch3olcp1u16gl" path="res://Assets/art/environment/Reef.png" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cos8xnr64nkoc" path="res://Scenes/PlayerUI.tscn" id="5_1nusx"]
 
