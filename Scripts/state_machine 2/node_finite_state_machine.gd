@@ -30,7 +30,7 @@ func _physics_process(delta: float):
 	#print("Current State: ", current_node_state.name.to_lower())
 
 func transition_to(node_state_name : String) -> void:
-	var key := name.to_lower()
+	var key := node_state_name.to_lower()
 	if current_node_state and key == current_node_state.name.to_lower(): return
 	
 	var new_state: NodeState = node_states.get(key)
