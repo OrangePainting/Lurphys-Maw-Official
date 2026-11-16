@@ -8,7 +8,7 @@ func equip(new_holder: Node2D) -> void:
 	(holder as Player).dash_started.connect(on_dash_started)
 
 func unequip() -> void:
-	(holder as Player).dash_started.connect(on_dash_started)
+	(holder as Player).dash_started.disconnect(on_dash_started)
 
 func on_dash_started(direction: Vector2) -> void:
 	start_attack((holder as Player).dash_duration)
