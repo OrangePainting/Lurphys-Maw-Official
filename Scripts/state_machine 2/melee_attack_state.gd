@@ -38,7 +38,7 @@ func _ready():
 			attack_hitbox.body_entered.connect(_on_attack_hitbox_body_entered)
 
 func _on_attack_hitbox_body_entered(body: Node2D):
-	print("Player hit")
+	#print("Player hit")
 	if body.is_in_group("Player") and body.has_method("hurt"):
 		body.hurt(damage)
 
