@@ -8,6 +8,8 @@ signal scrap_changed(total: int)
 var scrap := 0
 
 func load_next_level():
+	if currentLevel.nextLevel == null:
+		return # TODO: add winscreen scene / homebase scene here
 	currentLevel = currentLevel.nextLevel
 	root.load_scene.call_deferred(load("res://Scenes/LurphyLevel.tscn"))
 
@@ -22,3 +24,7 @@ func spend_scrap(amount: int) -> bool:
 	scrap -= amount
 	scrap_changed.emit(scrap)
 	return true
+
+func reset_run(start: Level) -> void:
+	currentLevel = start
+	scrap = 0
