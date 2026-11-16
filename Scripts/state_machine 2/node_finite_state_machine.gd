@@ -39,7 +39,7 @@ func transition_to(node_state_name : String) -> void:
 	if current_node_state: current_node_state.exit()
 	
 	current_node_state = new_state
-	current_node_state_name = key
+	current_node_state_name = key	
 	
 	new_state.enter()
 	

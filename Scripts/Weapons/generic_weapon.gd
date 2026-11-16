@@ -47,9 +47,9 @@ func attack(direction: Vector2) -> bool:
 	return true
 
 
-func start_attack(direction: float) -> void:
+func start_attack(duration: float) -> void:
 	state = State.ACTIVE
-	timer = attack_duration
+	timer = duration
 	show()
 	hitbox.set_deferred("monitoring", true)
 	on_attack_start()
