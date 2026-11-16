@@ -8,8 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckrdom0eu77gj" path="res://Assets/art/player/player-swiming.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://d1tpg6kukgg7a" path="res://Assets/art/player/new_player_idle_sprite_sheet.png" id="6_8erm5"]
 [ext_resource type="Texture2D" uid="uid://cr784wnuobqv5" path="res://Assets/art/player/new_player_swim_sprite_sheet.png" id="7_8erm5"]
-[ext_resource type="Texture2D" uid="uid://cf2sd1cxa5xha" path="res://Assets/art/player/player-rush.png" id="5_x3wgy"]
-[ext_resource type="Script" path="res://Scenes/dash_charge_holder.gd" id="9_tx1dd"]
+[ext_resource type="Script" uid="uid://wuvwjf0hf5ne" path="res://Scripts/dash_charge_holder.gd" id="9_f1ek2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li6ia"]
 radius = 13.0
@@ -257,7 +256,7 @@ offset_right = 31.0
 offset_bottom = -50.0
 mouse_filter = 2
 theme_override_constants/separation = 1
-script = ExtResource("9_tx1dd")
+script = ExtResource("9_f1ek2")
 player = NodePath("../..")
 
 [connection signal="dash_queued" from="." to="." method="on_dash_queued"]
