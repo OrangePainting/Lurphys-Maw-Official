@@ -29,19 +29,17 @@ func _physics_process(delta: float):
 	
 	#print("Current State: ", current_node_state.name.to_lower())
 
-func transition_to(node_state_name : String):
-	if node_state_name == current_node_state.name.to_lower():
-		return
+func transition_to(node_state_name : String) -> void:
+	var key := name.to_lower()
+	if current_node_state and key == current_node_state.name.to_lower(): return
 	
-	var new_node_state = node_states.get(node_state_name.to_lower())
+	var new_state: NodeState = node_states.get(key)
 	
-	if !new_node_state:
-		return
+	if !new_state: return
+	if current_node_state: current_node_state.exit()
 	
-	if current_node_state:
-		current_node_state.exit()
+	current_node_state = new_state
+	current_node_state_name = key
 	
-	new_node_state.enter()
+	new_state.enter()
 	
-	current_node_state = new_node_state
-	current_node_state_name = current_node_state.name.to_lower()
