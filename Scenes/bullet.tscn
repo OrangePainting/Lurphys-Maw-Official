@@ -44,6 +44,8 @@ animations = [{
 
 [node name="Area2D" type="Area2D" unique_id=1523319331]
 script = ExtResource("1_oduel")
+speed = null
+damage = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556441447]
 position = Vector2(1, 1)
